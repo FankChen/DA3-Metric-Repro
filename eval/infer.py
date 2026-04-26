@@ -71,12 +71,21 @@ class DA3MetricInfer:
         Args:
             rgb_uint8: (H, W, 3) uint8 RGB image.
             K: (3, 3) camera intrinsics matrix corresponding to the input
-                resolution.
+                resolution (i.e. the original H, W of `rgb_uint8`).
             process_res: optional resize target (default: self.process_res).
 
         Returns:
             depth_m: (H, W) float32 metric depth in meters, resampled to
                 input resolution.
+
+        Important: the model forwards on a resized image of shape
+        (h_proc, w_proc) close to ``process_res`` on its longest side.
+        Per the official FAQ ``metric_depth = focal / 300 * raw_output``,
+        with `focal` measured **at the model's input resolution** because
+        ``raw_output`` is conditioned on the canonical focal of 300 px in
+        that same resolution.  We therefore scale K by (sx, sy) before
+        computing focal, then upsample the metric depth to the original
+        resolution (depth in meters is invariant to spatial resize).
         """
         assert rgb_uint8.ndim == 3 and rgb_uint8.shape[2] == 3
         assert rgb_uint8.dtype == np.uint8
@@ -89,18 +98,21 @@ class DA3MetricInfer:
             process_res_method="upper_bound_resize",
             export_dir=None,
         )
-        depth_raw = np.asarray(prediction.depth)  # (1, h', w')
+        depth_raw = np.asarray(prediction.depth)  # (1, h_proc, w_proc) or (h_proc, w_proc)
         if depth_raw.ndim == 3:
             depth_raw = depth_raw[0]
+        h_proc, w_proc = depth_raw.shape
 
-        # Resize back to input resolution. We do it in numpy via simple
-        # bilinear from torch to avoid an extra cv2 dep.
-        d_t = torch.from_numpy(depth_raw.astype(np.float32))[None, None]
+        # --- correct metric scaling ---
+        # Use intrinsics at the model-input resolution.
+        sx = w_proc / float(W)
+        sy = h_proc / float(H)
+        f_proc = 0.5 * (float(K[0, 0]) * sx + float(K[1, 1]) * sy)
+        metric_proc = (f_proc / 300.0) * depth_raw.astype(np.float32)
+
+        # Upsample metric depth back to input resolution.
+        d_t = torch.from_numpy(metric_proc)[None, None]
         d_t = torch.nn.functional.interpolate(
             d_t, size=(H, W), mode="bilinear", align_corners=False
         )[0, 0].numpy()
-
-        # Apply the metric scaling (FAQ).
-        focal = 0.5 * (float(K[0, 0]) + float(K[1, 1]))
-        depth_m = (focal / 300.0) * d_t
-        return depth_m.astype(np.float32)
+        return d_t.astype(np.float32)
