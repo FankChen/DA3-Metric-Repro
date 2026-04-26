@@ -17,15 +17,15 @@
 |---|---|---|---|---|---|
 |  | δ1 / AbsRel | δ1 / AbsRel | δ1 / AbsRel | δ1 / AbsRel | δ1 / AbsRel |
 | DA3-metric (paper) | 0.963 / 0.070 | 0.953 / 0.086 | 0.917 / 0.104 | 0.973 / 0.105 | 0.838 / 0.128 |
-| **本项目复现** | 0.720 / 0.171 ⚠️ | **0.926 / 0.094** ✅ | TBD | TBD | TBD |
+| **本项目复现** | **0.948 / 0.080** ✅ | **0.926 / 0.094** ✅ | TBD | TBD | TBD |
 
 **KITTI 复现成功**：AbsRel 差 +0.008（相对 +9%），d1 差 -0.027（相对 -2.8%）。
 完整 7 个指标见 [results/kitti_eigen_full.csv](results/kitti_eigen_full.csv)。
 
-**NYUv2 偏差较大**：单张诊断显示 pred 与 GT 接近（例 idx=0: pred=2.91 m, GT=3.07 m），
-但 654 张统计 abs_rel=0.17。怀疑 `/fs/scratch/.../nyuv2/val/` 不是官方 Eigen
-test split，或 npy 经过非标准预处理。下一步从 `nyu_depth_v2_labeled.mat` +
-`splits.mat` 重做。
+**NYUv2 复现成功**：AbsRel 差 +0.010（相对 +14%），d1 差 -0.015（相对 -1.6%）。
+官方 654 Eigen test split (480×640 原图)，见 [results/nyuv2_val.csv](results/nyuv2_val.csv)。
+注：之前用 `/fs/scratch/.../nyuv2/val/` 下的 288×384 npy 跑出 AbsRel=0.171，
+切换到原始 `nyu_depth_v2/nyuv2/test/` (480×640 PNG) 后正常。
 
 ## 2. 关键转换公式（论文 FAQ）
 

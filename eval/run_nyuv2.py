@@ -1,20 +1,19 @@
-"""DA3-Metric eval on NYUv2 official 654-image val split.
+"""DA3-Metric eval on NYUv2 official 654-image Eigen test split (full res).
 
-Data layout (already on cluster):
-  /fs/scratch/datasets/cr_dlp_open_permissive/nyuv2/val/
-      image/{0..N}.npy    (H, W, 3) float64 in [0,1]
-      depth/{0..N}.npy    (H, W, 1) float32, meters
+Data layout (cluster):
+  /fs/scratch/datasets/cr_dlp_open_permissive/nyuv2/nyu_depth_v2/nyuv2/test/
+      rgb/{####}.png         (480, 640, 3) uint8
+      depth/{####}.png       (480, 640) uint16, millimetres (inpainted)
+      depth_raw/{####}.png   (480, 640) uint16, mm, 0 = invalid
+  test.txt                   654 frame ids (one per line)
 
 NYUv2 evaluation protocol (Eigen et al. 2014, used by DA2/DA3):
-- Cap depth at 10 m.
-- Use the Eigen crop (rows [45:471], cols [41:601] on 480x640 original).
-  We rescale this crop proportionally to the actual image size since the
-  shared val tensors are resized to 288x384.
+- Cap depth at 10 m, min 1e-3.
+- Eigen crop rows [45:471] cols [41:601].
+- Use the inpainted depth/ as GT (matches BTS/Adabins/DA2/DA3).
 
-Intrinsics: NYUv2 ships Kinect intrinsics for 640x480:
+Intrinsics: official Kinect intrinsics on 640x480:
   fx=518.8579, fy=519.4696, cx=325.5824, cy=253.7362
-We scale (fx, fy, cx, cy) by (W/640, H/480) for whatever size the image
-arrives in. focal = (fx+fy)/2 in pixels at the input resolution.
 
 Paper Table 11 NYUv2 target: d1=0.963, AbsRel=0.070.
 """
@@ -26,6 +25,7 @@ import time
 from pathlib import Path
 
 import numpy as np
+from PIL import Image
 
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT / "eval"))
@@ -60,10 +60,11 @@ def nyu_eigen_crop(h: int, w: int) -> tuple[slice, slice]:
 
 def main():
     ap = argparse.ArgumentParser()
-    ap.add_argument("--val_dir",
-                    default="/fs/scratch/datasets/cr_dlp_open_permissive/nyuv2/val")
-    ap.add_argument("--max_samples", type=int, default=-1,
-                    help="-1 for all 654 samples; small for smoke")
+    ap.add_argument("--root",
+                    default="/fs/scratch/datasets/cr_dlp_open_permissive/nyuv2/nyu_depth_v2/nyuv2")
+    ap.add_argument("--split_file", default=None,
+                    help="defaults to <root>/test.txt")
+    ap.add_argument("--max_samples", type=int, default=-1)
     ap.add_argument("--max_depth", type=float, default=10.0)
     ap.add_argument("--min_depth", type=float, default=1e-3)
     ap.add_argument("--device", default="cuda")
@@ -71,15 +72,13 @@ def main():
     ap.add_argument("--output", default=str(ROOT / "results" / "nyuv2_val.csv"))
     args = ap.parse_args()
 
-    val = Path(args.val_dir)
-    img_files = sorted(
-        (val / "image").glob("*.npy"),
-        key=lambda p: int(p.stem),
-    )
+    root = Path(args.root)
+    split = Path(args.split_file) if args.split_file else (root / "test.txt")
+    ids = [ln.strip() for ln in split.read_text().splitlines() if ln.strip()]
     if args.max_samples > 0:
-        img_files = img_files[: args.max_samples]
-    print(f"[nyu] val_dir={val}")
-    print(f"[nyu] num samples={len(img_files)}")
+        ids = ids[: args.max_samples]
+    print(f"[nyu] root={root}")
+    print(f"[nyu] split={split}  N={len(ids)}")
 
     print("[nyu] loading DA3METRIC-LARGE ...")
     t0 = time.time()
@@ -94,17 +93,15 @@ def main():
     rows = []
     t_loop = time.time()
 
-    for i, img_p in enumerate(img_files):
-        idx = img_p.stem
-        gt_p = val / "depth" / f"{idx}.npy"
-        if not gt_p.is_file():
+    for i, idx in enumerate(ids):
+        rgb_p = root / "test" / "rgb" / f"{idx}.png"
+        gt_p = root / "test" / "depth" / f"{idx}.png"
+        if not (rgb_p.is_file() and gt_p.is_file()):
+            print(f"  [skip] missing {idx}")
             continue
 
-        rgb_f = np.load(img_p)  # (H, W, 3) float in [0,1]
-        gt = np.load(gt_p)      # (H, W, 1) float meters
-        if gt.ndim == 3:
-            gt = gt[..., 0]
-        rgb = (np.clip(rgb_f, 0, 1) * 255).astype(np.uint8)
+        rgb = np.array(Image.open(rgb_p))                # (480,640,3) uint8
+        gt = np.array(Image.open(gt_p)).astype(np.float32) / 1000.0  # mm -> m
         H, W = rgb.shape[:2]
         K = nyu_intrinsics(H, W)
 
@@ -124,7 +121,7 @@ def main():
         rows.append((idx, m["abs_rel"], m["d1"], m["rmse"]))
         if i < 3 or (i + 1) % 50 == 0:
             elapsed = time.time() - t_loop
-            print(f"  [{i+1:>4}/{len(img_files)}] idx={idx}  "
+            print(f"  [{i+1:>4}/{len(ids)}] idx={idx}  "
                   f"abs_rel={m['abs_rel']:.4f}  d1={m['d1']:.4f}  "
                   f"({elapsed:.1f}s)")
 

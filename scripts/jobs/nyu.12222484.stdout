@@ -1,0 +1,2107 @@
+Sun Apr 26 15:01:18 2026       
++-----------------------------------------------------------------------------------------+
+| NVIDIA-SMI 590.48.01              Driver Version: 590.48.01      CUDA Version: 13.1     |
++-----------------------------------------+------------------------+----------------------+
+| GPU  Name                 Persistence-M | Bus-Id          Disp.A | Volatile Uncorr. ECC |
+| Fan  Temp   Perf          Pwr:Usage/Cap |           Memory-Usage | GPU-Util  Compute M. |
+|                                         |                        |               MIG M. |
+|=========================================+========================+======================|
+|   0  NVIDIA H200                    On  |   00000000:C2:00.0 Off |                    0 |
+| N/A   33C    P0             79W /  700W |       0MiB / 143771MiB |      0%   E. Process |
+|                                         |                        |             Disabled |
++-----------------------------------------+------------------------+----------------------+
+
++-----------------------------------------------------------------------------------------+
+| Processes:                                                                              |
+|  GPU   GI   CI              PID   Type   Process name                        GPU Memory |
+|        ID   ID                                                               Usage      |
+|=========================================================================================|
+|  No running processes found                                                             |
++-----------------------------------------------------------------------------------------+
+------------
+/home/izi2sgh/MYDATA/quanjie/liren/envs/da3/bin/python
+Python 3.10.20
+------------
+[nyu] root=/fs/scratch/datasets/cr_dlp_open_permissive/nyuv2/nyu_depth_v2/nyuv2
+[nyu] split=/fs/scratch/datasets/cr_dlp_open_permissive/nyuv2/nyu_depth_v2/nyuv2/test.txt  N=654
+[nyu] loading DA3METRIC-LARGE ...
+[93m[WARN ] Dependency `gsplat` is required for rendering 3DGS. Install via: pip install git+https://github.com/nerfstudio-project/gsplat.git@0b4dddf04cb687367602c01196913cde6a743d70[0m
+[97m[INFO ] using MLP layer as FFN[0m
+Loading weights from local directory
+[nyu] model ready in 24.6s
+[97m[INFO ] Processed Images Done taking 0.0401453971862793 seconds. Shape:  torch.Size([1, 3, 378, 504])[0m
+[97m[INFO ] Model Forward Pass Done. Time: 0.3925018310546875 seconds[0m
+[97m[INFO ] Conversion to Prediction Done. Time: 0.0010287761688232422 seconds[0m
+  [   1/654] idx=0001  abs_rel=0.0305  d1=0.9988  (0.5s)
+[97m[INFO ] Processed Images Done taking 0.009219646453857422 seconds. Shape:  torch.Size([1, 3, 378, 504])[0m
+[97m[INFO ] Model Forward Pass Done. Time: 0.017305374145507812 seconds[0m
+[97m[INFO ] Conversion to Prediction Done. Time: 0.00027179718017578125 seconds[0m
+  [   2/654] idx=0002  abs_rel=0.0270  d1=0.9995  (0.5s)
+[97m[INFO ] Processed Images Done taking 0.009617805480957031 seconds. Shape:  torch.Size([1, 3, 378, 504])[0m
+[97m[INFO ] Model Forward Pass Done. Time: 0.017266273498535156 seconds[0m
+[97m[INFO ] Conversion to Prediction Done. Time: 0.000286102294921875 seconds[0m
+  [   3/654] idx=0009  abs_rel=0.0321  d1=0.9933  (0.6s)
+[97m[INFO ] Processed Images Done taking 0.0076982975006103516 seconds. Shape:  torch.Size([1, 3, 378, 504])[0m
+[97m[INFO ] Model Forward Pass Done. Time: 0.01723456382751465 seconds[0m
+[97m[INFO ] Conversion to Prediction Done. Time: 0.000293731689453125 seconds[0m
+[97m[INFO ] Processed Images Done taking 0.006819248199462891 seconds. Shape:  torch.Size([1, 3, 378, 504])[0m
+[97m[INFO ] Model Forward Pass Done. Time: 0.017503738403320312 seconds[0m
+[97m[INFO ] Conversion to Prediction Done. Time: 0.0003523826599121094 seconds[0m
+[97m[INFO ] Processed Images Done taking 0.007545948028564453 seconds. Shape:  torch.Size([1, 3, 378, 504])[0m
+[97m[INFO ] Model Forward Pass Done. Time: 0.017283916473388672 seconds[0m
+[97m[INFO ] Conversion to Prediction Done. Time: 0.00029277801513671875 seconds[0m
+[97m[INFO ] Processed Images Done taking 0.008535146713256836 seconds. Shape:  torch.Size([1, 3, 378, 504])[0m
+[97m[INFO ] Model Forward Pass Done. Time: 0.017189741134643555 seconds[0m
+[97m[INFO ] Conversion to Prediction Done. Time: 0.000278472900390625 seconds[0m
+[97m[INFO ] Processed Images Done taking 0.00799107551574707 seconds. Shape:  torch.Size([1, 3, 378, 504])[0m
+[97m[INFO ] Model Forward Pass Done. Time: 0.01717352867126465 seconds[0m
+[97m[INFO ] Conversion to Prediction Done. Time: 0.0002894401550292969 seconds[0m
+[97m[INFO ] Processed Images Done taking 0.00729060173034668 seconds. Shape:  torch.Size([1, 3, 378, 504])[0m
+[97m[INFO ] Model Forward Pass Done. Time: 0.017145395278930664 seconds[0m
+[97m[INFO ] Conversion to Prediction Done. Time: 0.00028252601623535156 seconds[0m
+[97m[INFO ] Processed Images Done taking 0.006704092025756836 seconds. Shape:  torch.Size([1, 3, 378, 504])[0m
+[97m[INFO ] Model Forward Pass Done. Time: 0.017113447189331055 seconds[0m
+[97m[INFO ] Conversion to Prediction Done. Time: 0.0002789497375488281 seconds[0m
+[97m[INFO ] Processed Images Done taking 0.006941318511962891 seconds. Shape:  torch.Size([1, 3, 378, 504])[0m
+[97m[INFO ] Model Forward Pass Done. Time: 0.01719212532043457 seconds[0m
+[97m[INFO ] Conversion to Prediction Done. Time: 0.00028324127197265625 seconds[0m
+[97m[INFO ] Processed Images Done taking 0.0067255496978759766 seconds. Shape:  torch.Size([1, 3, 378, 504])[0m
+[97m[INFO ] Model Forward Pass Done. Time: 0.017157793045043945 seconds[0m
+[97m[INFO ] Conversion to Prediction Done. Time: 0.0002856254577636719 seconds[0m
+[97m[INFO ] Processed Images Done taking 0.006868839263916016 seconds. Shape:  torch.Size([1, 3, 378, 504])[0m
+[97m[INFO ] Model Forward Pass Done. Time: 0.01716160774230957 seconds[0m
+[97m[INFO ] Conversion to Prediction Done. Time: 0.0002963542938232422 seconds[0m
+[97m[INFO ] Processed Images Done taking 0.00806736946105957 seconds. Shape:  torch.Size([1, 3, 378, 504])[0m
+[97m[INFO ] Model Forward Pass Done. Time: 0.017469406127929688 seconds[0m
+[97m[INFO ] Conversion to Prediction Done. Time: 0.00027489662170410156 seconds[0m
+[97m[INFO ] Processed Images Done taking 0.007783412933349609 seconds. Shape:  torch.Size([1, 3, 378, 504])[0m
+[97m[INFO ] Model Forward Pass Done. Time: 0.01729130744934082 seconds[0m
+[97m[INFO ] Conversion to Prediction Done. Time: 0.00029206275939941406 seconds[0m
+[97m[INFO ] Processed Images Done taking 0.007835149765014648 seconds. Shape:  torch.Size([1, 3, 378, 504])[0m
+[97m[INFO ] Model Forward Pass Done. Time: 0.017162084579467773 seconds[0m
+[97m[INFO ] Conversion to Prediction Done. Time: 0.0002777576446533203 seconds[0m
+[97m[INFO ] Processed Images Done taking 0.0069882869720458984 seconds. Shape:  torch.Size([1, 3, 378, 504])[0m
+[97m[INFO ] Model Forward Pass Done. Time: 0.017144203186035156 seconds[0m
+[97m[INFO ] Conversion to Prediction Done. Time: 0.0002906322479248047 seconds[0m
+[97m[INFO ] Processed Images Done taking 0.007816553115844727 seconds. Shape:  torch.Size([1, 3, 378, 504])[0m
+[97m[INFO ] Model Forward Pass Done. Time: 0.017148733139038086 seconds[0m
+[97m[INFO ] Conversion to Prediction Done. Time: 0.00028967857360839844 seconds[0m
+[97m[INFO ] Processed Images Done taking 0.006653547286987305 seconds. Shape:  torch.Size([1, 3, 378, 504])[0m
+[97m[INFO ] Model Forward Pass Done. Time: 0.017142534255981445 seconds[0m
+[97m[INFO ] Conversion to Prediction Done. Time: 0.0002841949462890625 seconds[0m
+[97m[INFO ] Processed Images Done taking 0.007309436798095703 seconds. Shape:  torch.Size([1, 3, 378, 504])[0m
+[97m[INFO ] Model Forward Pass Done. Time: 0.017182111740112305 seconds[0m
+[97m[INFO ] Conversion to Prediction Done. Time: 0.00029397010803222656 seconds[0m
+[97m[INFO ] Processed Images Done taking 0.006360530853271484 seconds. Shape:  torch.Size([1, 3, 378, 504])[0m
+[97m[INFO ] Model Forward Pass Done. Time: 0.01713395118713379 seconds[0m
+[97m[INFO ] Conversion to Prediction Done. Time: 0.0002884864807128906 seconds[0m
+[97m[INFO ] Processed Images Done taking 0.010293006896972656 seconds. Shape:  torch.Size([1, 3, 378, 504])[0m
+[97m[INFO ] Model Forward Pass Done. Time: 0.01717352867126465 seconds[0m
+[97m[INFO ] Conversion to Prediction Done. Time: 0.00027632713317871094 seconds[0m
+[97m[INFO ] Processed Images Done taking 0.007332324981689453 seconds. Shape:  torch.Size([1, 3, 378, 504])[0m
+[97m[INFO ] Model Forward Pass Done. Time: 0.017172574996948242 seconds[0m
+[97m[INFO ] Conversion to Prediction Done. Time: 0.00028514862060546875 seconds[0m
+[97m[INFO ] Processed Images Done taking 0.006875753402709961 seconds. Shape:  torch.Size([1, 3, 378, 504])[0m
+[97m[INFO ] Model Forward Pass Done. Time: 0.017174959182739258 seconds[0m
+[97m[INFO ] Conversion to Prediction Done. Time: 0.00029349327087402344 seconds[0m
+[97m[INFO ] Processed Images Done taking 0.0077037811279296875 seconds. Shape:  torch.Size([1, 3, 378, 504])[0m
+[97m[INFO ] Model Forward Pass Done. Time: 0.017136573791503906 seconds[0m
+[97m[INFO ] Conversion to Prediction Done. Time: 0.00029659271240234375 seconds[0m
+[97m[INFO ] Processed Images Done taking 0.007043123245239258 seconds. Shape:  torch.Size([1, 3, 378, 504])[0m
+[97m[INFO ] Model Forward Pass Done. Time: 0.017148733139038086 seconds[0m
+[97m[INFO ] Conversion to Prediction Done. Time: 0.0002810955047607422 seconds[0m
+[97m[INFO ] Processed Images Done taking 0.006903648376464844 seconds. Shape:  torch.Size([1, 3, 378, 504])[0m
+[97m[INFO ] Model Forward Pass Done. Time: 0.017194509506225586 seconds[0m
+[97m[INFO ] Conversion to Prediction Done. Time: 0.00028824806213378906 seconds[0m
+[97m[INFO ] Processed Images Done taking 0.007187604904174805 seconds. Shape:  torch.Size([1, 3, 378, 504])[0m
+[97m[INFO ] Model Forward Pass Done. Time: 0.017154693603515625 seconds[0m
+[97m[INFO ] Conversion to Prediction Done. Time: 0.0002791881561279297 seconds[0m
+[97m[INFO ] Processed Images Done taking 0.0051708221435546875 seconds. Shape:  torch.Size([1, 3, 378, 504])[0m
+[97m[INFO ] Model Forward Pass Done. Time: 0.017166852951049805 seconds[0m
+[97m[INFO ] Conversion to Prediction Done. Time: 0.0002899169921875 seconds[0m
+[97m[INFO ] Processed Images Done taking 0.00787353515625 seconds. Shape:  torch.Size([1, 3, 378, 504])[0m
+[97m[INFO ] Model Forward Pass Done. Time: 0.017115116119384766 seconds[0m
+[97m[INFO ] Conversion to Prediction Done. Time: 0.00028896331787109375 seconds[0m
+[97m[INFO ] Processed Images Done taking 0.009628057479858398 seconds. Shape:  torch.Size([1, 3, 378, 504])[0m
+[97m[INFO ] Model Forward Pass Done. Time: 0.017139196395874023 seconds[0m
+[97m[INFO ] Conversion to Prediction Done. Time: 0.0002818107604980469 seconds[0m
+[97m[INFO ] Processed Images Done taking 0.009078264236450195 seconds. Shape:  torch.Size([1, 3, 378, 504])[0m
+[97m[INFO ] Model Forward Pass Done. Time: 0.017149925231933594 seconds[0m
+[97m[INFO ] Conversion to Prediction Done. Time: 0.0002760887145996094 seconds[0m
+[97m[INFO ] Processed Images Done taking 0.007462739944458008 seconds. Shape:  torch.Size([1, 3, 378, 504])[0m
+[97m[INFO ] Model Forward Pass Done. Time: 0.01716446876525879 seconds[0m
+[97m[INFO ] Conversion to Prediction Done. Time: 0.0002868175506591797 seconds[0m
+[97m[INFO ] Processed Images Done taking 0.00800776481628418 seconds. Shape:  torch.Size([1, 3, 378, 504])[0m
+[97m[INFO ] Model Forward Pass Done. Time: 0.017134428024291992 seconds[0m
+[97m[INFO ] Conversion to Prediction Done. Time: 0.00028204917907714844 seconds[0m
+[97m[INFO ] Processed Images Done taking 0.006391048431396484 seconds. Shape:  torch.Size([1, 3, 378, 504])[0m
+[97m[INFO ] Model Forward Pass Done. Time: 0.01714301109313965 seconds[0m
+[97m[INFO ] Conversion to Prediction Done. Time: 0.0002989768981933594 seconds[0m
+[97m[INFO ] Processed Images Done taking 0.0062825679779052734 seconds. Shape:  torch.Size([1, 3, 378, 504])[0m
+[97m[INFO ] Model Forward Pass Done. Time: 0.017170190811157227 seconds[0m
+[97m[INFO ] Conversion to Prediction Done. Time: 0.0002989768981933594 seconds[0m
+[97m[INFO ] Processed Images Done taking 0.0070688724517822266 seconds. Shape:  torch.Size([1, 3, 378, 504])[0m
+[97m[INFO ] Model Forward Pass Done. Time: 0.017155170440673828 seconds[0m
+[97m[INFO ] Conversion to Prediction Done. Time: 0.0002779960632324219 seconds[0m
+[97m[INFO ] Processed Images Done taking 0.0064239501953125 seconds. Shape:  torch.Size([1, 3, 378, 504])[0m
+[97m[INFO ] Model Forward Pass Done. Time: 0.017151832580566406 seconds[0m
+[97m[INFO ] Conversion to Prediction Done. Time: 0.00028967857360839844 seconds[0m
+[97m[INFO ] Processed Images Done taking 0.008349180221557617 seconds. Shape:  torch.Size([1, 3, 378, 504])[0m
+[97m[INFO ] Model Forward Pass Done. Time: 0.01716780662536621 seconds[0m
+[97m[INFO ] Conversion to Prediction Done. Time: 0.0002982616424560547 seconds[0m
+[97m[INFO ] Processed Images Done taking 0.007386207580566406 seconds. Shape:  torch.Size([1, 3, 378, 504])[0m
+[97m[INFO ] Model Forward Pass Done. Time: 0.01716327667236328 seconds[0m
+[97m[INFO ] Conversion to Prediction Done. Time: 0.00029206275939941406 seconds[0m
+[97m[INFO ] Processed Images Done taking 0.007477998733520508 seconds. Shape:  torch.Size([1, 3, 378, 504])[0m
+[97m[INFO ] Model Forward Pass Done. Time: 0.01716756820678711 seconds[0m
+[97m[INFO ] Conversion to Prediction Done. Time: 0.00028896331787109375 seconds[0m
+[97m[INFO ] Processed Images Done taking 0.006578922271728516 seconds. Shape:  torch.Size([1, 3, 378, 504])[0m
+[97m[INFO ] Model Forward Pass Done. Time: 0.017114639282226562 seconds[0m
+[97m[INFO ] Conversion to Prediction Done. Time: 0.0002872943878173828 seconds[0m
+[97m[INFO ] Processed Images Done taking 0.0077435970306396484 seconds. Shape:  torch.Size([1, 3, 378, 504])[0m
+[97m[INFO ] Model Forward Pass Done. Time: 0.017144441604614258 seconds[0m
+[97m[INFO ] Conversion to Prediction Done. Time: 0.00029349327087402344 seconds[0m
+[97m[INFO ] Processed Images Done taking 0.00981283187866211 seconds. Shape:  torch.Size([1, 3, 378, 504])[0m
+[97m[INFO ] Model Forward Pass Done. Time: 0.017177343368530273 seconds[0m
+[97m[INFO ] Conversion to Prediction Done. Time: 0.00029158592224121094 seconds[0m
+[97m[INFO ] Processed Images Done taking 0.007518291473388672 seconds. Shape:  torch.Size([1, 3, 378, 504])[0m
+[97m[INFO ] Model Forward Pass Done. Time: 0.017968416213989258 seconds[0m
+[97m[INFO ] Conversion to Prediction Done. Time: 0.00030493736267089844 seconds[0m
+[97m[INFO ] Processed Images Done taking 0.00748443603515625 seconds. Shape:  torch.Size([1, 3, 378, 504])[0m
+[97m[INFO ] Model Forward Pass Done. Time: 0.017345190048217773 seconds[0m
+[97m[INFO ] Conversion to Prediction Done. Time: 0.00028324127197265625 seconds[0m
+[97m[INFO ] Processed Images Done taking 0.007793903350830078 seconds. Shape:  torch.Size([1, 3, 378, 504])[0m
+[97m[INFO ] Model Forward Pass Done. Time: 0.01714468002319336 seconds[0m
+[97m[INFO ] Conversion to Prediction Done. Time: 0.0002868175506591797 seconds[0m
+[97m[INFO ] Processed Images Done taking 0.007576942443847656 seconds. Shape:  torch.Size([1, 3, 378, 504])[0m
+[97m[INFO ] Model Forward Pass Done. Time: 0.01718735694885254 seconds[0m
+[97m[INFO ] Conversion to Prediction Done. Time: 0.0002892017364501953 seconds[0m
+[97m[INFO ] Processed Images Done taking 0.006819248199462891 seconds. Shape:  torch.Size([1, 3, 378, 504])[0m
+[97m[INFO ] Model Forward Pass Done. Time: 0.017188549041748047 seconds[0m
+[97m[INFO ] Conversion to Prediction Done. Time: 0.0002770423889160156 seconds[0m
+[97m[INFO ] Processed Images Done taking 0.007580757141113281 seconds. Shape:  torch.Size([1, 3, 378, 504])[0m
+[97m[INFO ] Model Forward Pass Done. Time: 0.01714944839477539 seconds[0m
+[97m[INFO ] Conversion to Prediction Done. Time: 0.0002827644348144531 seconds[0m
+  [  50/654] idx=0125  abs_rel=0.0726  d1=0.9893  (2.9s)
+[97m[INFO ] Processed Images Done taking 0.0068929195404052734 seconds. Shape:  torch.Size([1, 3, 378, 504])[0m
+[97m[INFO ] Model Forward Pass Done. Time: 0.017132997512817383 seconds[0m
+[97m[INFO ] Conversion to Prediction Done. Time: 0.0002779960632324219 seconds[0m
+[97m[INFO ] Processed Images Done taking 0.00717616081237793 seconds. Shape:  torch.Size([1, 3, 378, 504])[0m
+[97m[INFO ] Model Forward Pass Done. Time: 0.01720118522644043 seconds[0m
+[97m[INFO ] Conversion to Prediction Done. Time: 0.0002894401550292969 seconds[0m
+[97m[INFO ] Processed Images Done taking 0.007068634033203125 seconds. Shape:  torch.Size([1, 3, 378, 504])[0m
+[97m[INFO ] Model Forward Pass Done. Time: 0.017197370529174805 seconds[0m
+[97m[INFO ] Conversion to Prediction Done. Time: 0.00027871131896972656 seconds[0m
+[97m[INFO ] Processed Images Done taking 0.008017301559448242 seconds. Shape:  torch.Size([1, 3, 378, 504])[0m
+[97m[INFO ] Model Forward Pass Done. Time: 0.017153501510620117 seconds[0m
+[97m[INFO ] Conversion to Prediction Done. Time: 0.00028896331787109375 seconds[0m
+[97m[INFO ] Processed Images Done taking 0.005868673324584961 seconds. Shape:  torch.Size([1, 3, 378, 504])[0m
+[97m[INFO ] Model Forward Pass Done. Time: 0.017154693603515625 seconds[0m
+[97m[INFO ] Conversion to Prediction Done. Time: 0.00027823448181152344 seconds[0m
+[97m[INFO ] Processed Images Done taking 0.006410121917724609 seconds. Shape:  torch.Size([1, 3, 378, 504])[0m
+[97m[INFO ] Model Forward Pass Done. Time: 0.017189741134643555 seconds[0m
+[97m[INFO ] Conversion to Prediction Done. Time: 0.0002815723419189453 seconds[0m
+[97m[INFO ] Processed Images Done taking 0.007288932800292969 seconds. Shape:  torch.Size([1, 3, 378, 504])[0m
+[97m[INFO ] Model Forward Pass Done. Time: 0.017212867736816406 seconds[0m
+[97m[INFO ] Conversion to Prediction Done. Time: 0.0002932548522949219 seconds[0m
+[97m[INFO ] Processed Images Done taking 0.006749629974365234 seconds. Shape:  torch.Size([1, 3, 378, 504])[0m
+[97m[INFO ] Model Forward Pass Done. Time: 0.017422914505004883 seconds[0m
+[97m[INFO ] Conversion to Prediction Done. Time: 0.00031638145446777344 seconds[0m
+[97m[INFO ] Processed Images Done taking 0.005965709686279297 seconds. Shape:  torch.Size([1, 3, 378, 504])[0m
+[97m[INFO ] Model Forward Pass Done. Time: 0.017390727996826172 seconds[0m
+[97m[INFO ] Conversion to Prediction Done. Time: 0.00028014183044433594 seconds[0m
+[97m[INFO ] Processed Images Done taking 0.007439374923706055 seconds. Shape:  torch.Size([1, 3, 378, 504])[0m
+[97m[INFO ] Model Forward Pass Done. Time: 0.017269134521484375 seconds[0m
+[97m[INFO ] Conversion to Prediction Done. Time: 0.00029850006103515625 seconds[0m
+[97m[INFO ] Processed Images Done taking 0.007146596908569336 seconds. Shape:  torch.Size([1, 3, 378, 504])[0m
+[97m[INFO ] Model Forward Pass Done. Time: 0.01723337173461914 seconds[0m
+[97m[INFO ] Conversion to Prediction Done. Time: 0.0002796649932861328 seconds[0m
+[97m[INFO ] Processed Images Done taking 0.009927034378051758 seconds. Shape:  torch.Size([1, 3, 378, 504])[0m
+[97m[INFO ] Model Forward Pass Done. Time: 0.017197132110595703 seconds[0m
+[97m[INFO ] Conversion to Prediction Done. Time: 0.0002892017364501953 seconds[0m
+[97m[INFO ] Processed Images Done taking 0.007061481475830078 seconds. Shape:  torch.Size([1, 3, 378, 504])[0m
+[97m[INFO ] Model Forward Pass Done. Time: 0.017168760299682617 seconds[0m
+[97m[INFO ] Conversion to Prediction Done. Time: 0.0002818107604980469 seconds[0m
+[97m[INFO ] Processed Images Done taking 0.007791996002197266 seconds. Shape:  torch.Size([1, 3, 378, 504])[0m
+[97m[INFO ] Model Forward Pass Done. Time: 0.01721358299255371 seconds[0m
+[97m[INFO ] Conversion to Prediction Done. Time: 0.00029087066650390625 seconds[0m
+[97m[INFO ] Processed Images Done taking 0.009359598159790039 seconds. Shape:  torch.Size([1, 3, 378, 504])[0m
+[97m[INFO ] Model Forward Pass Done. Time: 0.01729893684387207 seconds[0m
+[97m[INFO ] Conversion to Prediction Done. Time: 0.00027871131896972656 seconds[0m
+[97m[INFO ] Processed Images Done taking 0.007413148880004883 seconds. Shape:  torch.Size([1, 3, 378, 504])[0m
+[97m[INFO ] Model Forward Pass Done. Time: 0.017227888107299805 seconds[0m
+[97m[INFO ] Conversion to Prediction Done. Time: 0.000274658203125 seconds[0m
+[97m[INFO ] Processed Images Done taking 0.008488893508911133 seconds. Shape:  torch.Size([1, 3, 378, 504])[0m
+[97m[INFO ] Model Forward Pass Done. Time: 0.0172574520111084 seconds[0m
+[97m[INFO ] Conversion to Prediction Done. Time: 0.0002830028533935547 seconds[0m
+[97m[INFO ] Processed Images Done taking 0.007766246795654297 seconds. Shape:  torch.Size([1, 3, 378, 504])[0m
+[97m[INFO ] Model Forward Pass Done. Time: 0.01728367805480957 seconds[0m
+[97m[INFO ] Conversion to Prediction Done. Time: 0.0003037452697753906 seconds[0m
+[97m[INFO ] Processed Images Done taking 0.0074613094329833984 seconds. Shape:  torch.Size([1, 3, 378, 504])[0m
+[97m[INFO ] Model Forward Pass Done. Time: 0.017289161682128906 seconds[0m
+[97m[INFO ] Conversion to Prediction Done. Time: 0.00028324127197265625 seconds[0m
+[97m[INFO ] Processed Images Done taking 0.009050846099853516 seconds. Shape:  torch.Size([1, 3, 378, 504])[0m
+[97m[INFO ] Model Forward Pass Done. Time: 0.017270565032958984 seconds[0m
+[97m[INFO ] Conversion to Prediction Done. Time: 0.0002727508544921875 seconds[0m
+[97m[INFO ] Processed Images Done taking 0.007325649261474609 seconds. Shape:  torch.Size([1, 3, 378, 504])[0m
+[97m[INFO ] Model Forward Pass Done. Time: 0.017258405685424805 seconds[0m
+[97m[INFO ] Conversion to Prediction Done. Time: 0.0002834796905517578 seconds[0m
+[97m[INFO ] Processed Images Done taking 0.007560014724731445 seconds. Shape:  torch.Size([1, 3, 378, 504])[0m
+[97m[INFO ] Model Forward Pass Done. Time: 0.01724410057067871 seconds[0m
+[97m[INFO ] Conversion to Prediction Done. Time: 0.0003020763397216797 seconds[0m
+[97m[INFO ] Processed Images Done taking 0.008299589157104492 seconds. Shape:  torch.Size([1, 3, 378, 504])[0m
+[97m[INFO ] Model Forward Pass Done. Time: 0.017262697219848633 seconds[0m
+[97m[INFO ] Conversion to Prediction Done. Time: 0.0002903938293457031 seconds[0m
+[97m[INFO ] Processed Images Done taking 0.006901741027832031 seconds. Shape:  torch.Size([1, 3, 378, 504])[0m
+[97m[INFO ] Model Forward Pass Done. Time: 0.017200946807861328 seconds[0m
+[97m[INFO ] Conversion to Prediction Done. Time: 0.0002772808074951172 seconds[0m
+[97m[INFO ] Processed Images Done taking 0.009228229522705078 seconds. Shape:  torch.Size([1, 3, 378, 504])[0m
+[97m[INFO ] Model Forward Pass Done. Time: 0.01721811294555664 seconds[0m
+[97m[INFO ] Conversion to Prediction Done. Time: 0.00028133392333984375 seconds[0m
+[97m[INFO ] Processed Images Done taking 0.007008790969848633 seconds. Shape:  torch.Size([1, 3, 378, 504])[0m
+[97m[INFO ] Model Forward Pass Done. Time: 0.0172269344329834 seconds[0m
+[97m[INFO ] Conversion to Prediction Done. Time: 0.000270843505859375 seconds[0m
+[97m[INFO ] Processed Images Done taking 0.007408618927001953 seconds. Shape:  torch.Size([1, 3, 378, 504])[0m
+[97m[INFO ] Model Forward Pass Done. Time: 0.01724720001220703 seconds[0m
+[97m[INFO ] Conversion to Prediction Done. Time: 0.00027632713317871094 seconds[0m
+[97m[INFO ] Processed Images Done taking 0.007951021194458008 seconds. Shape:  torch.Size([1, 3, 378, 504])[0m
+[97m[INFO ] Model Forward Pass Done. Time: 0.017232418060302734 seconds[0m
+[97m[INFO ] Conversion to Prediction Done. Time: 0.0002949237823486328 seconds[0m
+[97m[INFO ] Processed Images Done taking 0.007316112518310547 seconds. Shape:  torch.Size([1, 3, 378, 504])[0m
+[97m[INFO ] Model Forward Pass Done. Time: 0.017223596572875977 seconds[0m
+[97m[INFO ] Conversion to Prediction Done. Time: 0.00026917457580566406 seconds[0m
+[97m[INFO ] Processed Images Done taking 0.0071527957916259766 seconds. Shape:  torch.Size([1, 3, 378, 504])[0m
+[97m[INFO ] Model Forward Pass Done. Time: 0.01722407341003418 seconds[0m
+[97m[INFO ] Conversion to Prediction Done. Time: 0.0002830028533935547 seconds[0m
+[97m[INFO ] Processed Images Done taking 0.006870269775390625 seconds. Shape:  torch.Size([1, 3, 378, 504])[0m
+[97m[INFO ] Model Forward Pass Done. Time: 0.017229557037353516 seconds[0m
+[97m[INFO ] Conversion to Prediction Done. Time: 0.0002734661102294922 seconds[0m
+[97m[INFO ] Processed Images Done taking 0.00785970687866211 seconds. Shape:  torch.Size([1, 3, 378, 504])[0m
+[97m[INFO ] Model Forward Pass Done. Time: 0.01723027229309082 seconds[0m
+[97m[INFO ] Conversion to Prediction Done. Time: 0.0002925395965576172 seconds[0m
+[97m[INFO ] Processed Images Done taking 0.006944894790649414 seconds. Shape:  torch.Size([1, 3, 378, 504])[0m
+[97m[INFO ] Model Forward Pass Done. Time: 0.017259836196899414 seconds[0m
+[97m[INFO ] Conversion to Prediction Done. Time: 0.00026535987854003906 seconds[0m
+[97m[INFO ] Processed Images Done taking 0.00803518295288086 seconds. Shape:  torch.Size([1, 3, 378, 504])[0m
+[97m[INFO ] Model Forward Pass Done. Time: 0.017329692840576172 seconds[0m
+[97m[INFO ] Conversion to Prediction Done. Time: 0.0002722740173339844 seconds[0m
+[97m[INFO ] Processed Images Done taking 0.009777307510375977 seconds. Shape:  torch.Size([1, 3, 378, 504])[0m
+[97m[INFO ] Model Forward Pass Done. Time: 0.017445087432861328 seconds[0m
+[97m[INFO ] Conversion to Prediction Done. Time: 0.0002846717834472656 seconds[0m
+[97m[INFO ] Processed Images Done taking 0.009094476699829102 seconds. Shape:  torch.Size([1, 3, 378, 504])[0m
+[97m[INFO ] Model Forward Pass Done. Time: 0.017418622970581055 seconds[0m
+[97m[INFO ] Conversion to Prediction Done. Time: 0.0002570152282714844 seconds[0m
+[97m[INFO ] Processed Images Done taking 0.007793903350830078 seconds. Shape:  torch.Size([1, 3, 378, 504])[0m
+[97m[INFO ] Model Forward Pass Done. Time: 0.017368078231811523 seconds[0m
+[97m[INFO ] Conversion to Prediction Done. Time: 0.00027251243591308594 seconds[0m
+[97m[INFO ] Processed Images Done taking 0.007645606994628906 seconds. Shape:  torch.Size([1, 3, 378, 504])[0m
+[97m[INFO ] Model Forward Pass Done. Time: 0.017375469207763672 seconds[0m
+[97m[INFO ] Conversion to Prediction Done. Time: 0.000255584716796875 seconds[0m
+[97m[INFO ] Processed Images Done taking 0.008489370346069336 seconds. Shape:  torch.Size([1, 3, 378, 504])[0m
+[97m[INFO ] Model Forward Pass Done. Time: 0.017430782318115234 seconds[0m
+[97m[INFO ] Conversion to Prediction Done. Time: 0.0002956390380859375 seconds[0m
+[97m[INFO ] Processed Images Done taking 0.008273839950561523 seconds. Shape:  torch.Size([1, 3, 378, 504])[0m
+[97m[INFO ] Model Forward Pass Done. Time: 0.017668485641479492 seconds[0m
+[97m[INFO ] Conversion to Prediction Done. Time: 0.00028824806213378906 seconds[0m
+[97m[INFO ] Processed Images Done taking 0.007625579833984375 seconds. Shape:  torch.Size([1, 3, 378, 504])[0m
+[97m[INFO ] Model Forward Pass Done. Time: 0.01741623878479004 seconds[0m
+[97m[INFO ] Conversion to Prediction Done. Time: 0.00027179718017578125 seconds[0m
+[97m[INFO ] Processed Images Done taking 0.007723808288574219 seconds. Shape:  torch.Size([1, 3, 378, 504])[0m
+[97m[INFO ] Model Forward Pass Done. Time: 0.01744222640991211 seconds[0m
+[97m[INFO ] Conversion to Prediction Done. Time: 0.0002675056457519531 seconds[0m
+[97m[INFO ] Processed Images Done taking 0.00845479965209961 seconds. Shape:  torch.Size([1, 3, 378, 504])[0m
+[97m[INFO ] Model Forward Pass Done. Time: 0.017434358596801758 seconds[0m
+[97m[INFO ] Conversion to Prediction Done. Time: 0.00028514862060546875 seconds[0m
+[97m[INFO ] Processed Images Done taking 0.007532835006713867 seconds. Shape:  torch.Size([1, 3, 378, 504])[0m
+[97m[INFO ] Model Forward Pass Done. Time: 0.017423629760742188 seconds[0m
+[97m[INFO ] Conversion to Prediction Done. Time: 0.00025343894958496094 seconds[0m
+[97m[INFO ] Processed Images Done taking 0.00823068618774414 seconds. Shape:  torch.Size([1, 3, 378, 504])[0m
+[97m[INFO ] Model Forward Pass Done. Time: 0.017411231994628906 seconds[0m
+[97m[INFO ] Conversion to Prediction Done. Time: 0.00026798248291015625 seconds[0m
+[97m[INFO ] Processed Images Done taking 0.007843971252441406 seconds. Shape:  torch.Size([1, 3, 378, 504])[0m
+[97m[INFO ] Model Forward Pass Done. Time: 0.0174558162689209 seconds[0m
+[97m[INFO ] Conversion to Prediction Done. Time: 0.0002899169921875 seconds[0m
+[97m[INFO ] Processed Images Done taking 0.007509708404541016 seconds. Shape:  torch.Size([1, 3, 378, 504])[0m
+[97m[INFO ] Model Forward Pass Done. Time: 0.0174257755279541 seconds[0m
+[97m[INFO ] Conversion to Prediction Done. Time: 0.00029468536376953125 seconds[0m
+[97m[INFO ] Processed Images Done taking 0.007967472076416016 seconds. Shape:  torch.Size([1, 3, 378, 504])[0m
+[97m[INFO ] Model Forward Pass Done. Time: 0.017405033111572266 seconds[0m
+[97m[INFO ] Conversion to Prediction Done. Time: 0.00026869773864746094 seconds[0m
+[97m[INFO ] Processed Images Done taking 0.008381366729736328 seconds. Shape:  torch.Size([1, 3, 378, 504])[0m
+[97m[INFO ] Model Forward Pass Done. Time: 0.017383098602294922 seconds[0m
+[97m[INFO ] Conversion to Prediction Done. Time: 0.0002696514129638672 seconds[0m
+[97m[INFO ] Processed Images Done taking 0.007797956466674805 seconds. Shape:  torch.Size([1, 3, 378, 504])[0m
+[97m[INFO ] Model Forward Pass Done. Time: 0.017428159713745117 seconds[0m
+[97m[INFO ] Conversion to Prediction Done. Time: 0.0002753734588623047 seconds[0m
+  [ 100/654] idx=0212  abs_rel=0.0449  d1=0.9903  (5.4s)
+[97m[INFO ] Processed Images Done taking 0.008006095886230469 seconds. Shape:  torch.Size([1, 3, 378, 504])[0m
+[97m[INFO ] Model Forward Pass Done. Time: 0.017447948455810547 seconds[0m
+[97m[INFO ] Conversion to Prediction Done. Time: 0.0002586841583251953 seconds[0m
+[97m[INFO ] Processed Images Done taking 0.007794857025146484 seconds. Shape:  torch.Size([1, 3, 378, 504])[0m
+[97m[INFO ] Model Forward Pass Done. Time: 0.017419099807739258 seconds[0m
+[97m[INFO ] Conversion to Prediction Done. Time: 0.0002827644348144531 seconds[0m
+[97m[INFO ] Processed Images Done taking 0.007673025131225586 seconds. Shape:  torch.Size([1, 3, 378, 504])[0m
+[97m[INFO ] Model Forward Pass Done. Time: 0.01740431785583496 seconds[0m
+[97m[INFO ] Conversion to Prediction Done. Time: 0.0002624988555908203 seconds[0m
+[97m[INFO ] Processed Images Done taking 0.008107423782348633 seconds. Shape:  torch.Size([1, 3, 378, 504])[0m
+[97m[INFO ] Model Forward Pass Done. Time: 0.017423629760742188 seconds[0m
+[97m[INFO ] Conversion to Prediction Done. Time: 0.0002677440643310547 seconds[0m
+[97m[INFO ] Processed Images Done taking 0.008296728134155273 seconds. Shape:  torch.Size([1, 3, 378, 504])[0m
+[97m[INFO ] Model Forward Pass Done. Time: 0.017452239990234375 seconds[0m
+[97m[INFO ] Conversion to Prediction Done. Time: 0.0002493858337402344 seconds[0m
+[97m[INFO ] Processed Images Done taking 0.008145332336425781 seconds. Shape:  torch.Size([1, 3, 378, 504])[0m
+[97m[INFO ] Model Forward Pass Done. Time: 0.017385482788085938 seconds[0m
+[97m[INFO ] Conversion to Prediction Done. Time: 0.0002734661102294922 seconds[0m
+[97m[INFO ] Processed Images Done taking 0.007660627365112305 seconds. Shape:  torch.Size([1, 3, 378, 504])[0m
+[97m[INFO ] Model Forward Pass Done. Time: 0.01739215850830078 seconds[0m
+[97m[INFO ] Conversion to Prediction Done. Time: 0.0002636909484863281 seconds[0m
+[97m[INFO ] Processed Images Done taking 0.008217096328735352 seconds. Shape:  torch.Size([1, 3, 378, 504])[0m
+[97m[INFO ] Model Forward Pass Done. Time: 0.017467260360717773 seconds[0m
+[97m[INFO ] Conversion to Prediction Done. Time: 0.0002701282501220703 seconds[0m
+[97m[INFO ] Processed Images Done taking 0.007784366607666016 seconds. Shape:  torch.Size([1, 3, 378, 504])[0m
+[97m[INFO ] Model Forward Pass Done. Time: 0.0174100399017334 seconds[0m
+[97m[INFO ] Conversion to Prediction Done. Time: 0.00027108192443847656 seconds[0m
+[97m[INFO ] Processed Images Done taking 0.00783848762512207 seconds. Shape:  torch.Size([1, 3, 378, 504])[0m
+[97m[INFO ] Model Forward Pass Done. Time: 0.017380714416503906 seconds[0m
+[97m[INFO ] Conversion to Prediction Done. Time: 0.0002894401550292969 seconds[0m
+[97m[INFO ] Processed Images Done taking 0.008081436157226562 seconds. Shape:  torch.Size([1, 3, 378, 504])[0m
+[97m[INFO ] Model Forward Pass Done. Time: 0.017386913299560547 seconds[0m
+[97m[INFO ] Conversion to Prediction Done. Time: 0.00027441978454589844 seconds[0m
+[97m[INFO ] Processed Images Done taking 0.00823974609375 seconds. Shape:  torch.Size([1, 3, 378, 504])[0m
+[97m[INFO ] Model Forward Pass Done. Time: 0.01742863655090332 seconds[0m
+[97m[INFO ] Conversion to Prediction Done. Time: 0.0002651214599609375 seconds[0m
+[97m[INFO ] Processed Images Done taking 0.008680343627929688 seconds. Shape:  torch.Size([1, 3, 378, 504])[0m
+[97m[INFO ] Model Forward Pass Done. Time: 0.017428874969482422 seconds[0m
+[97m[INFO ] Conversion to Prediction Done. Time: 0.00029587745666503906 seconds[0m
+[97m[INFO ] Processed Images Done taking 0.008088111877441406 seconds. Shape:  torch.Size([1, 3, 378, 504])[0m
+[97m[INFO ] Model Forward Pass Done. Time: 0.01737523078918457 seconds[0m
+[97m[INFO ] Conversion to Prediction Done. Time: 0.0002377033233642578 seconds[0m
+[97m[INFO ] Processed Images Done taking 0.008180618286132812 seconds. Shape:  torch.Size([1, 3, 378, 504])[0m
+[97m[INFO ] Model Forward Pass Done. Time: 0.017407655715942383 seconds[0m
+[97m[INFO ] Conversion to Prediction Done. Time: 0.0002868175506591797 seconds[0m
+[97m[INFO ] Processed Images Done taking 0.007359981536865234 seconds. Shape:  torch.Size([1, 3, 378, 504])[0m
+[97m[INFO ] Model Forward Pass Done. Time: 0.01744866371154785 seconds[0m
+[97m[INFO ] Conversion to Prediction Done. Time: 0.0002880096435546875 seconds[0m
+[97m[INFO ] Processed Images Done taking 0.007051229476928711 seconds. Shape:  torch.Size([1, 3, 378, 504])[0m
+[97m[INFO ] Model Forward Pass Done. Time: 0.017422914505004883 seconds[0m
+[97m[INFO ] Conversion to Prediction Done. Time: 0.0002834796905517578 seconds[0m
+[97m[INFO ] Processed Images Done taking 0.008350610733032227 seconds. Shape:  torch.Size([1, 3, 378, 504])[0m
+[97m[INFO ] Model Forward Pass Done. Time: 0.017389535903930664 seconds[0m
+[97m[INFO ] Conversion to Prediction Done. Time: 0.00029850006103515625 seconds[0m
+[97m[INFO ] Processed Images Done taking 0.007131814956665039 seconds. Shape:  torch.Size([1, 3, 378, 504])[0m
+[97m[INFO ] Model Forward Pass Done. Time: 0.01729416847229004 seconds[0m
+[97m[INFO ] Conversion to Prediction Done. Time: 0.0002923011779785156 seconds[0m
+[97m[INFO ] Processed Images Done taking 0.006911516189575195 seconds. Shape:  torch.Size([1, 3, 378, 504])[0m
+[97m[INFO ] Model Forward Pass Done. Time: 0.01727437973022461 seconds[0m
+[97m[INFO ] Conversion to Prediction Done. Time: 0.0002830028533935547 seconds[0m
+[97m[INFO ] Processed Images Done taking 0.007428884506225586 seconds. Shape:  torch.Size([1, 3, 378, 504])[0m
+[97m[INFO ] Model Forward Pass Done. Time: 0.01727890968322754 seconds[0m
+[97m[INFO ] Conversion to Prediction Done. Time: 0.0002961158752441406 seconds[0m
+[97m[INFO ] Processed Images Done taking 0.007081747055053711 seconds. Shape:  torch.Size([1, 3, 378, 504])[0m
+[97m[INFO ] Model Forward Pass Done. Time: 0.01722860336303711 seconds[0m
+[97m[INFO ] Conversion to Prediction Done. Time: 0.00027441978454589844 seconds[0m
+[97m[INFO ] Processed Images Done taking 0.006940603256225586 seconds. Shape:  torch.Size([1, 3, 378, 504])[0m
+[97m[INFO ] Model Forward Pass Done. Time: 0.017180204391479492 seconds[0m
+[97m[INFO ] Conversion to Prediction Done. Time: 0.0002779960632324219 seconds[0m
+[97m[INFO ] Processed Images Done taking 0.007107257843017578 seconds. Shape:  torch.Size([1, 3, 378, 504])[0m
+[97m[INFO ] Model Forward Pass Done. Time: 0.0172574520111084 seconds[0m
+[97m[INFO ] Conversion to Prediction Done. Time: 0.000293731689453125 seconds[0m
+[97m[INFO ] Processed Images Done taking 0.0075533390045166016 seconds. Shape:  torch.Size([1, 3, 378, 504])[0m
+[97m[INFO ] Model Forward Pass Done. Time: 0.01721978187561035 seconds[0m
+[97m[INFO ] Conversion to Prediction Done. Time: 0.00028061866760253906 seconds[0m
+[97m[INFO ] Processed Images Done taking 0.008079290390014648 seconds. Shape:  torch.Size([1, 3, 378, 504])[0m
+[97m[INFO ] Model Forward Pass Done. Time: 0.017146587371826172 seconds[0m
+[97m[INFO ] Conversion to Prediction Done. Time: 0.0002655982971191406 seconds[0m
+[97m[INFO ] Processed Images Done taking 0.007535219192504883 seconds. Shape:  torch.Size([1, 3, 378, 504])[0m
+[97m[INFO ] Model Forward Pass Done. Time: 0.017176389694213867 seconds[0m
+[97m[INFO ] Conversion to Prediction Done. Time: 0.0002789497375488281 seconds[0m
+[97m[INFO ] Processed Images Done taking 0.0077321529388427734 seconds. Shape:  torch.Size([1, 3, 378, 504])[0m
+[97m[INFO ] Model Forward Pass Done. Time: 0.01720404624938965 seconds[0m
+[97m[INFO ] Conversion to Prediction Done. Time: 0.00027942657470703125 seconds[0m
+[97m[INFO ] Processed Images Done taking 0.008550882339477539 seconds. Shape:  torch.Size([1, 3, 378, 504])[0m
+[97m[INFO ] Model Forward Pass Done. Time: 0.017210006713867188 seconds[0m
+[97m[INFO ] Conversion to Prediction Done. Time: 0.00029158592224121094 seconds[0m
+[97m[INFO ] Processed Images Done taking 0.007995128631591797 seconds. Shape:  torch.Size([1, 3, 378, 504])[0m
+[97m[INFO ] Model Forward Pass Done. Time: 0.017576217651367188 seconds[0m
+[97m[INFO ] Conversion to Prediction Done. Time: 0.0002810955047607422 seconds[0m
+[97m[INFO ] Processed Images Done taking 0.007917642593383789 seconds. Shape:  torch.Size([1, 3, 378, 504])[0m
+[97m[INFO ] Model Forward Pass Done. Time: 0.017304182052612305 seconds[0m
+[97m[INFO ] Conversion to Prediction Done. Time: 0.0002872943878173828 seconds[0m
+[97m[INFO ] Processed Images Done taking 0.007562875747680664 seconds. Shape:  torch.Size([1, 3, 378, 504])[0m
+[97m[INFO ] Model Forward Pass Done. Time: 0.01727151870727539 seconds[0m
+[97m[INFO ] Conversion to Prediction Done. Time: 0.00027489662170410156 seconds[0m
+[97m[INFO ] Processed Images Done taking 0.007406473159790039 seconds. Shape:  torch.Size([1, 3, 378, 504])[0m
+[97m[INFO ] Model Forward Pass Done. Time: 0.01721477508544922 seconds[0m
+[97m[INFO ] Conversion to Prediction Done. Time: 0.0002875328063964844 seconds[0m
+[97m[INFO ] Processed Images Done taking 0.007680416107177734 seconds. Shape:  torch.Size([1, 3, 378, 504])[0m
+[97m[INFO ] Model Forward Pass Done. Time: 0.017214536666870117 seconds[0m
+[97m[INFO ] Conversion to Prediction Done. Time: 0.0002715587615966797 seconds[0m
+[97m[INFO ] Processed Images Done taking 0.008124589920043945 seconds. Shape:  torch.Size([1, 3, 378, 504])[0m
+[97m[INFO ] Model Forward Pass Done. Time: 0.017212629318237305 seconds[0m
+[97m[INFO ] Conversion to Prediction Done. Time: 0.00028967857360839844 seconds[0m
+[97m[INFO ] Processed Images Done taking 0.007080793380737305 seconds. Shape:  torch.Size([1, 3, 378, 504])[0m
+[97m[INFO ] Model Forward Pass Done. Time: 0.0172879695892334 seconds[0m
+[97m[INFO ] Conversion to Prediction Done. Time: 0.0003209114074707031 seconds[0m
+[97m[INFO ] Processed Images Done taking 0.0076694488525390625 seconds. Shape:  torch.Size([1, 3, 378, 504])[0m
+[97m[INFO ] Model Forward Pass Done. Time: 0.017281770706176758 seconds[0m
+[97m[INFO ] Conversion to Prediction Done. Time: 0.0002753734588623047 seconds[0m
+[97m[INFO ] Processed Images Done taking 0.007756948471069336 seconds. Shape:  torch.Size([1, 3, 378, 504])[0m
+[97m[INFO ] Model Forward Pass Done. Time: 0.017231225967407227 seconds[0m
+[97m[INFO ] Conversion to Prediction Done. Time: 0.00028061866760253906 seconds[0m
+[97m[INFO ] Processed Images Done taking 0.006504058837890625 seconds. Shape:  torch.Size([1, 3, 378, 504])[0m
+[97m[INFO ] Model Forward Pass Done. Time: 0.017222166061401367 seconds[0m
+[97m[INFO ] Conversion to Prediction Done. Time: 0.00026488304138183594 seconds[0m
+[97m[INFO ] Processed Images Done taking 0.006864309310913086 seconds. Shape:  torch.Size([1, 3, 378, 504])[0m
+[97m[INFO ] Model Forward Pass Done. Time: 0.017258644104003906 seconds[0m
+[97m[INFO ] Conversion to Prediction Done. Time: 0.00027942657470703125 seconds[0m
+[97m[INFO ] Processed Images Done taking 0.007702827453613281 seconds. Shape:  torch.Size([1, 3, 378, 504])[0m
+[97m[INFO ] Model Forward Pass Done. Time: 0.017230987548828125 seconds[0m
+[97m[INFO ] Conversion to Prediction Done. Time: 0.00026988983154296875 seconds[0m
+[97m[INFO ] Processed Images Done taking 0.007205009460449219 seconds. Shape:  torch.Size([1, 3, 378, 504])[0m
+[97m[INFO ] Model Forward Pass Done. Time: 0.017256736755371094 seconds[0m
+[97m[INFO ] Conversion to Prediction Done. Time: 0.0002894401550292969 seconds[0m
+[97m[INFO ] Processed Images Done taking 0.007514238357543945 seconds. Shape:  torch.Size([1, 3, 378, 504])[0m
+[97m[INFO ] Model Forward Pass Done. Time: 0.01725006103515625 seconds[0m
+[97m[INFO ] Conversion to Prediction Done. Time: 0.0002815723419189453 seconds[0m
+[97m[INFO ] Processed Images Done taking 0.006983041763305664 seconds. Shape:  torch.Size([1, 3, 378, 504])[0m
+[97m[INFO ] Model Forward Pass Done. Time: 0.017299175262451172 seconds[0m
+[97m[INFO ] Conversion to Prediction Done. Time: 0.00028204917907714844 seconds[0m
+[97m[INFO ] Processed Images Done taking 0.008275747299194336 seconds. Shape:  torch.Size([1, 3, 378, 504])[0m
+[97m[INFO ] Model Forward Pass Done. Time: 0.0172879695892334 seconds[0m
+[97m[INFO ] Conversion to Prediction Done. Time: 0.0003046989440917969 seconds[0m
+[97m[INFO ] Processed Images Done taking 0.00797581672668457 seconds. Shape:  torch.Size([1, 3, 378, 504])[0m
+[97m[INFO ] Model Forward Pass Done. Time: 0.017239809036254883 seconds[0m
+[97m[INFO ] Conversion to Prediction Done. Time: 0.0002830028533935547 seconds[0m
+[97m[INFO ] Processed Images Done taking 0.007515668869018555 seconds. Shape:  torch.Size([1, 3, 378, 504])[0m
+[97m[INFO ] Model Forward Pass Done. Time: 0.017213821411132812 seconds[0m
+[97m[INFO ] Conversion to Prediction Done. Time: 0.00028061866760253906 seconds[0m
+[97m[INFO ] Processed Images Done taking 0.007127523422241211 seconds. Shape:  torch.Size([1, 3, 378, 504])[0m
+[97m[INFO ] Model Forward Pass Done. Time: 0.017191410064697266 seconds[0m
+[97m[INFO ] Conversion to Prediction Done. Time: 0.0003199577331542969 seconds[0m
+[97m[INFO ] Processed Images Done taking 0.007799386978149414 seconds. Shape:  torch.Size([1, 3, 378, 504])[0m
+[97m[INFO ] Model Forward Pass Done. Time: 0.017244815826416016 seconds[0m
+[97m[INFO ] Conversion to Prediction Done. Time: 0.0002875328063964844 seconds[0m
+[97m[INFO ] Processed Images Done taking 0.008712053298950195 seconds. Shape:  torch.Size([1, 3, 378, 504])[0m
+[97m[INFO ] Model Forward Pass Done. Time: 0.01763176918029785 seconds[0m
+[97m[INFO ] Conversion to Prediction Done. Time: 0.00027871131896972656 seconds[0m
+  [ 150/654] idx=0363  abs_rel=0.0970  d1=0.9707  (7.8s)
+[97m[INFO ] Processed Images Done taking 0.007636308670043945 seconds. Shape:  torch.Size([1, 3, 378, 504])[0m
+[97m[INFO ] Model Forward Pass Done. Time: 0.017334699630737305 seconds[0m
+[97m[INFO ] Conversion to Prediction Done. Time: 0.00026035308837890625 seconds[0m
+[97m[INFO ] Processed Images Done taking 0.006946086883544922 seconds. Shape:  torch.Size([1, 3, 378, 504])[0m
+[97m[INFO ] Model Forward Pass Done. Time: 0.01721978187561035 seconds[0m
+[97m[INFO ] Conversion to Prediction Done. Time: 0.0002913475036621094 seconds[0m
+[97m[INFO ] Processed Images Done taking 0.007412910461425781 seconds. Shape:  torch.Size([1, 3, 378, 504])[0m
+[97m[INFO ] Model Forward Pass Done. Time: 0.017243385314941406 seconds[0m
+[97m[INFO ] Conversion to Prediction Done. Time: 0.0002884864807128906 seconds[0m
+[97m[INFO ] Processed Images Done taking 0.0076372623443603516 seconds. Shape:  torch.Size([1, 3, 378, 504])[0m
+[97m[INFO ] Model Forward Pass Done. Time: 0.01721787452697754 seconds[0m
+[97m[INFO ] Conversion to Prediction Done. Time: 0.00030732154846191406 seconds[0m
+[97m[INFO ] Processed Images Done taking 0.008475542068481445 seconds. Shape:  torch.Size([1, 3, 378, 504])[0m
+[97m[INFO ] Model Forward Pass Done. Time: 0.017185211181640625 seconds[0m
+[97m[INFO ] Conversion to Prediction Done. Time: 0.0003044605255126953 seconds[0m
+[97m[INFO ] Processed Images Done taking 0.0071125030517578125 seconds. Shape:  torch.Size([1, 3, 378, 504])[0m
+[97m[INFO ] Model Forward Pass Done. Time: 0.017197370529174805 seconds[0m
+[97m[INFO ] Conversion to Prediction Done. Time: 0.0002911090850830078 seconds[0m
+[97m[INFO ] Processed Images Done taking 0.0078029632568359375 seconds. Shape:  torch.Size([1, 3, 378, 504])[0m
+[97m[INFO ] Model Forward Pass Done. Time: 0.01720118522644043 seconds[0m
+[97m[INFO ] Conversion to Prediction Done. Time: 0.0002791881561279297 seconds[0m
+[97m[INFO ] Processed Images Done taking 0.007987499237060547 seconds. Shape:  torch.Size([1, 3, 378, 504])[0m
+[97m[INFO ] Model Forward Pass Done. Time: 0.017212629318237305 seconds[0m
+[97m[INFO ] Conversion to Prediction Done. Time: 0.0002834796905517578 seconds[0m
+[97m[INFO ] Processed Images Done taking 0.007769107818603516 seconds. Shape:  torch.Size([1, 3, 378, 504])[0m
+[97m[INFO ] Model Forward Pass Done. Time: 0.01717519760131836 seconds[0m
+[97m[INFO ] Conversion to Prediction Done. Time: 0.0002799034118652344 seconds[0m
+[97m[INFO ] Processed Images Done taking 0.008792400360107422 seconds. Shape:  torch.Size([1, 3, 378, 504])[0m
+[97m[INFO ] Model Forward Pass Done. Time: 0.017657756805419922 seconds[0m
+[97m[INFO ] Conversion to Prediction Done. Time: 0.00028252601623535156 seconds[0m
+[97m[INFO ] Processed Images Done taking 0.008139610290527344 seconds. Shape:  torch.Size([1, 3, 378, 504])[0m
+[97m[INFO ] Model Forward Pass Done. Time: 0.01743030548095703 seconds[0m
+[97m[INFO ] Conversion to Prediction Done. Time: 0.0002799034118652344 seconds[0m
+[97m[INFO ] Processed Images Done taking 0.008242130279541016 seconds. Shape:  torch.Size([1, 3, 378, 504])[0m
+[97m[INFO ] Model Forward Pass Done. Time: 0.01728963851928711 seconds[0m
+[97m[INFO ] Conversion to Prediction Done. Time: 0.0002884864807128906 seconds[0m
+[97m[INFO ] Processed Images Done taking 0.007053375244140625 seconds. Shape:  torch.Size([1, 3, 378, 504])[0m
+[97m[INFO ] Model Forward Pass Done. Time: 0.017341136932373047 seconds[0m
+[97m[INFO ] Conversion to Prediction Done. Time: 0.0002923011779785156 seconds[0m
+[97m[INFO ] Processed Images Done taking 0.006661891937255859 seconds. Shape:  torch.Size([1, 3, 378, 504])[0m
+[97m[INFO ] Model Forward Pass Done. Time: 0.017212867736816406 seconds[0m
+[97m[INFO ] Conversion to Prediction Done. Time: 0.00029087066650390625 seconds[0m
+[97m[INFO ] Processed Images Done taking 0.007234334945678711 seconds. Shape:  torch.Size([1, 3, 378, 504])[0m
+[97m[INFO ] Model Forward Pass Done. Time: 0.017216205596923828 seconds[0m
+[97m[INFO ] Conversion to Prediction Done. Time: 0.000278472900390625 seconds[0m
+[97m[INFO ] Processed Images Done taking 0.006701231002807617 seconds. Shape:  torch.Size([1, 3, 378, 504])[0m
+[97m[INFO ] Model Forward Pass Done. Time: 0.017199039459228516 seconds[0m
+[97m[INFO ] Conversion to Prediction Done. Time: 0.0002853870391845703 seconds[0m
+[97m[INFO ] Processed Images Done taking 0.006899833679199219 seconds. Shape:  torch.Size([1, 3, 378, 504])[0m
+[97m[INFO ] Model Forward Pass Done. Time: 0.017212390899658203 seconds[0m
+[97m[INFO ] Conversion to Prediction Done. Time: 0.0002865791320800781 seconds[0m
+[97m[INFO ] Processed Images Done taking 0.00781393051147461 seconds. Shape:  torch.Size([1, 3, 378, 504])[0m
+[97m[INFO ] Model Forward Pass Done. Time: 0.017221927642822266 seconds[0m
+[97m[INFO ] Conversion to Prediction Done. Time: 0.0002791881561279297 seconds[0m
+[97m[INFO ] Processed Images Done taking 0.008595705032348633 seconds. Shape:  torch.Size([1, 3, 378, 504])[0m
+[97m[INFO ] Model Forward Pass Done. Time: 0.0172727108001709 seconds[0m
+[97m[INFO ] Conversion to Prediction Done. Time: 0.00028443336486816406 seconds[0m
+[97m[INFO ] Processed Images Done taking 0.007969379425048828 seconds. Shape:  torch.Size([1, 3, 378, 504])[0m
+[97m[INFO ] Model Forward Pass Done. Time: 0.017236709594726562 seconds[0m
+[97m[INFO ] Conversion to Prediction Done. Time: 0.00029540061950683594 seconds[0m
+[97m[INFO ] Processed Images Done taking 0.00747370719909668 seconds. Shape:  torch.Size([1, 3, 378, 504])[0m
+[97m[INFO ] Model Forward Pass Done. Time: 0.017235517501831055 seconds[0m
+[97m[INFO ] Conversion to Prediction Done. Time: 0.0002701282501220703 seconds[0m
+[97m[INFO ] Processed Images Done taking 0.00708770751953125 seconds. Shape:  torch.Size([1, 3, 378, 504])[0m
+[97m[INFO ] Model Forward Pass Done. Time: 0.017199039459228516 seconds[0m
+[97m[INFO ] Conversion to Prediction Done. Time: 0.0002722740173339844 seconds[0m
+[97m[INFO ] Processed Images Done taking 0.0076236724853515625 seconds. Shape:  torch.Size([1, 3, 378, 504])[0m
+[97m[INFO ] Model Forward Pass Done. Time: 0.01724386215209961 seconds[0m
+[97m[INFO ] Conversion to Prediction Done. Time: 0.000263214111328125 seconds[0m
+[97m[INFO ] Processed Images Done taking 0.007896661758422852 seconds. Shape:  torch.Size([1, 3, 378, 504])[0m
+[97m[INFO ] Model Forward Pass Done. Time: 0.017236948013305664 seconds[0m
+[97m[INFO ] Conversion to Prediction Done. Time: 0.00028133392333984375 seconds[0m
+[97m[INFO ] Processed Images Done taking 0.007430076599121094 seconds. Shape:  torch.Size([1, 3, 378, 504])[0m
+[97m[INFO ] Model Forward Pass Done. Time: 0.01720905303955078 seconds[0m
+[97m[INFO ] Conversion to Prediction Done. Time: 0.00027251243591308594 seconds[0m
+[97m[INFO ] Processed Images Done taking 0.007786750793457031 seconds. Shape:  torch.Size([1, 3, 378, 504])[0m
+[97m[INFO ] Model Forward Pass Done. Time: 0.017199277877807617 seconds[0m
+[97m[INFO ] Conversion to Prediction Done. Time: 0.0002868175506591797 seconds[0m
+[97m[INFO ] Processed Images Done taking 0.0074617862701416016 seconds. Shape:  torch.Size([1, 3, 378, 504])[0m
+[97m[INFO ] Model Forward Pass Done. Time: 0.0172121524810791 seconds[0m
+[97m[INFO ] Conversion to Prediction Done. Time: 0.00028586387634277344 seconds[0m
+[97m[INFO ] Processed Images Done taking 0.004252195358276367 seconds. Shape:  torch.Size([1, 3, 378, 504])[0m
+[97m[INFO ] Model Forward Pass Done. Time: 0.017189979553222656 seconds[0m
+[97m[INFO ] Conversion to Prediction Done. Time: 0.00027680397033691406 seconds[0m
+[97m[INFO ] Processed Images Done taking 0.00777888298034668 seconds. Shape:  torch.Size([1, 3, 378, 504])[0m
+[97m[INFO ] Model Forward Pass Done. Time: 0.017235994338989258 seconds[0m
+[97m[INFO ] Conversion to Prediction Done. Time: 0.00027251243591308594 seconds[0m
+[97m[INFO ] Processed Images Done taking 0.007581472396850586 seconds. Shape:  torch.Size([1, 3, 378, 504])[0m
+[97m[INFO ] Model Forward Pass Done. Time: 0.01717662811279297 seconds[0m
+[97m[INFO ] Conversion to Prediction Done. Time: 0.0002574920654296875 seconds[0m
+[97m[INFO ] Processed Images Done taking 0.004215240478515625 seconds. Shape:  torch.Size([1, 3, 378, 504])[0m
+[97m[INFO ] Model Forward Pass Done. Time: 0.017221927642822266 seconds[0m
+[97m[INFO ] Conversion to Prediction Done. Time: 0.0002715587615966797 seconds[0m
+[97m[INFO ] Processed Images Done taking 0.003963470458984375 seconds. Shape:  torch.Size([1, 3, 378, 504])[0m
+[97m[INFO ] Model Forward Pass Done. Time: 0.017217397689819336 seconds[0m
+[97m[INFO ] Conversion to Prediction Done. Time: 0.0002830028533935547 seconds[0m
+[97m[INFO ] Processed Images Done taking 0.007469654083251953 seconds. Shape:  torch.Size([1, 3, 378, 504])[0m
+[97m[INFO ] Model Forward Pass Done. Time: 0.017182111740112305 seconds[0m
+[97m[INFO ] Conversion to Prediction Done. Time: 0.0002887248992919922 seconds[0m
+[97m[INFO ] Processed Images Done taking 0.00805211067199707 seconds. Shape:  torch.Size([1, 3, 378, 504])[0m
+[97m[INFO ] Model Forward Pass Done. Time: 0.017192840576171875 seconds[0m
+[97m[INFO ] Conversion to Prediction Done. Time: 0.0002696514129638672 seconds[0m
+[97m[INFO ] Processed Images Done taking 0.007468461990356445 seconds. Shape:  torch.Size([1, 3, 378, 504])[0m
+[97m[INFO ] Model Forward Pass Done. Time: 0.01723027229309082 seconds[0m
+[97m[INFO ] Conversion to Prediction Done. Time: 0.0002810955047607422 seconds[0m
+[97m[INFO ] Processed Images Done taking 0.00784921646118164 seconds. Shape:  torch.Size([1, 3, 378, 504])[0m
+[97m[INFO ] Model Forward Pass Done. Time: 0.0172426700592041 seconds[0m
+[97m[INFO ] Conversion to Prediction Done. Time: 0.000274658203125 seconds[0m
+[97m[INFO ] Processed Images Done taking 0.008610963821411133 seconds. Shape:  torch.Size([1, 3, 378, 504])[0m
+[97m[INFO ] Model Forward Pass Done. Time: 0.017348289489746094 seconds[0m
+[97m[INFO ] Conversion to Prediction Done. Time: 0.0002810955047607422 seconds[0m
+[97m[INFO ] Processed Images Done taking 0.005869865417480469 seconds. Shape:  torch.Size([1, 3, 378, 504])[0m
+[97m[INFO ] Model Forward Pass Done. Time: 0.017320632934570312 seconds[0m
+[97m[INFO ] Conversion to Prediction Done. Time: 0.0002713203430175781 seconds[0m
+[97m[INFO ] Processed Images Done taking 0.004191398620605469 seconds. Shape:  torch.Size([1, 3, 378, 504])[0m
+[97m[INFO ] Model Forward Pass Done. Time: 0.017359018325805664 seconds[0m
+[97m[INFO ] Conversion to Prediction Done. Time: 0.00026798248291015625 seconds[0m
+[97m[INFO ] Processed Images Done taking 0.004398822784423828 seconds. Shape:  torch.Size([1, 3, 378, 504])[0m
+[97m[INFO ] Model Forward Pass Done. Time: 0.017372608184814453 seconds[0m
+[97m[INFO ] Conversion to Prediction Done. Time: 0.00028443336486816406 seconds[0m
+[97m[INFO ] Processed Images Done taking 0.00425267219543457 seconds. Shape:  torch.Size([1, 3, 378, 504])[0m
+[97m[INFO ] Model Forward Pass Done. Time: 0.01756882667541504 seconds[0m
+[97m[INFO ] Conversion to Prediction Done. Time: 0.0003027915954589844 seconds[0m
+[97m[INFO ] Processed Images Done taking 0.004786252975463867 seconds. Shape:  torch.Size([1, 3, 378, 504])[0m
+[97m[INFO ] Model Forward Pass Done. Time: 0.017393827438354492 seconds[0m
+[97m[INFO ] Conversion to Prediction Done. Time: 0.0002779960632324219 seconds[0m
+[97m[INFO ] Processed Images Done taking 0.004136562347412109 seconds. Shape:  torch.Size([1, 3, 378, 504])[0m
+[97m[INFO ] Model Forward Pass Done. Time: 0.017376422882080078 seconds[0m
+[97m[INFO ] Conversion to Prediction Done. Time: 0.000278472900390625 seconds[0m
+[97m[INFO ] Processed Images Done taking 0.007407426834106445 seconds. Shape:  torch.Size([1, 3, 378, 504])[0m
+[97m[INFO ] Model Forward Pass Done. Time: 0.01741647720336914 seconds[0m
+[97m[INFO ] Conversion to Prediction Done. Time: 0.0002734661102294922 seconds[0m
+[97m[INFO ] Processed Images Done taking 0.007454633712768555 seconds. Shape:  torch.Size([1, 3, 378, 504])[0m
+[97m[INFO ] Model Forward Pass Done. Time: 0.017452716827392578 seconds[0m
+[97m[INFO ] Conversion to Prediction Done. Time: 0.0002779960632324219 seconds[0m
+[97m[INFO ] Processed Images Done taking 0.00423884391784668 seconds. Shape:  torch.Size([1, 3, 378, 504])[0m
+[97m[INFO ] Model Forward Pass Done. Time: 0.017388343811035156 seconds[0m
+[97m[INFO ] Conversion to Prediction Done. Time: 0.00028133392333984375 seconds[0m
+[97m[INFO ] Processed Images Done taking 0.007565498352050781 seconds. Shape:  torch.Size([1, 3, 378, 504])[0m
+[97m[INFO ] Model Forward Pass Done. Time: 0.017386674880981445 seconds[0m
+[97m[INFO ] Conversion to Prediction Done. Time: 0.0002925395965576172 seconds[0m
+[97m[INFO ] Processed Images Done taking 0.004209041595458984 seconds. Shape:  torch.Size([1, 3, 378, 504])[0m
+[97m[INFO ] Model Forward Pass Done. Time: 0.01738452911376953 seconds[0m
+[97m[INFO ] Conversion to Prediction Done. Time: 0.0002722740173339844 seconds[0m
+[97m[INFO ] Processed Images Done taking 0.004151344299316406 seconds. Shape:  torch.Size([1, 3, 378, 504])[0m
+[97m[INFO ] Model Forward Pass Done. Time: 0.017370939254760742 seconds[0m
+[97m[INFO ] Conversion to Prediction Done. Time: 0.00026535987854003906 seconds[0m
+[97m[INFO ] Processed Images Done taking 0.004234790802001953 seconds. Shape:  torch.Size([1, 3, 378, 504])[0m
+[97m[INFO ] Model Forward Pass Done. Time: 0.017365694046020508 seconds[0m
+[97m[INFO ] Conversion to Prediction Done. Time: 0.00027942657470703125 seconds[0m
+  [ 200/654] idx=0515  abs_rel=0.1480  d1=0.8198  (10.3s)
+[97m[INFO ] Processed Images Done taking 0.008196353912353516 seconds. Shape:  torch.Size([1, 3, 378, 504])[0m
+[97m[INFO ] Model Forward Pass Done. Time: 0.017342567443847656 seconds[0m
+[97m[INFO ] Conversion to Prediction Done. Time: 0.00027871131896972656 seconds[0m
+[97m[INFO ] Processed Images Done taking 0.004035234451293945 seconds. Shape:  torch.Size([1, 3, 378, 504])[0m
+[97m[INFO ] Model Forward Pass Done. Time: 0.017409086227416992 seconds[0m
+[97m[INFO ] Conversion to Prediction Done. Time: 0.0002875328063964844 seconds[0m
+[97m[INFO ] Processed Images Done taking 0.004256010055541992 seconds. Shape:  torch.Size([1, 3, 378, 504])[0m
+[97m[INFO ] Model Forward Pass Done. Time: 0.017392635345458984 seconds[0m
+[97m[INFO ] Conversion to Prediction Done. Time: 0.00027561187744140625 seconds[0m
+[97m[INFO ] Processed Images Done taking 0.005733489990234375 seconds. Shape:  torch.Size([1, 3, 378, 504])[0m
+[97m[INFO ] Model Forward Pass Done. Time: 0.017374515533447266 seconds[0m
+[97m[INFO ] Conversion to Prediction Done. Time: 0.00027632713317871094 seconds[0m
+[97m[INFO ] Processed Images Done taking 0.004241466522216797 seconds. Shape:  torch.Size([1, 3, 378, 504])[0m
+[97m[INFO ] Model Forward Pass Done. Time: 0.017364025115966797 seconds[0m
+[97m[INFO ] Conversion to Prediction Done. Time: 0.00032782554626464844 seconds[0m
+[97m[INFO ] Processed Images Done taking 0.0041027069091796875 seconds. Shape:  torch.Size([1, 3, 378, 504])[0m
+[97m[INFO ] Model Forward Pass Done. Time: 0.017362356185913086 seconds[0m
+[97m[INFO ] Conversion to Prediction Done. Time: 0.00029087066650390625 seconds[0m
+[97m[INFO ] Processed Images Done taking 0.008090734481811523 seconds. Shape:  torch.Size([1, 3, 378, 504])[0m
+[97m[INFO ] Model Forward Pass Done. Time: 0.01741337776184082 seconds[0m
+[97m[INFO ] Conversion to Prediction Done. Time: 0.000278472900390625 seconds[0m
+[97m[INFO ] Processed Images Done taking 0.004395961761474609 seconds. Shape:  torch.Size([1, 3, 378, 504])[0m
+[97m[INFO ] Model Forward Pass Done. Time: 0.017386913299560547 seconds[0m
+[97m[INFO ] Conversion to Prediction Done. Time: 0.0002722740173339844 seconds[0m
+[97m[INFO ] Processed Images Done taking 0.004312753677368164 seconds. Shape:  torch.Size([1, 3, 378, 504])[0m
+[97m[INFO ] Model Forward Pass Done. Time: 0.01735830307006836 seconds[0m
+[97m[INFO ] Conversion to Prediction Done. Time: 0.00028514862060546875 seconds[0m
+[97m[INFO ] Processed Images Done taking 0.004423856735229492 seconds. Shape:  torch.Size([1, 3, 378, 504])[0m
+[97m[INFO ] Model Forward Pass Done. Time: 0.01735973358154297 seconds[0m
+[97m[INFO ] Conversion to Prediction Done. Time: 0.00027179718017578125 seconds[0m
+[97m[INFO ] Processed Images Done taking 0.004302024841308594 seconds. Shape:  torch.Size([1, 3, 378, 504])[0m
+[97m[INFO ] Model Forward Pass Done. Time: 0.01735663414001465 seconds[0m
+[97m[INFO ] Conversion to Prediction Done. Time: 0.00027942657470703125 seconds[0m
+[97m[INFO ] Processed Images Done taking 0.004443168640136719 seconds. Shape:  torch.Size([1, 3, 378, 504])[0m
+[97m[INFO ] Model Forward Pass Done. Time: 0.017368078231811523 seconds[0m
+[97m[INFO ] Conversion to Prediction Done. Time: 0.00029540061950683594 seconds[0m
+[97m[INFO ] Processed Images Done taking 0.004144430160522461 seconds. Shape:  torch.Size([1, 3, 378, 504])[0m
+[97m[INFO ] Model Forward Pass Done. Time: 0.01735973358154297 seconds[0m
+[97m[INFO ] Conversion to Prediction Done. Time: 0.00027441978454589844 seconds[0m
+[97m[INFO ] Processed Images Done taking 0.004170656204223633 seconds. Shape:  torch.Size([1, 3, 378, 504])[0m
+[97m[INFO ] Model Forward Pass Done. Time: 0.017328977584838867 seconds[0m
+[97m[INFO ] Conversion to Prediction Done. Time: 0.00029158592224121094 seconds[0m
+[97m[INFO ] Processed Images Done taking 0.004204988479614258 seconds. Shape:  torch.Size([1, 3, 378, 504])[0m
+[97m[INFO ] Model Forward Pass Done. Time: 0.01740288734436035 seconds[0m
+[97m[INFO ] Conversion to Prediction Done. Time: 0.0002932548522949219 seconds[0m
+[97m[INFO ] Processed Images Done taking 0.007479190826416016 seconds. Shape:  torch.Size([1, 3, 378, 504])[0m
+[97m[INFO ] Model Forward Pass Done. Time: 0.017392396926879883 seconds[0m
+[97m[INFO ] Conversion to Prediction Done. Time: 0.00027632713317871094 seconds[0m
+[97m[INFO ] Processed Images Done taking 0.0069637298583984375 seconds. Shape:  torch.Size([1, 3, 378, 504])[0m
+[97m[INFO ] Model Forward Pass Done. Time: 0.017342805862426758 seconds[0m
+[97m[INFO ] Conversion to Prediction Done. Time: 0.00029015541076660156 seconds[0m
+[97m[INFO ] Processed Images Done taking 0.004163026809692383 seconds. Shape:  torch.Size([1, 3, 378, 504])[0m
+[97m[INFO ] Model Forward Pass Done. Time: 0.01737070083618164 seconds[0m
+[97m[INFO ] Conversion to Prediction Done. Time: 0.00028967857360839844 seconds[0m
+[97m[INFO ] Processed Images Done taking 0.008354902267456055 seconds. Shape:  torch.Size([1, 3, 378, 504])[0m
+[97m[INFO ] Model Forward Pass Done. Time: 0.01744985580444336 seconds[0m
+[97m[INFO ] Conversion to Prediction Done. Time: 0.0002651214599609375 seconds[0m
+[97m[INFO ] Processed Images Done taking 0.007341146469116211 seconds. Shape:  torch.Size([1, 3, 378, 504])[0m
+[97m[INFO ] Model Forward Pass Done. Time: 0.017395496368408203 seconds[0m
+[97m[INFO ] Conversion to Prediction Done. Time: 0.00027108192443847656 seconds[0m
+[97m[INFO ] Processed Images Done taking 0.0047376155853271484 seconds. Shape:  torch.Size([1, 3, 378, 504])[0m
+[97m[INFO ] Model Forward Pass Done. Time: 0.0173795223236084 seconds[0m
+[97m[INFO ] Conversion to Prediction Done. Time: 0.00030350685119628906 seconds[0m
+[97m[INFO ] Processed Images Done taking 0.004773378372192383 seconds. Shape:  torch.Size([1, 3, 378, 504])[0m
+[97m[INFO ] Model Forward Pass Done. Time: 0.01737380027770996 seconds[0m
+[97m[INFO ] Conversion to Prediction Done. Time: 0.0002799034118652344 seconds[0m
+[97m[INFO ] Processed Images Done taking 0.004678249359130859 seconds. Shape:  torch.Size([1, 3, 378, 504])[0m
+[97m[INFO ] Model Forward Pass Done. Time: 0.01735973358154297 seconds[0m
+[97m[INFO ] Conversion to Prediction Done. Time: 0.00029158592224121094 seconds[0m
+[97m[INFO ] Processed Images Done taking 0.004037380218505859 seconds. Shape:  torch.Size([1, 3, 378, 504])[0m
+[97m[INFO ] Model Forward Pass Done. Time: 0.017380475997924805 seconds[0m
+[97m[INFO ] Conversion to Prediction Done. Time: 0.00028061866760253906 seconds[0m
+[97m[INFO ] Processed Images Done taking 0.004143238067626953 seconds. Shape:  torch.Size([1, 3, 378, 504])[0m
+[97m[INFO ] Model Forward Pass Done. Time: 0.017275571823120117 seconds[0m
+[97m[INFO ] Conversion to Prediction Done. Time: 0.0002925395965576172 seconds[0m
+[97m[INFO ] Processed Images Done taking 0.0040166378021240234 seconds. Shape:  torch.Size([1, 3, 378, 504])[0m
+[97m[INFO ] Model Forward Pass Done. Time: 0.017215728759765625 seconds[0m
+[97m[INFO ] Conversion to Prediction Done. Time: 0.00029540061950683594 seconds[0m
+[97m[INFO ] Processed Images Done taking 0.003763437271118164 seconds. Shape:  torch.Size([1, 3, 378, 504])[0m
+[97m[INFO ] Model Forward Pass Done. Time: 0.01722240447998047 seconds[0m
+[97m[INFO ] Conversion to Prediction Done. Time: 0.0002770423889160156 seconds[0m
+[97m[INFO ] Processed Images Done taking 0.0037605762481689453 seconds. Shape:  torch.Size([1, 3, 378, 504])[0m
+[97m[INFO ] Model Forward Pass Done. Time: 0.017240524291992188 seconds[0m
+[97m[INFO ] Conversion to Prediction Done. Time: 0.0002732276916503906 seconds[0m
+[97m[INFO ] Processed Images Done taking 0.003591299057006836 seconds. Shape:  torch.Size([1, 3, 378, 504])[0m
+[97m[INFO ] Model Forward Pass Done. Time: 0.017204999923706055 seconds[0m
+[97m[INFO ] Conversion to Prediction Done. Time: 0.00029015541076660156 seconds[0m
+[97m[INFO ] Processed Images Done taking 0.0044972896575927734 seconds. Shape:  torch.Size([1, 3, 378, 504])[0m
+[97m[INFO ] Model Forward Pass Done. Time: 0.01722097396850586 seconds[0m
+[97m[INFO ] Conversion to Prediction Done. Time: 0.00029730796813964844 seconds[0m
+[97m[INFO ] Processed Images Done taking 0.003668069839477539 seconds. Shape:  torch.Size([1, 3, 378, 504])[0m
+[97m[INFO ] Model Forward Pass Done. Time: 0.01719355583190918 seconds[0m
+[97m[INFO ] Conversion to Prediction Done. Time: 0.0002682209014892578 seconds[0m
+[97m[INFO ] Processed Images Done taking 0.0035867691040039062 seconds. Shape:  torch.Size([1, 3, 378, 504])[0m
+[97m[INFO ] Model Forward Pass Done. Time: 0.01719379425048828 seconds[0m
+[97m[INFO ] Conversion to Prediction Done. Time: 0.00028228759765625 seconds[0m
+[97m[INFO ] Processed Images Done taking 0.003995656967163086 seconds. Shape:  torch.Size([1, 3, 378, 504])[0m
+[97m[INFO ] Model Forward Pass Done. Time: 0.017195940017700195 seconds[0m
+[97m[INFO ] Conversion to Prediction Done. Time: 0.00027942657470703125 seconds[0m
+[97m[INFO ] Processed Images Done taking 0.0038940906524658203 seconds. Shape:  torch.Size([1, 3, 378, 504])[0m
+[97m[INFO ] Model Forward Pass Done. Time: 0.017174720764160156 seconds[0m
+[97m[INFO ] Conversion to Prediction Done. Time: 0.00028896331787109375 seconds[0m
+[97m[INFO ] Processed Images Done taking 0.003686666488647461 seconds. Shape:  torch.Size([1, 3, 378, 504])[0m
+[97m[INFO ] Model Forward Pass Done. Time: 0.017165660858154297 seconds[0m
+[97m[INFO ] Conversion to Prediction Done. Time: 0.0002865791320800781 seconds[0m
+[97m[INFO ] Processed Images Done taking 0.0038411617279052734 seconds. Shape:  torch.Size([1, 3, 378, 504])[0m
+[97m[INFO ] Model Forward Pass Done. Time: 0.017171144485473633 seconds[0m
+[97m[INFO ] Conversion to Prediction Done. Time: 0.00029397010803222656 seconds[0m
+[97m[INFO ] Processed Images Done taking 0.0033850669860839844 seconds. Shape:  torch.Size([1, 3, 378, 504])[0m
+[97m[INFO ] Model Forward Pass Done. Time: 0.017199277877807617 seconds[0m
+[97m[INFO ] Conversion to Prediction Done. Time: 0.0002899169921875 seconds[0m
+[97m[INFO ] Processed Images Done taking 0.00808858871459961 seconds. Shape:  torch.Size([1, 3, 378, 504])[0m
+[97m[INFO ] Model Forward Pass Done. Time: 0.017153501510620117 seconds[0m
+[97m[INFO ] Conversion to Prediction Done. Time: 0.0002818107604980469 seconds[0m
+[97m[INFO ] Processed Images Done taking 0.003332853317260742 seconds. Shape:  torch.Size([1, 3, 378, 504])[0m
+[97m[INFO ] Model Forward Pass Done. Time: 0.017146587371826172 seconds[0m
+[97m[INFO ] Conversion to Prediction Done. Time: 0.00027942657470703125 seconds[0m
+[97m[INFO ] Processed Images Done taking 0.003868579864501953 seconds. Shape:  torch.Size([1, 3, 378, 504])[0m
+[97m[INFO ] Model Forward Pass Done. Time: 0.017147541046142578 seconds[0m
+[97m[INFO ] Conversion to Prediction Done. Time: 0.00027179718017578125 seconds[0m
+[97m[INFO ] Processed Images Done taking 0.004873037338256836 seconds. Shape:  torch.Size([1, 3, 378, 504])[0m
+[97m[INFO ] Model Forward Pass Done. Time: 0.017597436904907227 seconds[0m
+[97m[INFO ] Conversion to Prediction Done. Time: 0.0003001689910888672 seconds[0m
+[97m[INFO ] Processed Images Done taking 0.009716987609863281 seconds. Shape:  torch.Size([1, 3, 378, 504])[0m
+[97m[INFO ] Model Forward Pass Done. Time: 0.017394065856933594 seconds[0m
+[97m[INFO ] Conversion to Prediction Done. Time: 0.00029206275939941406 seconds[0m
+[97m[INFO ] Processed Images Done taking 0.003808259963989258 seconds. Shape:  torch.Size([1, 3, 378, 504])[0m
+[97m[INFO ] Model Forward Pass Done. Time: 0.01729273796081543 seconds[0m
+[97m[INFO ] Conversion to Prediction Done. Time: 0.0002777576446533203 seconds[0m
+[97m[INFO ] Processed Images Done taking 0.003731966018676758 seconds. Shape:  torch.Size([1, 3, 378, 504])[0m
+[97m[INFO ] Model Forward Pass Done. Time: 0.017220497131347656 seconds[0m
+[97m[INFO ] Conversion to Prediction Done. Time: 0.00028061866760253906 seconds[0m
+[97m[INFO ] Processed Images Done taking 0.003856182098388672 seconds. Shape:  torch.Size([1, 3, 378, 504])[0m
+[97m[INFO ] Model Forward Pass Done. Time: 0.01723623275756836 seconds[0m
+[97m[INFO ] Conversion to Prediction Done. Time: 0.0002887248992919922 seconds[0m
+[97m[INFO ] Processed Images Done taking 0.004050493240356445 seconds. Shape:  torch.Size([1, 3, 378, 504])[0m
+[97m[INFO ] Model Forward Pass Done. Time: 0.017255067825317383 seconds[0m
+[97m[INFO ] Conversion to Prediction Done. Time: 0.00028896331787109375 seconds[0m
+[97m[INFO ] Processed Images Done taking 0.008364439010620117 seconds. Shape:  torch.Size([1, 3, 378, 504])[0m
+[97m[INFO ] Model Forward Pass Done. Time: 0.01724696159362793 seconds[0m
+[97m[INFO ] Conversion to Prediction Done. Time: 0.00028443336486816406 seconds[0m
+[97m[INFO ] Processed Images Done taking 0.0072019100189208984 seconds. Shape:  torch.Size([1, 3, 378, 504])[0m
+[97m[INFO ] Model Forward Pass Done. Time: 0.01721477508544922 seconds[0m
+[97m[INFO ] Conversion to Prediction Done. Time: 0.0002827644348144531 seconds[0m
+[97m[INFO ] Processed Images Done taking 0.007204532623291016 seconds. Shape:  torch.Size([1, 3, 378, 504])[0m
+[97m[INFO ] Model Forward Pass Done. Time: 0.017232894897460938 seconds[0m
+[97m[INFO ] Conversion to Prediction Done. Time: 0.00027441978454589844 seconds[0m
+[97m[INFO ] Processed Images Done taking 0.007912397384643555 seconds. Shape:  torch.Size([1, 3, 378, 504])[0m
+[97m[INFO ] Model Forward Pass Done. Time: 0.01757025718688965 seconds[0m
+[97m[INFO ] Conversion to Prediction Done. Time: 0.0003132820129394531 seconds[0m
+  [ 250/654] idx=0606  abs_rel=0.1267  d1=0.9188  (12.6s)
+[97m[INFO ] Processed Images Done taking 0.008068323135375977 seconds. Shape:  torch.Size([1, 3, 378, 504])[0m
+[97m[INFO ] Model Forward Pass Done. Time: 0.01741337776184082 seconds[0m
+[97m[INFO ] Conversion to Prediction Done. Time: 0.0002682209014892578 seconds[0m
+[97m[INFO ] Processed Images Done taking 0.00744318962097168 seconds. Shape:  torch.Size([1, 3, 378, 504])[0m
+[97m[INFO ] Model Forward Pass Done. Time: 0.017333984375 seconds[0m
+[97m[INFO ] Conversion to Prediction Done. Time: 0.0002968311309814453 seconds[0m
+[97m[INFO ] Processed Images Done taking 0.0076677799224853516 seconds. Shape:  torch.Size([1, 3, 378, 504])[0m
+[97m[INFO ] Model Forward Pass Done. Time: 0.017313718795776367 seconds[0m
+[97m[INFO ] Conversion to Prediction Done. Time: 0.00028824806213378906 seconds[0m
+[97m[INFO ] Processed Images Done taking 0.007895231246948242 seconds. Shape:  torch.Size([1, 3, 378, 504])[0m
+[97m[INFO ] Model Forward Pass Done. Time: 0.017284154891967773 seconds[0m
+[97m[INFO ] Conversion to Prediction Done. Time: 0.0002837181091308594 seconds[0m
+[97m[INFO ] Processed Images Done taking 0.009949445724487305 seconds. Shape:  torch.Size([1, 3, 378, 504])[0m
+[97m[INFO ] Model Forward Pass Done. Time: 0.01727771759033203 seconds[0m
+[97m[INFO ] Conversion to Prediction Done. Time: 0.00028705596923828125 seconds[0m
+[97m[INFO ] Processed Images Done taking 0.007315158843994141 seconds. Shape:  torch.Size([1, 3, 378, 504])[0m
+[97m[INFO ] Model Forward Pass Done. Time: 0.017212390899658203 seconds[0m
+[97m[INFO ] Conversion to Prediction Done. Time: 0.00028014183044433594 seconds[0m
+[97m[INFO ] Processed Images Done taking 0.007375955581665039 seconds. Shape:  torch.Size([1, 3, 378, 504])[0m
+[97m[INFO ] Model Forward Pass Done. Time: 0.017188549041748047 seconds[0m
+[97m[INFO ] Conversion to Prediction Done. Time: 0.0003020763397216797 seconds[0m
+[97m[INFO ] Processed Images Done taking 0.006646871566772461 seconds. Shape:  torch.Size([1, 3, 378, 504])[0m
+[97m[INFO ] Model Forward Pass Done. Time: 0.017175674438476562 seconds[0m
+[97m[INFO ] Conversion to Prediction Done. Time: 0.00026416778564453125 seconds[0m
+[97m[INFO ] Processed Images Done taking 0.007837772369384766 seconds. Shape:  torch.Size([1, 3, 378, 504])[0m
+[97m[INFO ] Model Forward Pass Done. Time: 0.017203569412231445 seconds[0m
+[97m[INFO ] Conversion to Prediction Done. Time: 0.00029659271240234375 seconds[0m
+[97m[INFO ] Processed Images Done taking 0.008459329605102539 seconds. Shape:  torch.Size([1, 3, 378, 504])[0m
+[97m[INFO ] Model Forward Pass Done. Time: 0.01746058464050293 seconds[0m
+[97m[INFO ] Conversion to Prediction Done. Time: 0.00026726722717285156 seconds[0m
+[97m[INFO ] Processed Images Done taking 0.007703065872192383 seconds. Shape:  torch.Size([1, 3, 378, 504])[0m
+[97m[INFO ] Model Forward Pass Done. Time: 0.01725006103515625 seconds[0m
+[97m[INFO ] Conversion to Prediction Done. Time: 0.0002846717834472656 seconds[0m
+[97m[INFO ] Processed Images Done taking 0.007304191589355469 seconds. Shape:  torch.Size([1, 3, 378, 504])[0m
+[97m[INFO ] Model Forward Pass Done. Time: 0.017255306243896484 seconds[0m
+[97m[INFO ] Conversion to Prediction Done. Time: 0.00027060508728027344 seconds[0m
+[97m[INFO ] Processed Images Done taking 0.0072574615478515625 seconds. Shape:  torch.Size([1, 3, 378, 504])[0m
+[97m[INFO ] Model Forward Pass Done. Time: 0.01720142364501953 seconds[0m
+[97m[INFO ] Conversion to Prediction Done. Time: 0.0002923011779785156 seconds[0m
+[97m[INFO ] Processed Images Done taking 0.009734153747558594 seconds. Shape:  torch.Size([1, 3, 378, 504])[0m
+[97m[INFO ] Model Forward Pass Done. Time: 0.017168760299682617 seconds[0m
+[97m[INFO ] Conversion to Prediction Done. Time: 0.00028824806213378906 seconds[0m
+[97m[INFO ] Processed Images Done taking 0.007880449295043945 seconds. Shape:  torch.Size([1, 3, 378, 504])[0m
+[97m[INFO ] Model Forward Pass Done. Time: 0.01717066764831543 seconds[0m
+[97m[INFO ] Conversion to Prediction Done. Time: 0.00028061866760253906 seconds[0m
+[97m[INFO ] Processed Images Done taking 0.00692439079284668 seconds. Shape:  torch.Size([1, 3, 378, 504])[0m
+[97m[INFO ] Model Forward Pass Done. Time: 0.017232179641723633 seconds[0m
+[97m[INFO ] Conversion to Prediction Done. Time: 0.0002923011779785156 seconds[0m
+[97m[INFO ] Processed Images Done taking 0.007653474807739258 seconds. Shape:  torch.Size([1, 3, 378, 504])[0m
+[97m[INFO ] Model Forward Pass Done. Time: 0.017176151275634766 seconds[0m
+[97m[INFO ] Conversion to Prediction Done. Time: 0.00027871131896972656 seconds[0m
+[97m[INFO ] Processed Images Done taking 0.006357431411743164 seconds. Shape:  torch.Size([1, 3, 378, 504])[0m
+[97m[INFO ] Model Forward Pass Done. Time: 0.017141342163085938 seconds[0m
+[97m[INFO ] Conversion to Prediction Done. Time: 0.0002884864807128906 seconds[0m
+[97m[INFO ] Processed Images Done taking 0.00739741325378418 seconds. Shape:  torch.Size([1, 3, 378, 504])[0m
+[97m[INFO ] Model Forward Pass Done. Time: 0.01716780662536621 seconds[0m
+[97m[INFO ] Conversion to Prediction Done. Time: 0.0002923011779785156 seconds[0m
+[97m[INFO ] Processed Images Done taking 0.007203817367553711 seconds. Shape:  torch.Size([1, 3, 378, 504])[0m
+[97m[INFO ] Model Forward Pass Done. Time: 0.01724386215209961 seconds[0m
+[97m[INFO ] Conversion to Prediction Done. Time: 0.0002944469451904297 seconds[0m
+[97m[INFO ] Processed Images Done taking 0.00917196273803711 seconds. Shape:  torch.Size([1, 3, 378, 504])[0m
+[97m[INFO ] Model Forward Pass Done. Time: 0.017183303833007812 seconds[0m
+[97m[INFO ] Conversion to Prediction Done. Time: 0.0002803802490234375 seconds[0m
+[97m[INFO ] Processed Images Done taking 0.00852346420288086 seconds. Shape:  torch.Size([1, 3, 378, 504])[0m
+[97m[INFO ] Model Forward Pass Done. Time: 0.017156362533569336 seconds[0m
+[97m[INFO ] Conversion to Prediction Done. Time: 0.0002853870391845703 seconds[0m
+[97m[INFO ] Processed Images Done taking 0.009889364242553711 seconds. Shape:  torch.Size([1, 3, 378, 504])[0m
+[97m[INFO ] Model Forward Pass Done. Time: 0.017156600952148438 seconds[0m
+[97m[INFO ] Conversion to Prediction Done. Time: 0.00028967857360839844 seconds[0m
+[97m[INFO ] Processed Images Done taking 0.007387399673461914 seconds. Shape:  torch.Size([1, 3, 378, 504])[0m
+[97m[INFO ] Model Forward Pass Done. Time: 0.017203569412231445 seconds[0m
+[97m[INFO ] Conversion to Prediction Done. Time: 0.0002875328063964844 seconds[0m
+[97m[INFO ] Processed Images Done taking 0.0070798397064208984 seconds. Shape:  torch.Size([1, 3, 378, 504])[0m
+[97m[INFO ] Model Forward Pass Done. Time: 0.017214298248291016 seconds[0m
+[97m[INFO ] Conversion to Prediction Done. Time: 0.0002884864807128906 seconds[0m
+[97m[INFO ] Processed Images Done taking 0.00851893424987793 seconds. Shape:  torch.Size([1, 3, 378, 504])[0m
+[97m[INFO ] Model Forward Pass Done. Time: 0.017168045043945312 seconds[0m
+[97m[INFO ] Conversion to Prediction Done. Time: 0.0002830028533935547 seconds[0m
+[97m[INFO ] Processed Images Done taking 0.007652759552001953 seconds. Shape:  torch.Size([1, 3, 378, 504])[0m
+[97m[INFO ] Model Forward Pass Done. Time: 0.01716470718383789 seconds[0m
+[97m[INFO ] Conversion to Prediction Done. Time: 0.00027441978454589844 seconds[0m
+[97m[INFO ] Processed Images Done taking 0.007437467575073242 seconds. Shape:  torch.Size([1, 3, 378, 504])[0m
+[97m[INFO ] Model Forward Pass Done. Time: 0.0172121524810791 seconds[0m
+[97m[INFO ] Conversion to Prediction Done. Time: 0.0002899169921875 seconds[0m
+[97m[INFO ] Processed Images Done taking 0.007542848587036133 seconds. Shape:  torch.Size([1, 3, 378, 504])[0m
+[97m[INFO ] Model Forward Pass Done. Time: 0.017215728759765625 seconds[0m
+[97m[INFO ] Conversion to Prediction Done. Time: 0.00026679039001464844 seconds[0m
+[97m[INFO ] Processed Images Done taking 0.007603883743286133 seconds. Shape:  torch.Size([1, 3, 378, 504])[0m
+[97m[INFO ] Model Forward Pass Done. Time: 0.01721954345703125 seconds[0m
+[97m[INFO ] Conversion to Prediction Done. Time: 0.0002658367156982422 seconds[0m
+[97m[INFO ] Processed Images Done taking 0.008223295211791992 seconds. Shape:  torch.Size([1, 3, 378, 504])[0m
+[97m[INFO ] Model Forward Pass Done. Time: 0.01719951629638672 seconds[0m
+[97m[INFO ] Conversion to Prediction Done. Time: 0.00030040740966796875 seconds[0m
+[97m[INFO ] Processed Images Done taking 0.010221242904663086 seconds. Shape:  torch.Size([1, 3, 378, 504])[0m
+[97m[INFO ] Model Forward Pass Done. Time: 0.017213106155395508 seconds[0m
+[97m[INFO ] Conversion to Prediction Done. Time: 0.0002810955047607422 seconds[0m
+[97m[INFO ] Processed Images Done taking 0.007906913757324219 seconds. Shape:  torch.Size([1, 3, 378, 504])[0m
+[97m[INFO ] Model Forward Pass Done. Time: 0.017248868942260742 seconds[0m
+[97m[INFO ] Conversion to Prediction Done. Time: 0.00029158592224121094 seconds[0m
+[97m[INFO ] Processed Images Done taking 0.008055686950683594 seconds. Shape:  torch.Size([1, 3, 378, 504])[0m
+[97m[INFO ] Model Forward Pass Done. Time: 0.017215728759765625 seconds[0m
+[97m[INFO ] Conversion to Prediction Done. Time: 0.00028634071350097656 seconds[0m
+[97m[INFO ] Processed Images Done taking 0.010511398315429688 seconds. Shape:  torch.Size([1, 3, 378, 504])[0m
+[97m[INFO ] Model Forward Pass Done. Time: 0.017217159271240234 seconds[0m
+[97m[INFO ] Conversion to Prediction Done. Time: 0.000286102294921875 seconds[0m
+[97m[INFO ] Processed Images Done taking 0.007773399353027344 seconds. Shape:  torch.Size([1, 3, 378, 504])[0m
+[97m[INFO ] Model Forward Pass Done. Time: 0.01724696159362793 seconds[0m
+[97m[INFO ] Conversion to Prediction Done. Time: 0.0002815723419189453 seconds[0m
+[97m[INFO ] Processed Images Done taking 0.00811767578125 seconds. Shape:  torch.Size([1, 3, 378, 504])[0m
+[97m[INFO ] Model Forward Pass Done. Time: 0.01723623275756836 seconds[0m
+[97m[INFO ] Conversion to Prediction Done. Time: 0.0002779960632324219 seconds[0m
+[97m[INFO ] Processed Images Done taking 0.007515430450439453 seconds. Shape:  torch.Size([1, 3, 378, 504])[0m
+[97m[INFO ] Model Forward Pass Done. Time: 0.017214536666870117 seconds[0m
+[97m[INFO ] Conversion to Prediction Done. Time: 0.0002689361572265625 seconds[0m
+[97m[INFO ] Processed Images Done taking 0.007116079330444336 seconds. Shape:  torch.Size([1, 3, 378, 504])[0m
+[97m[INFO ] Model Forward Pass Done. Time: 0.017177581787109375 seconds[0m
+[97m[INFO ] Conversion to Prediction Done. Time: 0.0002741813659667969 seconds[0m
+[97m[INFO ] Processed Images Done taking 0.007013797760009766 seconds. Shape:  torch.Size([1, 3, 378, 504])[0m
+[97m[INFO ] Model Forward Pass Done. Time: 0.017222881317138672 seconds[0m
+[97m[INFO ] Conversion to Prediction Done. Time: 0.0003070831298828125 seconds[0m
+[97m[INFO ] Processed Images Done taking 0.008048295974731445 seconds. Shape:  torch.Size([1, 3, 378, 504])[0m
+[97m[INFO ] Model Forward Pass Done. Time: 0.017207860946655273 seconds[0m
+[97m[INFO ] Conversion to Prediction Done. Time: 0.0002830028533935547 seconds[0m
+[97m[INFO ] Processed Images Done taking 0.007863998413085938 seconds. Shape:  torch.Size([1, 3, 378, 504])[0m
+[97m[INFO ] Model Forward Pass Done. Time: 0.017212629318237305 seconds[0m
+[97m[INFO ] Conversion to Prediction Done. Time: 0.00029659271240234375 seconds[0m
+[97m[INFO ] Processed Images Done taking 0.006662607192993164 seconds. Shape:  torch.Size([1, 3, 378, 504])[0m
+[97m[INFO ] Model Forward Pass Done. Time: 0.017209291458129883 seconds[0m
+[97m[INFO ] Conversion to Prediction Done. Time: 0.0002739429473876953 seconds[0m
+[97m[INFO ] Processed Images Done taking 0.007192373275756836 seconds. Shape:  torch.Size([1, 3, 378, 504])[0m
+[97m[INFO ] Model Forward Pass Done. Time: 0.017203807830810547 seconds[0m
+[97m[INFO ] Conversion to Prediction Done. Time: 0.0002841949462890625 seconds[0m
+[97m[INFO ] Processed Images Done taking 0.009987115859985352 seconds. Shape:  torch.Size([1, 3, 378, 504])[0m
+[97m[INFO ] Model Forward Pass Done. Time: 0.017453432083129883 seconds[0m
+[97m[INFO ] Conversion to Prediction Done. Time: 0.00033354759216308594 seconds[0m
+[97m[INFO ] Processed Images Done taking 0.008700370788574219 seconds. Shape:  torch.Size([1, 3, 378, 504])[0m
+[97m[INFO ] Model Forward Pass Done. Time: 0.017705202102661133 seconds[0m
+[97m[INFO ] Conversion to Prediction Done. Time: 0.0003218650817871094 seconds[0m
+[97m[INFO ] Processed Images Done taking 0.008170366287231445 seconds. Shape:  torch.Size([1, 3, 378, 504])[0m
+[97m[INFO ] Model Forward Pass Done. Time: 0.01741337776184082 seconds[0m
+[97m[INFO ] Conversion to Prediction Done. Time: 0.0002684593200683594 seconds[0m
+[97m[INFO ] Processed Images Done taking 0.008466720581054688 seconds. Shape:  torch.Size([1, 3, 378, 504])[0m
+[97m[INFO ] Model Forward Pass Done. Time: 0.01760077476501465 seconds[0m
+[97m[INFO ] Conversion to Prediction Done. Time: 0.0002875328063964844 seconds[0m
+[97m[INFO ] Processed Images Done taking 0.008443355560302734 seconds. Shape:  torch.Size([1, 3, 378, 504])[0m
+[97m[INFO ] Model Forward Pass Done. Time: 0.017431020736694336 seconds[0m
+[97m[INFO ] Conversion to Prediction Done. Time: 0.0002646446228027344 seconds[0m
+[97m[INFO ] Processed Images Done taking 0.00905752182006836 seconds. Shape:  torch.Size([1, 3, 378, 504])[0m
+[97m[INFO ] Model Forward Pass Done. Time: 0.017408132553100586 seconds[0m
+[97m[INFO ] Conversion to Prediction Done. Time: 0.00030803680419921875 seconds[0m
+  [ 300/654] idx=0710  abs_rel=0.2200  d1=0.6920  (15.0s)
+[97m[INFO ] Processed Images Done taking 0.008131980895996094 seconds. Shape:  torch.Size([1, 3, 378, 504])[0m
+[97m[INFO ] Model Forward Pass Done. Time: 0.017463207244873047 seconds[0m
+[97m[INFO ] Conversion to Prediction Done. Time: 0.0002720355987548828 seconds[0m
+[97m[INFO ] Processed Images Done taking 0.00840449333190918 seconds. Shape:  torch.Size([1, 3, 378, 504])[0m
+[97m[INFO ] Model Forward Pass Done. Time: 0.01739358901977539 seconds[0m
+[97m[INFO ] Conversion to Prediction Done. Time: 0.0002770423889160156 seconds[0m
+[97m[INFO ] Processed Images Done taking 0.008073568344116211 seconds. Shape:  torch.Size([1, 3, 378, 504])[0m
+[97m[INFO ] Model Forward Pass Done. Time: 0.017393827438354492 seconds[0m
+[97m[INFO ] Conversion to Prediction Done. Time: 0.0002989768981933594 seconds[0m
+[97m[INFO ] Processed Images Done taking 0.008177995681762695 seconds. Shape:  torch.Size([1, 3, 378, 504])[0m
+[97m[INFO ] Model Forward Pass Done. Time: 0.017397642135620117 seconds[0m
+[97m[INFO ] Conversion to Prediction Done. Time: 0.0002644062042236328 seconds[0m
+[97m[INFO ] Processed Images Done taking 0.007568836212158203 seconds. Shape:  torch.Size([1, 3, 378, 504])[0m
+[97m[INFO ] Model Forward Pass Done. Time: 0.0173952579498291 seconds[0m
+[97m[INFO ] Conversion to Prediction Done. Time: 0.0002620220184326172 seconds[0m
+[97m[INFO ] Processed Images Done taking 0.008940696716308594 seconds. Shape:  torch.Size([1, 3, 378, 504])[0m
+[97m[INFO ] Model Forward Pass Done. Time: 0.01743173599243164 seconds[0m
+[97m[INFO ] Conversion to Prediction Done. Time: 0.00028824806213378906 seconds[0m
+[97m[INFO ] Processed Images Done taking 0.007842302322387695 seconds. Shape:  torch.Size([1, 3, 378, 504])[0m
+[97m[INFO ] Model Forward Pass Done. Time: 0.01744389533996582 seconds[0m
+[97m[INFO ] Conversion to Prediction Done. Time: 0.0002772808074951172 seconds[0m
+[97m[INFO ] Processed Images Done taking 0.00950169563293457 seconds. Shape:  torch.Size([1, 3, 378, 504])[0m
+[97m[INFO ] Model Forward Pass Done. Time: 0.017374515533447266 seconds[0m
+[97m[INFO ] Conversion to Prediction Done. Time: 0.00025343894958496094 seconds[0m
+[97m[INFO ] Processed Images Done taking 0.007452487945556641 seconds. Shape:  torch.Size([1, 3, 378, 504])[0m
+[97m[INFO ] Model Forward Pass Done. Time: 0.017354726791381836 seconds[0m
+[97m[INFO ] Conversion to Prediction Done. Time: 0.0002720355987548828 seconds[0m
+[97m[INFO ] Processed Images Done taking 0.009482622146606445 seconds. Shape:  torch.Size([1, 3, 378, 504])[0m
+[97m[INFO ] Model Forward Pass Done. Time: 0.017440080642700195 seconds[0m
+[97m[INFO ] Conversion to Prediction Done. Time: 0.0002624988555908203 seconds[0m
+[97m[INFO ] Processed Images Done taking 0.00841975212097168 seconds. Shape:  torch.Size([1, 3, 378, 504])[0m
+[97m[INFO ] Model Forward Pass Done. Time: 0.017377614974975586 seconds[0m
+[97m[INFO ] Conversion to Prediction Done. Time: 0.00027179718017578125 seconds[0m
+[97m[INFO ] Processed Images Done taking 0.007467746734619141 seconds. Shape:  torch.Size([1, 3, 378, 504])[0m
+[97m[INFO ] Model Forward Pass Done. Time: 0.01738142967224121 seconds[0m
+[97m[INFO ] Conversion to Prediction Done. Time: 0.00024771690368652344 seconds[0m
+[97m[INFO ] Processed Images Done taking 0.008383989334106445 seconds. Shape:  torch.Size([1, 3, 378, 504])[0m
+[97m[INFO ] Model Forward Pass Done. Time: 0.017408132553100586 seconds[0m
+[97m[INFO ] Conversion to Prediction Done. Time: 0.0002868175506591797 seconds[0m
+[97m[INFO ] Processed Images Done taking 0.008382558822631836 seconds. Shape:  torch.Size([1, 3, 378, 504])[0m
+[97m[INFO ] Model Forward Pass Done. Time: 0.01743149757385254 seconds[0m
+[97m[INFO ] Conversion to Prediction Done. Time: 0.0002644062042236328 seconds[0m
+[97m[INFO ] Processed Images Done taking 0.008152484893798828 seconds. Shape:  torch.Size([1, 3, 378, 504])[0m
+[97m[INFO ] Model Forward Pass Done. Time: 0.01741337776184082 seconds[0m
+[97m[INFO ] Conversion to Prediction Done. Time: 0.00029087066650390625 seconds[0m
+[97m[INFO ] Processed Images Done taking 0.007867574691772461 seconds. Shape:  torch.Size([1, 3, 378, 504])[0m
+[97m[INFO ] Model Forward Pass Done. Time: 0.017363548278808594 seconds[0m
+[97m[INFO ] Conversion to Prediction Done. Time: 0.0002624988555908203 seconds[0m
+[97m[INFO ] Processed Images Done taking 0.008424043655395508 seconds. Shape:  torch.Size([1, 3, 378, 504])[0m
+[97m[INFO ] Model Forward Pass Done. Time: 0.01739335060119629 seconds[0m
+[97m[INFO ] Conversion to Prediction Done. Time: 0.00027179718017578125 seconds[0m
+[97m[INFO ] Processed Images Done taking 0.007650613784790039 seconds. Shape:  torch.Size([1, 3, 378, 504])[0m
+[97m[INFO ] Model Forward Pass Done. Time: 0.017420291900634766 seconds[0m
+[97m[INFO ] Conversion to Prediction Done. Time: 0.0002894401550292969 seconds[0m
+[97m[INFO ] Processed Images Done taking 0.008118867874145508 seconds. Shape:  torch.Size([1, 3, 378, 504])[0m
+[97m[INFO ] Model Forward Pass Done. Time: 0.017425060272216797 seconds[0m
+[97m[INFO ] Conversion to Prediction Done. Time: 0.0002808570861816406 seconds[0m
+[97m[INFO ] Processed Images Done taking 0.007193565368652344 seconds. Shape:  torch.Size([1, 3, 378, 504])[0m
+[97m[INFO ] Model Forward Pass Done. Time: 0.01738286018371582 seconds[0m
+[97m[INFO ] Conversion to Prediction Done. Time: 0.0003039836883544922 seconds[0m
+[97m[INFO ] Processed Images Done taking 0.0074613094329833984 seconds. Shape:  torch.Size([1, 3, 378, 504])[0m
+[97m[INFO ] Model Forward Pass Done. Time: 0.017401933670043945 seconds[0m
+[97m[INFO ] Conversion to Prediction Done. Time: 0.00026226043701171875 seconds[0m
+[97m[INFO ] Processed Images Done taking 0.007099151611328125 seconds. Shape:  torch.Size([1, 3, 378, 504])[0m
+[97m[INFO ] Model Forward Pass Done. Time: 0.017423152923583984 seconds[0m
+[97m[INFO ] Conversion to Prediction Done. Time: 0.00026988983154296875 seconds[0m
+[97m[INFO ] Processed Images Done taking 0.008139610290527344 seconds. Shape:  torch.Size([1, 3, 378, 504])[0m
+[97m[INFO ] Model Forward Pass Done. Time: 0.017426729202270508 seconds[0m
+[97m[INFO ] Conversion to Prediction Done. Time: 0.00028228759765625 seconds[0m
+[97m[INFO ] Processed Images Done taking 0.008057832717895508 seconds. Shape:  torch.Size([1, 3, 378, 504])[0m
+[97m[INFO ] Model Forward Pass Done. Time: 0.01737499237060547 seconds[0m
+[97m[INFO ] Conversion to Prediction Done. Time: 0.00027489662170410156 seconds[0m
+[97m[INFO ] Processed Images Done taking 0.008037567138671875 seconds. Shape:  torch.Size([1, 3, 378, 504])[0m
+[97m[INFO ] Model Forward Pass Done. Time: 0.017383575439453125 seconds[0m
+[97m[INFO ] Conversion to Prediction Done. Time: 0.0002849102020263672 seconds[0m
+[97m[INFO ] Processed Images Done taking 0.007380962371826172 seconds. Shape:  torch.Size([1, 3, 378, 504])[0m
+[97m[INFO ] Model Forward Pass Done. Time: 0.01742076873779297 seconds[0m
+[97m[INFO ] Conversion to Prediction Done. Time: 0.00028514862060546875 seconds[0m
+[97m[INFO ] Processed Images Done taking 0.008712053298950195 seconds. Shape:  torch.Size([1, 3, 378, 504])[0m
+[97m[INFO ] Model Forward Pass Done. Time: 0.017571687698364258 seconds[0m
+[97m[INFO ] Conversion to Prediction Done. Time: 0.0002613067626953125 seconds[0m
+[97m[INFO ] Processed Images Done taking 0.0071980953216552734 seconds. Shape:  torch.Size([1, 3, 378, 504])[0m
+[97m[INFO ] Model Forward Pass Done. Time: 0.017472267150878906 seconds[0m
+[97m[INFO ] Conversion to Prediction Done. Time: 0.000244140625 seconds[0m
+[97m[INFO ] Processed Images Done taking 0.007584333419799805 seconds. Shape:  torch.Size([1, 3, 378, 504])[0m
+[97m[INFO ] Model Forward Pass Done. Time: 0.017398357391357422 seconds[0m
+[97m[INFO ] Conversion to Prediction Done. Time: 0.00028395652770996094 seconds[0m
+[97m[INFO ] Processed Images Done taking 0.007742881774902344 seconds. Shape:  torch.Size([1, 3, 378, 504])[0m
+[97m[INFO ] Model Forward Pass Done. Time: 0.017438173294067383 seconds[0m
+[97m[INFO ] Conversion to Prediction Done. Time: 0.00027298927307128906 seconds[0m
+[97m[INFO ] Processed Images Done taking 0.008112668991088867 seconds. Shape:  torch.Size([1, 3, 378, 504])[0m
+[97m[INFO ] Model Forward Pass Done. Time: 0.017410993576049805 seconds[0m
+[97m[INFO ] Conversion to Prediction Done. Time: 0.00028443336486816406 seconds[0m
+[97m[INFO ] Processed Images Done taking 0.007820606231689453 seconds. Shape:  torch.Size([1, 3, 378, 504])[0m
+[97m[INFO ] Model Forward Pass Done. Time: 0.017334461212158203 seconds[0m
+[97m[INFO ] Conversion to Prediction Done. Time: 0.00027251243591308594 seconds[0m
+[97m[INFO ] Processed Images Done taking 0.008059024810791016 seconds. Shape:  torch.Size([1, 3, 378, 504])[0m
+[97m[INFO ] Model Forward Pass Done. Time: 0.017241954803466797 seconds[0m
+[97m[INFO ] Conversion to Prediction Done. Time: 0.00029468536376953125 seconds[0m
+[97m[INFO ] Processed Images Done taking 0.007010698318481445 seconds. Shape:  torch.Size([1, 3, 378, 504])[0m
+[97m[INFO ] Model Forward Pass Done. Time: 0.01726388931274414 seconds[0m
+[97m[INFO ] Conversion to Prediction Done. Time: 0.0002808570861816406 seconds[0m
+[97m[INFO ] Processed Images Done taking 0.007246494293212891 seconds. Shape:  torch.Size([1, 3, 378, 504])[0m
+[97m[INFO ] Model Forward Pass Done. Time: 0.017247915267944336 seconds[0m
+[97m[INFO ] Conversion to Prediction Done. Time: 0.0003018379211425781 seconds[0m
+[97m[INFO ] Processed Images Done taking 0.008473396301269531 seconds. Shape:  torch.Size([1, 3, 378, 504])[0m
+[97m[INFO ] Model Forward Pass Done. Time: 0.01750922203063965 seconds[0m
+[97m[INFO ] Conversion to Prediction Done. Time: 0.0002911090850830078 seconds[0m
+[97m[INFO ] Processed Images Done taking 0.00745844841003418 seconds. Shape:  torch.Size([1, 3, 378, 504])[0m
+[97m[INFO ] Model Forward Pass Done. Time: 0.017261028289794922 seconds[0m
+[97m[INFO ] Conversion to Prediction Done. Time: 0.0002932548522949219 seconds[0m
+[97m[INFO ] Processed Images Done taking 0.007788419723510742 seconds. Shape:  torch.Size([1, 3, 378, 504])[0m
+[97m[INFO ] Model Forward Pass Done. Time: 0.017283201217651367 seconds[0m
+[97m[INFO ] Conversion to Prediction Done. Time: 0.00030231475830078125 seconds[0m
+[97m[INFO ] Processed Images Done taking 0.008226633071899414 seconds. Shape:  torch.Size([1, 3, 378, 504])[0m
+[97m[INFO ] Model Forward Pass Done. Time: 0.017257213592529297 seconds[0m
+[97m[INFO ] Conversion to Prediction Done. Time: 0.0002918243408203125 seconds[0m
+[97m[INFO ] Processed Images Done taking 0.006916999816894531 seconds. Shape:  torch.Size([1, 3, 378, 504])[0m
+[97m[INFO ] Model Forward Pass Done. Time: 0.01720404624938965 seconds[0m
+[97m[INFO ] Conversion to Prediction Done. Time: 0.0002913475036621094 seconds[0m
+[97m[INFO ] Processed Images Done taking 0.0071604251861572266 seconds. Shape:  torch.Size([1, 3, 378, 504])[0m
+[97m[INFO ] Model Forward Pass Done. Time: 0.01721811294555664 seconds[0m
+[97m[INFO ] Conversion to Prediction Done. Time: 0.00029158592224121094 seconds[0m
+[97m[INFO ] Processed Images Done taking 0.0072138309478759766 seconds. Shape:  torch.Size([1, 3, 378, 504])[0m
+[97m[INFO ] Model Forward Pass Done. Time: 0.01721477508544922 seconds[0m
+[97m[INFO ] Conversion to Prediction Done. Time: 0.0002856254577636719 seconds[0m
+[97m[INFO ] Processed Images Done taking 0.007311582565307617 seconds. Shape:  torch.Size([1, 3, 378, 504])[0m
+[97m[INFO ] Model Forward Pass Done. Time: 0.01718616485595703 seconds[0m
+[97m[INFO ] Conversion to Prediction Done. Time: 0.0002779960632324219 seconds[0m
+[97m[INFO ] Processed Images Done taking 0.006955862045288086 seconds. Shape:  torch.Size([1, 3, 378, 504])[0m
+[97m[INFO ] Model Forward Pass Done. Time: 0.017180442810058594 seconds[0m
+[97m[INFO ] Conversion to Prediction Done. Time: 0.0002880096435546875 seconds[0m
+[97m[INFO ] Processed Images Done taking 0.007979154586791992 seconds. Shape:  torch.Size([1, 3, 378, 504])[0m
+[97m[INFO ] Model Forward Pass Done. Time: 0.01721477508544922 seconds[0m
+[97m[INFO ] Conversion to Prediction Done. Time: 0.0002562999725341797 seconds[0m
+[97m[INFO ] Processed Images Done taking 0.007747173309326172 seconds. Shape:  torch.Size([1, 3, 378, 504])[0m
+[97m[INFO ] Model Forward Pass Done. Time: 0.017193317413330078 seconds[0m
+[97m[INFO ] Conversion to Prediction Done. Time: 0.0002827644348144531 seconds[0m
+[97m[INFO ] Processed Images Done taking 0.006283998489379883 seconds. Shape:  torch.Size([1, 3, 378, 504])[0m
+[97m[INFO ] Model Forward Pass Done. Time: 0.017217159271240234 seconds[0m
+[97m[INFO ] Conversion to Prediction Done. Time: 0.0002655982971191406 seconds[0m
+[97m[INFO ] Processed Images Done taking 0.007788658142089844 seconds. Shape:  torch.Size([1, 3, 378, 504])[0m
+[97m[INFO ] Model Forward Pass Done. Time: 0.01721787452697754 seconds[0m
+[97m[INFO ] Conversion to Prediction Done. Time: 0.00027251243591308594 seconds[0m
+[97m[INFO ] Processed Images Done taking 0.007514476776123047 seconds. Shape:  torch.Size([1, 3, 378, 504])[0m
+[97m[INFO ] Model Forward Pass Done. Time: 0.017191171646118164 seconds[0m
+[97m[INFO ] Conversion to Prediction Done. Time: 0.00027441978454589844 seconds[0m
+[97m[INFO ] Processed Images Done taking 0.007386207580566406 seconds. Shape:  torch.Size([1, 3, 378, 504])[0m
+[97m[INFO ] Model Forward Pass Done. Time: 0.017231464385986328 seconds[0m
+[97m[INFO ] Conversion to Prediction Done. Time: 0.0002932548522949219 seconds[0m
+  [ 350/654] idx=0804  abs_rel=0.1701  d1=0.8821  (17.5s)
+[97m[INFO ] Processed Images Done taking 0.007444143295288086 seconds. Shape:  torch.Size([1, 3, 378, 504])[0m
+[97m[INFO ] Model Forward Pass Done. Time: 0.017220497131347656 seconds[0m
+[97m[INFO ] Conversion to Prediction Done. Time: 0.00028204917907714844 seconds[0m
+[97m[INFO ] Processed Images Done taking 0.008336305618286133 seconds. Shape:  torch.Size([1, 3, 378, 504])[0m
+[97m[INFO ] Model Forward Pass Done. Time: 0.01723456382751465 seconds[0m
+[97m[INFO ] Conversion to Prediction Done. Time: 0.0002720355987548828 seconds[0m
+[97m[INFO ] Processed Images Done taking 0.007822036743164062 seconds. Shape:  torch.Size([1, 3, 378, 504])[0m
+[97m[INFO ] Model Forward Pass Done. Time: 0.017186641693115234 seconds[0m
+[97m[INFO ] Conversion to Prediction Done. Time: 0.0002758502960205078 seconds[0m
+[97m[INFO ] Processed Images Done taking 0.007155179977416992 seconds. Shape:  torch.Size([1, 3, 378, 504])[0m
+[97m[INFO ] Model Forward Pass Done. Time: 0.017169475555419922 seconds[0m
+[97m[INFO ] Conversion to Prediction Done. Time: 0.0002827644348144531 seconds[0m
+[97m[INFO ] Processed Images Done taking 0.006807804107666016 seconds. Shape:  torch.Size([1, 3, 378, 504])[0m
+[97m[INFO ] Model Forward Pass Done. Time: 0.017240285873413086 seconds[0m
+[97m[INFO ] Conversion to Prediction Done. Time: 0.0002899169921875 seconds[0m
+[97m[INFO ] Processed Images Done taking 0.007073640823364258 seconds. Shape:  torch.Size([1, 3, 378, 504])[0m
+[97m[INFO ] Model Forward Pass Done. Time: 0.017232894897460938 seconds[0m
+[97m[INFO ] Conversion to Prediction Done. Time: 0.0002529621124267578 seconds[0m
+[97m[INFO ] Processed Images Done taking 0.006722688674926758 seconds. Shape:  torch.Size([1, 3, 378, 504])[0m
+[97m[INFO ] Model Forward Pass Done. Time: 0.017208576202392578 seconds[0m
+[97m[INFO ] Conversion to Prediction Done. Time: 0.00028252601623535156 seconds[0m
+[97m[INFO ] Processed Images Done taking 0.007799625396728516 seconds. Shape:  torch.Size([1, 3, 378, 504])[0m
+[97m[INFO ] Model Forward Pass Done. Time: 0.017251014709472656 seconds[0m
+[97m[INFO ] Conversion to Prediction Done. Time: 0.000270843505859375 seconds[0m
+[97m[INFO ] Processed Images Done taking 0.007394552230834961 seconds. Shape:  torch.Size([1, 3, 378, 504])[0m
+[97m[INFO ] Model Forward Pass Done. Time: 0.01722550392150879 seconds[0m
+[97m[INFO ] Conversion to Prediction Done. Time: 0.00027370452880859375 seconds[0m
+[97m[INFO ] Processed Images Done taking 0.007967472076416016 seconds. Shape:  torch.Size([1, 3, 378, 504])[0m
+[97m[INFO ] Model Forward Pass Done. Time: 0.017232418060302734 seconds[0m
+[97m[INFO ] Conversion to Prediction Done. Time: 0.00027489662170410156 seconds[0m
+[97m[INFO ] Processed Images Done taking 0.007512569427490234 seconds. Shape:  torch.Size([1, 3, 378, 504])[0m
+[97m[INFO ] Model Forward Pass Done. Time: 0.017181396484375 seconds[0m
+[97m[INFO ] Conversion to Prediction Done. Time: 0.0002884864807128906 seconds[0m
+[97m[INFO ] Processed Images Done taking 0.007371425628662109 seconds. Shape:  torch.Size([1, 3, 378, 504])[0m
+[97m[INFO ] Model Forward Pass Done. Time: 0.017162799835205078 seconds[0m
+[97m[INFO ] Conversion to Prediction Done. Time: 0.0002663135528564453 seconds[0m
+[97m[INFO ] Processed Images Done taking 0.00798654556274414 seconds. Shape:  torch.Size([1, 3, 378, 504])[0m
+[97m[INFO ] Model Forward Pass Done. Time: 0.017204999923706055 seconds[0m
+[97m[INFO ] Conversion to Prediction Done. Time: 0.0002765655517578125 seconds[0m
+[97m[INFO ] Processed Images Done taking 0.007496356964111328 seconds. Shape:  torch.Size([1, 3, 378, 504])[0m
+[97m[INFO ] Model Forward Pass Done. Time: 0.01719379425048828 seconds[0m
+[97m[INFO ] Conversion to Prediction Done. Time: 0.0002808570861816406 seconds[0m
+[97m[INFO ] Processed Images Done taking 0.006517648696899414 seconds. Shape:  torch.Size([1, 3, 378, 504])[0m
+[97m[INFO ] Model Forward Pass Done. Time: 0.01714468002319336 seconds[0m
+[97m[INFO ] Conversion to Prediction Done. Time: 0.00028204917907714844 seconds[0m
+[97m[INFO ] Processed Images Done taking 0.007683515548706055 seconds. Shape:  torch.Size([1, 3, 378, 504])[0m
+[97m[INFO ] Model Forward Pass Done. Time: 0.017153263092041016 seconds[0m
+[97m[INFO ] Conversion to Prediction Done. Time: 0.0002779960632324219 seconds[0m
+[97m[INFO ] Processed Images Done taking 0.007241010665893555 seconds. Shape:  torch.Size([1, 3, 378, 504])[0m
+[97m[INFO ] Model Forward Pass Done. Time: 0.01717543601989746 seconds[0m
+[97m[INFO ] Conversion to Prediction Done. Time: 0.00027298927307128906 seconds[0m
+[97m[INFO ] Processed Images Done taking 0.007918596267700195 seconds. Shape:  torch.Size([1, 3, 378, 504])[0m
+[97m[INFO ] Model Forward Pass Done. Time: 0.017191410064697266 seconds[0m
+[97m[INFO ] Conversion to Prediction Done. Time: 0.00029969215393066406 seconds[0m
+[97m[INFO ] Processed Images Done taking 0.006979465484619141 seconds. Shape:  torch.Size([1, 3, 378, 504])[0m
+[97m[INFO ] Model Forward Pass Done. Time: 0.017186880111694336 seconds[0m
+[97m[INFO ] Conversion to Prediction Done. Time: 0.0002675056457519531 seconds[0m
+[97m[INFO ] Processed Images Done taking 0.007931947708129883 seconds. Shape:  torch.Size([1, 3, 378, 504])[0m
+[97m[INFO ] Model Forward Pass Done. Time: 0.017165660858154297 seconds[0m
+[97m[INFO ] Conversion to Prediction Done. Time: 0.00028395652770996094 seconds[0m
+[97m[INFO ] Processed Images Done taking 0.007161140441894531 seconds. Shape:  torch.Size([1, 3, 378, 504])[0m
+[97m[INFO ] Model Forward Pass Done. Time: 0.01717066764831543 seconds[0m
+[97m[INFO ] Conversion to Prediction Done. Time: 0.0002770423889160156 seconds[0m
+[97m[INFO ] Processed Images Done taking 0.007887125015258789 seconds. Shape:  torch.Size([1, 3, 378, 504])[0m
+[97m[INFO ] Model Forward Pass Done. Time: 0.017179012298583984 seconds[0m
+[97m[INFO ] Conversion to Prediction Done. Time: 0.00028133392333984375 seconds[0m
+[97m[INFO ] Processed Images Done taking 0.0071239471435546875 seconds. Shape:  torch.Size([1, 3, 378, 504])[0m
+[97m[INFO ] Model Forward Pass Done. Time: 0.0171356201171875 seconds[0m
+[97m[INFO ] Conversion to Prediction Done. Time: 0.0002741813659667969 seconds[0m
+[97m[INFO ] Processed Images Done taking 0.0074045658111572266 seconds. Shape:  torch.Size([1, 3, 378, 504])[0m
+[97m[INFO ] Model Forward Pass Done. Time: 0.017154216766357422 seconds[0m
+[97m[INFO ] Conversion to Prediction Done. Time: 0.00028514862060546875 seconds[0m
+[97m[INFO ] Processed Images Done taking 0.007147789001464844 seconds. Shape:  torch.Size([1, 3, 378, 504])[0m
+[97m[INFO ] Model Forward Pass Done. Time: 0.017172813415527344 seconds[0m
+[97m[INFO ] Conversion to Prediction Done. Time: 0.0002760887145996094 seconds[0m
+[97m[INFO ] Processed Images Done taking 0.008347511291503906 seconds. Shape:  torch.Size([1, 3, 378, 504])[0m
+[97m[INFO ] Model Forward Pass Done. Time: 0.0171658992767334 seconds[0m
+[97m[INFO ] Conversion to Prediction Done. Time: 0.0002796649932861328 seconds[0m
+[97m[INFO ] Processed Images Done taking 0.006251335144042969 seconds. Shape:  torch.Size([1, 3, 378, 504])[0m
+[97m[INFO ] Model Forward Pass Done. Time: 0.017160654067993164 seconds[0m
+[97m[INFO ] Conversion to Prediction Done. Time: 0.0002639293670654297 seconds[0m
+[97m[INFO ] Processed Images Done taking 0.007243156433105469 seconds. Shape:  torch.Size([1, 3, 378, 504])[0m
+[97m[INFO ] Model Forward Pass Done. Time: 0.01715540885925293 seconds[0m
+[97m[INFO ] Conversion to Prediction Done. Time: 0.0002913475036621094 seconds[0m
+[97m[INFO ] Processed Images Done taking 0.007099151611328125 seconds. Shape:  torch.Size([1, 3, 378, 504])[0m
+[97m[INFO ] Model Forward Pass Done. Time: 0.017179489135742188 seconds[0m
+[97m[INFO ] Conversion to Prediction Done. Time: 0.00028014183044433594 seconds[0m
+[97m[INFO ] Processed Images Done taking 0.00765538215637207 seconds. Shape:  torch.Size([1, 3, 378, 504])[0m
+[97m[INFO ] Model Forward Pass Done. Time: 0.017184972763061523 seconds[0m
+[97m[INFO ] Conversion to Prediction Done. Time: 0.0002930164337158203 seconds[0m
+[97m[INFO ] Processed Images Done taking 0.0067272186279296875 seconds. Shape:  torch.Size([1, 3, 378, 504])[0m
+[97m[INFO ] Model Forward Pass Done. Time: 0.017179489135742188 seconds[0m
+[97m[INFO ] Conversion to Prediction Done. Time: 0.0002856254577636719 seconds[0m
+[97m[INFO ] Processed Images Done taking 0.00737452507019043 seconds. Shape:  torch.Size([1, 3, 378, 504])[0m
+[97m[INFO ] Model Forward Pass Done. Time: 0.017205476760864258 seconds[0m
+[97m[INFO ] Conversion to Prediction Done. Time: 0.0002722740173339844 seconds[0m
+[97m[INFO ] Processed Images Done taking 0.007216453552246094 seconds. Shape:  torch.Size([1, 3, 378, 504])[0m
+[97m[INFO ] Model Forward Pass Done. Time: 0.017244577407836914 seconds[0m
+[97m[INFO ] Conversion to Prediction Done. Time: 0.0002796649932861328 seconds[0m
+[97m[INFO ] Processed Images Done taking 0.008292198181152344 seconds. Shape:  torch.Size([1, 3, 378, 504])[0m
+[97m[INFO ] Model Forward Pass Done. Time: 0.017545223236083984 seconds[0m
+[97m[INFO ] Conversion to Prediction Done. Time: 0.0003094673156738281 seconds[0m
+[97m[INFO ] Processed Images Done taking 0.008096456527709961 seconds. Shape:  torch.Size([1, 3, 378, 504])[0m
+[97m[INFO ] Model Forward Pass Done. Time: 0.01696157455444336 seconds[0m
+[97m[INFO ] Conversion to Prediction Done. Time: 0.00027561187744140625 seconds[0m
+[97m[INFO ] Processed Images Done taking 0.009103059768676758 seconds. Shape:  torch.Size([1, 3, 378, 504])[0m
+[97m[INFO ] Model Forward Pass Done. Time: 0.01735663414001465 seconds[0m
+[97m[INFO ] Conversion to Prediction Done. Time: 0.000293731689453125 seconds[0m
+[97m[INFO ] Processed Images Done taking 0.009747743606567383 seconds. Shape:  torch.Size([1, 3, 378, 504])[0m
+[97m[INFO ] Model Forward Pass Done. Time: 0.017444849014282227 seconds[0m
+[97m[INFO ] Conversion to Prediction Done. Time: 0.00028705596923828125 seconds[0m
+[97m[INFO ] Processed Images Done taking 0.008131980895996094 seconds. Shape:  torch.Size([1, 3, 378, 504])[0m
+[97m[INFO ] Model Forward Pass Done. Time: 0.01735711097717285 seconds[0m
+[97m[INFO ] Conversion to Prediction Done. Time: 0.00028204917907714844 seconds[0m
+[97m[INFO ] Processed Images Done taking 0.006627798080444336 seconds. Shape:  torch.Size([1, 3, 378, 504])[0m
+[97m[INFO ] Model Forward Pass Done. Time: 0.017279386520385742 seconds[0m
+[97m[INFO ] Conversion to Prediction Done. Time: 0.0002675056457519531 seconds[0m
+[97m[INFO ] Processed Images Done taking 0.00735783576965332 seconds. Shape:  torch.Size([1, 3, 378, 504])[0m
+[97m[INFO ] Model Forward Pass Done. Time: 0.01722550392150879 seconds[0m
+[97m[INFO ] Conversion to Prediction Done. Time: 0.00026679039001464844 seconds[0m
+[97m[INFO ] Processed Images Done taking 0.007382631301879883 seconds. Shape:  torch.Size([1, 3, 378, 504])[0m
+[97m[INFO ] Model Forward Pass Done. Time: 0.017261028289794922 seconds[0m
+[97m[INFO ] Conversion to Prediction Done. Time: 0.0002601146697998047 seconds[0m
+[97m[INFO ] Processed Images Done taking 0.007080078125 seconds. Shape:  torch.Size([1, 3, 378, 504])[0m
+[97m[INFO ] Model Forward Pass Done. Time: 0.017236948013305664 seconds[0m
+[97m[INFO ] Conversion to Prediction Done. Time: 0.0002903938293457031 seconds[0m
+[97m[INFO ] Processed Images Done taking 0.007070779800415039 seconds. Shape:  torch.Size([1, 3, 378, 504])[0m
+[97m[INFO ] Model Forward Pass Done. Time: 0.01720881462097168 seconds[0m
+[97m[INFO ] Conversion to Prediction Done. Time: 0.00029587745666503906 seconds[0m
+[97m[INFO ] Processed Images Done taking 0.008536100387573242 seconds. Shape:  torch.Size([1, 3, 378, 504])[0m
+[97m[INFO ] Model Forward Pass Done. Time: 0.01721811294555664 seconds[0m
+[97m[INFO ] Conversion to Prediction Done. Time: 0.0003020763397216797 seconds[0m
+[97m[INFO ] Processed Images Done taking 0.007227659225463867 seconds. Shape:  torch.Size([1, 3, 378, 504])[0m
+[97m[INFO ] Model Forward Pass Done. Time: 0.01729726791381836 seconds[0m
+[97m[INFO ] Conversion to Prediction Done. Time: 0.00027942657470703125 seconds[0m
+[97m[INFO ] Processed Images Done taking 0.007970094680786133 seconds. Shape:  torch.Size([1, 3, 378, 504])[0m
+[97m[INFO ] Model Forward Pass Done. Time: 0.01763463020324707 seconds[0m
+[97m[INFO ] Conversion to Prediction Done. Time: 0.00029087066650390625 seconds[0m
+[97m[INFO ] Processed Images Done taking 0.008166074752807617 seconds. Shape:  torch.Size([1, 3, 378, 504])[0m
+[97m[INFO ] Model Forward Pass Done. Time: 0.017368078231811523 seconds[0m
+[97m[INFO ] Conversion to Prediction Done. Time: 0.00029015541076660156 seconds[0m
+[97m[INFO ] Processed Images Done taking 0.007794618606567383 seconds. Shape:  torch.Size([1, 3, 378, 504])[0m
+[97m[INFO ] Model Forward Pass Done. Time: 0.01727294921875 seconds[0m
+[97m[INFO ] Conversion to Prediction Done. Time: 0.0002627372741699219 seconds[0m
+[97m[INFO ] Processed Images Done taking 0.0071561336517333984 seconds. Shape:  torch.Size([1, 3, 378, 504])[0m
+[97m[INFO ] Model Forward Pass Done. Time: 0.017279386520385742 seconds[0m
+[97m[INFO ] Conversion to Prediction Done. Time: 0.00028061866760253906 seconds[0m
+[97m[INFO ] Processed Images Done taking 0.008227825164794922 seconds. Shape:  torch.Size([1, 3, 378, 504])[0m
+[97m[INFO ] Model Forward Pass Done. Time: 0.01733994483947754 seconds[0m
+[97m[INFO ] Conversion to Prediction Done. Time: 0.0002758502960205078 seconds[0m
+  [ 400/654] idx=0947  abs_rel=0.1095  d1=0.9918  (20.0s)
+[97m[INFO ] Processed Images Done taking 0.007582664489746094 seconds. Shape:  torch.Size([1, 3, 378, 504])[0m
+[97m[INFO ] Model Forward Pass Done. Time: 0.01735663414001465 seconds[0m
+[97m[INFO ] Conversion to Prediction Done. Time: 0.0002665519714355469 seconds[0m
+[97m[INFO ] Processed Images Done taking 0.008403539657592773 seconds. Shape:  torch.Size([1, 3, 378, 504])[0m
+[97m[INFO ] Model Forward Pass Done. Time: 0.01738429069519043 seconds[0m
+[97m[INFO ] Conversion to Prediction Done. Time: 0.00027823448181152344 seconds[0m
+[97m[INFO ] Processed Images Done taking 0.007847785949707031 seconds. Shape:  torch.Size([1, 3, 378, 504])[0m
+[97m[INFO ] Model Forward Pass Done. Time: 0.017405986785888672 seconds[0m
+[97m[INFO ] Conversion to Prediction Done. Time: 0.00029850006103515625 seconds[0m
+[97m[INFO ] Processed Images Done taking 0.007849454879760742 seconds. Shape:  torch.Size([1, 3, 378, 504])[0m
+[97m[INFO ] Model Forward Pass Done. Time: 0.017394304275512695 seconds[0m
+[97m[INFO ] Conversion to Prediction Done. Time: 0.0002574920654296875 seconds[0m
+[97m[INFO ] Processed Images Done taking 0.007534980773925781 seconds. Shape:  torch.Size([1, 3, 378, 504])[0m
+[97m[INFO ] Model Forward Pass Done. Time: 0.017386436462402344 seconds[0m
+[97m[INFO ] Conversion to Prediction Done. Time: 0.0002739429473876953 seconds[0m
+[97m[INFO ] Processed Images Done taking 0.007791280746459961 seconds. Shape:  torch.Size([1, 3, 378, 504])[0m
+[97m[INFO ] Model Forward Pass Done. Time: 0.017350435256958008 seconds[0m
+[97m[INFO ] Conversion to Prediction Done. Time: 0.00028443336486816406 seconds[0m
+[97m[INFO ] Processed Images Done taking 0.00742650032043457 seconds. Shape:  torch.Size([1, 3, 378, 504])[0m
+[97m[INFO ] Model Forward Pass Done. Time: 0.017435073852539062 seconds[0m
+[97m[INFO ] Conversion to Prediction Done. Time: 0.000263214111328125 seconds[0m
+[97m[INFO ] Processed Images Done taking 0.00832223892211914 seconds. Shape:  torch.Size([1, 3, 378, 504])[0m
+[97m[INFO ] Model Forward Pass Done. Time: 0.0174558162689209 seconds[0m
+[97m[INFO ] Conversion to Prediction Done. Time: 0.00026297569274902344 seconds[0m
+[97m[INFO ] Processed Images Done taking 0.007666826248168945 seconds. Shape:  torch.Size([1, 3, 378, 504])[0m
+[97m[INFO ] Model Forward Pass Done. Time: 0.017383575439453125 seconds[0m
+[97m[INFO ] Conversion to Prediction Done. Time: 0.0002675056457519531 seconds[0m
+[97m[INFO ] Processed Images Done taking 0.00759577751159668 seconds. Shape:  torch.Size([1, 3, 378, 504])[0m
+[97m[INFO ] Model Forward Pass Done. Time: 0.01740407943725586 seconds[0m
+[97m[INFO ] Conversion to Prediction Done. Time: 0.0002608299255371094 seconds[0m
+[97m[INFO ] Processed Images Done taking 0.006818056106567383 seconds. Shape:  torch.Size([1, 3, 378, 504])[0m
+[97m[INFO ] Model Forward Pass Done. Time: 0.017411231994628906 seconds[0m
+[97m[INFO ] Conversion to Prediction Done. Time: 0.00027680397033691406 seconds[0m
+[97m[INFO ] Processed Images Done taking 0.007995843887329102 seconds. Shape:  torch.Size([1, 3, 378, 504])[0m
+[97m[INFO ] Model Forward Pass Done. Time: 0.017386436462402344 seconds[0m
+[97m[INFO ] Conversion to Prediction Done. Time: 0.00027251243591308594 seconds[0m
+[97m[INFO ] Processed Images Done taking 0.008367538452148438 seconds. Shape:  torch.Size([1, 3, 378, 504])[0m
+[97m[INFO ] Model Forward Pass Done. Time: 0.017409086227416992 seconds[0m
+[97m[INFO ] Conversion to Prediction Done. Time: 0.00028967857360839844 seconds[0m
+[97m[INFO ] Processed Images Done taking 0.00792241096496582 seconds. Shape:  torch.Size([1, 3, 378, 504])[0m
+[97m[INFO ] Model Forward Pass Done. Time: 0.017383098602294922 seconds[0m
+[97m[INFO ] Conversion to Prediction Done. Time: 0.00027942657470703125 seconds[0m
+[97m[INFO ] Processed Images Done taking 0.008325815200805664 seconds. Shape:  torch.Size([1, 3, 378, 504])[0m
+[97m[INFO ] Model Forward Pass Done. Time: 0.01739048957824707 seconds[0m
+[97m[INFO ] Conversion to Prediction Done. Time: 0.0002713203430175781 seconds[0m
+[97m[INFO ] Processed Images Done taking 0.007719993591308594 seconds. Shape:  torch.Size([1, 3, 378, 504])[0m
+[97m[INFO ] Model Forward Pass Done. Time: 0.01740264892578125 seconds[0m
+[97m[INFO ] Conversion to Prediction Done. Time: 0.00026106834411621094 seconds[0m
+[97m[INFO ] Processed Images Done taking 0.007510662078857422 seconds. Shape:  torch.Size([1, 3, 378, 504])[0m
+[97m[INFO ] Model Forward Pass Done. Time: 0.01738572120666504 seconds[0m
+[97m[INFO ] Conversion to Prediction Done. Time: 0.0002930164337158203 seconds[0m
+[97m[INFO ] Processed Images Done taking 0.009250402450561523 seconds. Shape:  torch.Size([1, 3, 378, 504])[0m
+[97m[INFO ] Model Forward Pass Done. Time: 0.017630815505981445 seconds[0m
+[97m[INFO ] Conversion to Prediction Done. Time: 0.0002803802490234375 seconds[0m
+[97m[INFO ] Processed Images Done taking 0.007303953170776367 seconds. Shape:  torch.Size([1, 3, 378, 504])[0m
+[97m[INFO ] Model Forward Pass Done. Time: 0.01745438575744629 seconds[0m
+[97m[INFO ] Conversion to Prediction Done. Time: 0.00026226043701171875 seconds[0m
+[97m[INFO ] Processed Images Done taking 0.008064031600952148 seconds. Shape:  torch.Size([1, 3, 378, 504])[0m
+[97m[INFO ] Model Forward Pass Done. Time: 0.017438173294067383 seconds[0m
+[97m[INFO ] Conversion to Prediction Done. Time: 0.0002796649932861328 seconds[0m
+[97m[INFO ] Processed Images Done taking 0.0069081783294677734 seconds. Shape:  torch.Size([1, 3, 378, 504])[0m
+[97m[INFO ] Model Forward Pass Done. Time: 0.017430782318115234 seconds[0m
+[97m[INFO ] Conversion to Prediction Done. Time: 0.0002830028533935547 seconds[0m
+[97m[INFO ] Processed Images Done taking 0.008762359619140625 seconds. Shape:  torch.Size([1, 3, 378, 504])[0m
+[97m[INFO ] Model Forward Pass Done. Time: 0.01746082305908203 seconds[0m
+[97m[INFO ] Conversion to Prediction Done. Time: 0.00027871131896972656 seconds[0m
+[97m[INFO ] Processed Images Done taking 0.007810354232788086 seconds. Shape:  torch.Size([1, 3, 378, 504])[0m
+[97m[INFO ] Model Forward Pass Done. Time: 0.017430543899536133 seconds[0m
+[97m[INFO ] Conversion to Prediction Done. Time: 0.0002827644348144531 seconds[0m
+[97m[INFO ] Processed Images Done taking 0.010858535766601562 seconds. Shape:  torch.Size([1, 3, 378, 504])[0m
+[97m[INFO ] Model Forward Pass Done. Time: 0.017481565475463867 seconds[0m
+[97m[INFO ] Conversion to Prediction Done. Time: 0.00027251243591308594 seconds[0m
+[97m[INFO ] Processed Images Done taking 0.006653308868408203 seconds. Shape:  torch.Size([1, 3, 378, 504])[0m
+[97m[INFO ] Model Forward Pass Done. Time: 0.01742839813232422 seconds[0m
+[97m[INFO ] Conversion to Prediction Done. Time: 0.00028777122497558594 seconds[0m
+[97m[INFO ] Processed Images Done taking 0.008555173873901367 seconds. Shape:  torch.Size([1, 3, 378, 504])[0m
+[97m[INFO ] Model Forward Pass Done. Time: 0.017410755157470703 seconds[0m
+[97m[INFO ] Conversion to Prediction Done. Time: 0.0002677440643310547 seconds[0m
+[97m[INFO ] Processed Images Done taking 0.0076291561126708984 seconds. Shape:  torch.Size([1, 3, 378, 504])[0m
+[97m[INFO ] Model Forward Pass Done. Time: 0.017449140548706055 seconds[0m
+[97m[INFO ] Conversion to Prediction Done. Time: 0.0002732276916503906 seconds[0m
+[97m[INFO ] Processed Images Done taking 0.00797724723815918 seconds. Shape:  torch.Size([1, 3, 378, 504])[0m
+[97m[INFO ] Model Forward Pass Done. Time: 0.01741170883178711 seconds[0m
+[97m[INFO ] Conversion to Prediction Done. Time: 0.0003104209899902344 seconds[0m
+[97m[INFO ] Processed Images Done taking 0.007629871368408203 seconds. Shape:  torch.Size([1, 3, 378, 504])[0m
+[97m[INFO ] Model Forward Pass Done. Time: 0.01741647720336914 seconds[0m
+[97m[INFO ] Conversion to Prediction Done. Time: 0.00027370452880859375 seconds[0m
+[97m[INFO ] Processed Images Done taking 0.007809162139892578 seconds. Shape:  torch.Size([1, 3, 378, 504])[0m
+[97m[INFO ] Model Forward Pass Done. Time: 0.01745915412902832 seconds[0m
+[97m[INFO ] Conversion to Prediction Done. Time: 0.00026035308837890625 seconds[0m
+[97m[INFO ] Processed Images Done taking 0.008231401443481445 seconds. Shape:  torch.Size([1, 3, 378, 504])[0m
+[97m[INFO ] Model Forward Pass Done. Time: 0.017449617385864258 seconds[0m
+[97m[INFO ] Conversion to Prediction Done. Time: 0.000286102294921875 seconds[0m
+[97m[INFO ] Processed Images Done taking 0.007837533950805664 seconds. Shape:  torch.Size([1, 3, 378, 504])[0m
+[97m[INFO ] Model Forward Pass Done. Time: 0.017414569854736328 seconds[0m
+[97m[INFO ] Conversion to Prediction Done. Time: 0.00030159950256347656 seconds[0m
+[97m[INFO ] Processed Images Done taking 0.007345914840698242 seconds. Shape:  torch.Size([1, 3, 378, 504])[0m
+[97m[INFO ] Model Forward Pass Done. Time: 0.01738595962524414 seconds[0m
+[97m[INFO ] Conversion to Prediction Done. Time: 0.00026535987854003906 seconds[0m
+[97m[INFO ] Processed Images Done taking 0.008124113082885742 seconds. Shape:  torch.Size([1, 3, 378, 504])[0m
+[97m[INFO ] Model Forward Pass Done. Time: 0.017420053482055664 seconds[0m
+[97m[INFO ] Conversion to Prediction Done. Time: 0.00025773048400878906 seconds[0m
+[97m[INFO ] Processed Images Done taking 0.007044315338134766 seconds. Shape:  torch.Size([1, 3, 378, 504])[0m
+[97m[INFO ] Model Forward Pass Done. Time: 0.017418622970581055 seconds[0m
+[97m[INFO ] Conversion to Prediction Done. Time: 0.00028014183044433594 seconds[0m
+[97m[INFO ] Processed Images Done taking 0.007792472839355469 seconds. Shape:  torch.Size([1, 3, 378, 504])[0m
+[97m[INFO ] Model Forward Pass Done. Time: 0.017308950424194336 seconds[0m
+[97m[INFO ] Conversion to Prediction Done. Time: 0.0002713203430175781 seconds[0m
+[97m[INFO ] Processed Images Done taking 0.007060050964355469 seconds. Shape:  torch.Size([1, 3, 378, 504])[0m
+[97m[INFO ] Model Forward Pass Done. Time: 0.017230987548828125 seconds[0m
+[97m[INFO ] Conversion to Prediction Done. Time: 0.0002799034118652344 seconds[0m
+[97m[INFO ] Processed Images Done taking 0.007390499114990234 seconds. Shape:  torch.Size([1, 3, 378, 504])[0m
+[97m[INFO ] Model Forward Pass Done. Time: 0.01723313331604004 seconds[0m
+[97m[INFO ] Conversion to Prediction Done. Time: 0.0002884864807128906 seconds[0m
+[97m[INFO ] Processed Images Done taking 0.006780147552490234 seconds. Shape:  torch.Size([1, 3, 378, 504])[0m
+[97m[INFO ] Model Forward Pass Done. Time: 0.017203092575073242 seconds[0m
+[97m[INFO ] Conversion to Prediction Done. Time: 0.000293731689453125 seconds[0m
+[97m[INFO ] Processed Images Done taking 0.007692575454711914 seconds. Shape:  torch.Size([1, 3, 378, 504])[0m
+[97m[INFO ] Model Forward Pass Done. Time: 0.01720118522644043 seconds[0m
+[97m[INFO ] Conversion to Prediction Done. Time: 0.0002810955047607422 seconds[0m
+[97m[INFO ] Processed Images Done taking 0.007416486740112305 seconds. Shape:  torch.Size([1, 3, 378, 504])[0m
+[97m[INFO ] Model Forward Pass Done. Time: 0.017195940017700195 seconds[0m
+[97m[INFO ] Conversion to Prediction Done. Time: 0.0002884864807128906 seconds[0m
+[97m[INFO ] Processed Images Done taking 0.00697016716003418 seconds. Shape:  torch.Size([1, 3, 378, 504])[0m
+[97m[INFO ] Model Forward Pass Done. Time: 0.017180681228637695 seconds[0m
+[97m[INFO ] Conversion to Prediction Done. Time: 0.0002696514129638672 seconds[0m
+[97m[INFO ] Processed Images Done taking 0.00681614875793457 seconds. Shape:  torch.Size([1, 3, 378, 504])[0m
+[97m[INFO ] Model Forward Pass Done. Time: 0.01719045639038086 seconds[0m
+[97m[INFO ] Conversion to Prediction Done. Time: 0.00028252601623535156 seconds[0m
+[97m[INFO ] Processed Images Done taking 0.007242441177368164 seconds. Shape:  torch.Size([1, 3, 378, 504])[0m
+[97m[INFO ] Model Forward Pass Done. Time: 0.017171621322631836 seconds[0m
+[97m[INFO ] Conversion to Prediction Done. Time: 0.0002734661102294922 seconds[0m
+[97m[INFO ] Processed Images Done taking 0.007073163986206055 seconds. Shape:  torch.Size([1, 3, 378, 504])[0m
+[97m[INFO ] Model Forward Pass Done. Time: 0.01720452308654785 seconds[0m
+[97m[INFO ] Conversion to Prediction Done. Time: 0.00032448768615722656 seconds[0m
+[97m[INFO ] Processed Images Done taking 0.0073053836822509766 seconds. Shape:  torch.Size([1, 3, 378, 504])[0m
+[97m[INFO ] Model Forward Pass Done. Time: 0.017201662063598633 seconds[0m
+[97m[INFO ] Conversion to Prediction Done. Time: 0.0002713203430175781 seconds[0m
+[97m[INFO ] Processed Images Done taking 0.0068035125732421875 seconds. Shape:  torch.Size([1, 3, 378, 504])[0m
+[97m[INFO ] Model Forward Pass Done. Time: 0.017177343368530273 seconds[0m
+[97m[INFO ] Conversion to Prediction Done. Time: 0.0002796649932861328 seconds[0m
+[97m[INFO ] Processed Images Done taking 0.007420778274536133 seconds. Shape:  torch.Size([1, 3, 378, 504])[0m
+[97m[INFO ] Model Forward Pass Done. Time: 0.017164945602416992 seconds[0m
+[97m[INFO ] Conversion to Prediction Done. Time: 0.0002830028533935547 seconds[0m
+[97m[INFO ] Processed Images Done taking 0.0072672367095947266 seconds. Shape:  torch.Size([1, 3, 378, 504])[0m
+[97m[INFO ] Model Forward Pass Done. Time: 0.017170190811157227 seconds[0m
+[97m[INFO ] Conversion to Prediction Done. Time: 0.0002779960632324219 seconds[0m
+[97m[INFO ] Processed Images Done taking 0.006818294525146484 seconds. Shape:  torch.Size([1, 3, 378, 504])[0m
+[97m[INFO ] Model Forward Pass Done. Time: 0.017179250717163086 seconds[0m
+[97m[INFO ] Conversion to Prediction Done. Time: 0.0002827644348144531 seconds[0m
+  [ 450/654] idx=1083  abs_rel=0.0839  d1=0.9984  (22.6s)
+[97m[INFO ] Processed Images Done taking 0.0069735050201416016 seconds. Shape:  torch.Size([1, 3, 378, 504])[0m
+[97m[INFO ] Model Forward Pass Done. Time: 0.017198562622070312 seconds[0m
+[97m[INFO ] Conversion to Prediction Done. Time: 0.0002846717834472656 seconds[0m
+[97m[INFO ] Processed Images Done taking 0.007944822311401367 seconds. Shape:  torch.Size([1, 3, 378, 504])[0m
+[97m[INFO ] Model Forward Pass Done. Time: 0.017186880111694336 seconds[0m
+[97m[INFO ] Conversion to Prediction Done. Time: 0.000286102294921875 seconds[0m
+[97m[INFO ] Processed Images Done taking 0.007542133331298828 seconds. Shape:  torch.Size([1, 3, 378, 504])[0m
+[97m[INFO ] Model Forward Pass Done. Time: 0.017186403274536133 seconds[0m
+[97m[INFO ] Conversion to Prediction Done. Time: 0.0002772808074951172 seconds[0m
+[97m[INFO ] Processed Images Done taking 0.008483648300170898 seconds. Shape:  torch.Size([1, 3, 378, 504])[0m
+[97m[INFO ] Model Forward Pass Done. Time: 0.017216920852661133 seconds[0m
+[97m[INFO ] Conversion to Prediction Done. Time: 0.0002639293670654297 seconds[0m
+[97m[INFO ] Processed Images Done taking 0.00701451301574707 seconds. Shape:  torch.Size([1, 3, 378, 504])[0m
+[97m[INFO ] Model Forward Pass Done. Time: 0.017208576202392578 seconds[0m
+[97m[INFO ] Conversion to Prediction Done. Time: 0.00027561187744140625 seconds[0m
+[97m[INFO ] Processed Images Done taking 0.00940704345703125 seconds. Shape:  torch.Size([1, 3, 378, 504])[0m
+[97m[INFO ] Model Forward Pass Done. Time: 0.017613649368286133 seconds[0m
+[97m[INFO ] Conversion to Prediction Done. Time: 0.00027441978454589844 seconds[0m
+[97m[INFO ] Processed Images Done taking 0.008033990859985352 seconds. Shape:  torch.Size([1, 3, 378, 504])[0m
+[97m[INFO ] Model Forward Pass Done. Time: 0.017350435256958008 seconds[0m
+[97m[INFO ] Conversion to Prediction Done. Time: 0.0003190040588378906 seconds[0m
+[97m[INFO ] Processed Images Done taking 0.007842302322387695 seconds. Shape:  torch.Size([1, 3, 378, 504])[0m
+[97m[INFO ] Model Forward Pass Done. Time: 0.01731252670288086 seconds[0m
+[97m[INFO ] Conversion to Prediction Done. Time: 0.00029778480529785156 seconds[0m
+[97m[INFO ] Processed Images Done taking 0.007042884826660156 seconds. Shape:  torch.Size([1, 3, 378, 504])[0m
+[97m[INFO ] Model Forward Pass Done. Time: 0.017319202423095703 seconds[0m
+[97m[INFO ] Conversion to Prediction Done. Time: 0.00028228759765625 seconds[0m
+[97m[INFO ] Processed Images Done taking 0.007292985916137695 seconds. Shape:  torch.Size([1, 3, 378, 504])[0m
+[97m[INFO ] Model Forward Pass Done. Time: 0.017279624938964844 seconds[0m
+[97m[INFO ] Conversion to Prediction Done. Time: 0.0002880096435546875 seconds[0m
+[97m[INFO ] Processed Images Done taking 0.007288694381713867 seconds. Shape:  torch.Size([1, 3, 378, 504])[0m
+[97m[INFO ] Model Forward Pass Done. Time: 0.017305374145507812 seconds[0m
+[97m[INFO ] Conversion to Prediction Done. Time: 0.0002696514129638672 seconds[0m
+[97m[INFO ] Processed Images Done taking 0.007283210754394531 seconds. Shape:  torch.Size([1, 3, 378, 504])[0m
+[97m[INFO ] Model Forward Pass Done. Time: 0.017314672470092773 seconds[0m
+[97m[INFO ] Conversion to Prediction Done. Time: 0.0002887248992919922 seconds[0m
+[97m[INFO ] Processed Images Done taking 0.00842142105102539 seconds. Shape:  torch.Size([1, 3, 378, 504])[0m
+[97m[INFO ] Model Forward Pass Done. Time: 0.01727128028869629 seconds[0m
+[97m[INFO ] Conversion to Prediction Done. Time: 0.00027942657470703125 seconds[0m
+[97m[INFO ] Processed Images Done taking 0.0076904296875 seconds. Shape:  torch.Size([1, 3, 378, 504])[0m
+[97m[INFO ] Model Forward Pass Done. Time: 0.017179489135742188 seconds[0m
+[97m[INFO ] Conversion to Prediction Done. Time: 0.00028133392333984375 seconds[0m
+[97m[INFO ] Processed Images Done taking 0.005783557891845703 seconds. Shape:  torch.Size([1, 3, 378, 504])[0m
+[97m[INFO ] Model Forward Pass Done. Time: 0.017191648483276367 seconds[0m
+[97m[INFO ] Conversion to Prediction Done. Time: 0.0002810955047607422 seconds[0m
+[97m[INFO ] Processed Images Done taking 0.00737762451171875 seconds. Shape:  torch.Size([1, 3, 378, 504])[0m
+[97m[INFO ] Model Forward Pass Done. Time: 0.017165184020996094 seconds[0m
+[97m[INFO ] Conversion to Prediction Done. Time: 0.0002789497375488281 seconds[0m
+[97m[INFO ] Processed Images Done taking 0.007864952087402344 seconds. Shape:  torch.Size([1, 3, 378, 504])[0m
+[97m[INFO ] Model Forward Pass Done. Time: 0.0172121524810791 seconds[0m
+[97m[INFO ] Conversion to Prediction Done. Time: 0.00028824806213378906 seconds[0m
+[97m[INFO ] Processed Images Done taking 0.007341623306274414 seconds. Shape:  torch.Size([1, 3, 378, 504])[0m
+[97m[INFO ] Model Forward Pass Done. Time: 0.017166614532470703 seconds[0m
+[97m[INFO ] Conversion to Prediction Done. Time: 0.00025653839111328125 seconds[0m
+[97m[INFO ] Processed Images Done taking 0.0069828033447265625 seconds. Shape:  torch.Size([1, 3, 378, 504])[0m
+[97m[INFO ] Model Forward Pass Done. Time: 0.01715683937072754 seconds[0m
+[97m[INFO ] Conversion to Prediction Done. Time: 0.00028395652770996094 seconds[0m
+[97m[INFO ] Processed Images Done taking 0.0075511932373046875 seconds. Shape:  torch.Size([1, 3, 378, 504])[0m
+[97m[INFO ] Model Forward Pass Done. Time: 0.017199039459228516 seconds[0m
+[97m[INFO ] Conversion to Prediction Done. Time: 0.0002899169921875 seconds[0m
+[97m[INFO ] Processed Images Done taking 0.007030010223388672 seconds. Shape:  torch.Size([1, 3, 378, 504])[0m
+[97m[INFO ] Model Forward Pass Done. Time: 0.017193317413330078 seconds[0m
+[97m[INFO ] Conversion to Prediction Done. Time: 0.0002961158752441406 seconds[0m
+[97m[INFO ] Processed Images Done taking 0.00798797607421875 seconds. Shape:  torch.Size([1, 3, 378, 504])[0m
+[97m[INFO ] Model Forward Pass Done. Time: 0.01715874671936035 seconds[0m
+[97m[INFO ] Conversion to Prediction Done. Time: 0.00026798248291015625 seconds[0m
+[97m[INFO ] Processed Images Done taking 0.007283449172973633 seconds. Shape:  torch.Size([1, 3, 378, 504])[0m
+[97m[INFO ] Model Forward Pass Done. Time: 0.01715373992919922 seconds[0m
+[97m[INFO ] Conversion to Prediction Done. Time: 0.0002758502960205078 seconds[0m
+[97m[INFO ] Processed Images Done taking 0.007505178451538086 seconds. Shape:  torch.Size([1, 3, 378, 504])[0m
+[97m[INFO ] Model Forward Pass Done. Time: 0.01715707778930664 seconds[0m
+[97m[INFO ] Conversion to Prediction Done. Time: 0.0002777576446533203 seconds[0m
+[97m[INFO ] Processed Images Done taking 0.008324623107910156 seconds. Shape:  torch.Size([1, 3, 378, 504])[0m
+[97m[INFO ] Model Forward Pass Done. Time: 0.017188549041748047 seconds[0m
+[97m[INFO ] Conversion to Prediction Done. Time: 0.0002853870391845703 seconds[0m
+[97m[INFO ] Processed Images Done taking 0.006948947906494141 seconds. Shape:  torch.Size([1, 3, 378, 504])[0m
+[97m[INFO ] Model Forward Pass Done. Time: 0.017178773880004883 seconds[0m
+[97m[INFO ] Conversion to Prediction Done. Time: 0.0002853870391845703 seconds[0m
+[97m[INFO ] Processed Images Done taking 0.00759124755859375 seconds. Shape:  torch.Size([1, 3, 378, 504])[0m
+[97m[INFO ] Model Forward Pass Done. Time: 0.017134904861450195 seconds[0m
+[97m[INFO ] Conversion to Prediction Done. Time: 0.0002834796905517578 seconds[0m
+[97m[INFO ] Processed Images Done taking 0.007084846496582031 seconds. Shape:  torch.Size([1, 3, 378, 504])[0m
+[97m[INFO ] Model Forward Pass Done. Time: 0.017156362533569336 seconds[0m
+[97m[INFO ] Conversion to Prediction Done. Time: 0.0002892017364501953 seconds[0m
+[97m[INFO ] Processed Images Done taking 0.0063359737396240234 seconds. Shape:  torch.Size([1, 3, 378, 504])[0m
+[97m[INFO ] Model Forward Pass Done. Time: 0.01717853546142578 seconds[0m
+[97m[INFO ] Conversion to Prediction Done. Time: 0.00027298927307128906 seconds[0m
+[97m[INFO ] Processed Images Done taking 0.007554531097412109 seconds. Shape:  torch.Size([1, 3, 378, 504])[0m
+[97m[INFO ] Model Forward Pass Done. Time: 0.017162084579467773 seconds[0m
+[97m[INFO ] Conversion to Prediction Done. Time: 0.00027823448181152344 seconds[0m
+[97m[INFO ] Processed Images Done taking 0.008165836334228516 seconds. Shape:  torch.Size([1, 3, 378, 504])[0m
+[97m[INFO ] Model Forward Pass Done. Time: 0.01713728904724121 seconds[0m
+[97m[INFO ] Conversion to Prediction Done. Time: 0.0002720355987548828 seconds[0m
+[97m[INFO ] Processed Images Done taking 0.0076122283935546875 seconds. Shape:  torch.Size([1, 3, 378, 504])[0m
+[97m[INFO ] Model Forward Pass Done. Time: 0.017164230346679688 seconds[0m
+[97m[INFO ] Conversion to Prediction Done. Time: 0.00028204917907714844 seconds[0m
+[97m[INFO ] Processed Images Done taking 0.00803375244140625 seconds. Shape:  torch.Size([1, 3, 378, 504])[0m
+[97m[INFO ] Model Forward Pass Done. Time: 0.01718878746032715 seconds[0m
+[97m[INFO ] Conversion to Prediction Done. Time: 0.0002989768981933594 seconds[0m
+[97m[INFO ] Processed Images Done taking 0.006899595260620117 seconds. Shape:  torch.Size([1, 3, 378, 504])[0m
+[97m[INFO ] Model Forward Pass Done. Time: 0.01718449592590332 seconds[0m
+[97m[INFO ] Conversion to Prediction Done. Time: 0.0002906322479248047 seconds[0m
+[97m[INFO ] Processed Images Done taking 0.00789785385131836 seconds. Shape:  torch.Size([1, 3, 378, 504])[0m
+[97m[INFO ] Model Forward Pass Done. Time: 0.017145872116088867 seconds[0m
+[97m[INFO ] Conversion to Prediction Done. Time: 0.00028586387634277344 seconds[0m
+[97m[INFO ] Processed Images Done taking 0.007670402526855469 seconds. Shape:  torch.Size([1, 3, 378, 504])[0m
+[97m[INFO ] Model Forward Pass Done. Time: 0.017128944396972656 seconds[0m
+[97m[INFO ] Conversion to Prediction Done. Time: 0.00026726722717285156 seconds[0m
+[97m[INFO ] Processed Images Done taking 0.006867408752441406 seconds. Shape:  torch.Size([1, 3, 378, 504])[0m
+[97m[INFO ] Model Forward Pass Done. Time: 0.017173051834106445 seconds[0m
+[97m[INFO ] Conversion to Prediction Done. Time: 0.0002932548522949219 seconds[0m
+[97m[INFO ] Processed Images Done taking 0.008153915405273438 seconds. Shape:  torch.Size([1, 3, 378, 504])[0m
+[97m[INFO ] Model Forward Pass Done. Time: 0.017179250717163086 seconds[0m
+[97m[INFO ] Conversion to Prediction Done. Time: 0.0002856254577636719 seconds[0m
+[97m[INFO ] Processed Images Done taking 0.01099848747253418 seconds. Shape:  torch.Size([1, 3, 378, 504])[0m
+[97m[INFO ] Model Forward Pass Done. Time: 0.0171964168548584 seconds[0m
+[97m[INFO ] Conversion to Prediction Done. Time: 0.000278472900390625 seconds[0m
+[97m[INFO ] Processed Images Done taking 0.007292985916137695 seconds. Shape:  torch.Size([1, 3, 378, 504])[0m
+[97m[INFO ] Model Forward Pass Done. Time: 0.017141342163085938 seconds[0m
+[97m[INFO ] Conversion to Prediction Done. Time: 0.00028204917907714844 seconds[0m
+[97m[INFO ] Processed Images Done taking 0.007941246032714844 seconds. Shape:  torch.Size([1, 3, 378, 504])[0m
+[97m[INFO ] Model Forward Pass Done. Time: 0.01716923713684082 seconds[0m
+[97m[INFO ] Conversion to Prediction Done. Time: 0.00028777122497558594 seconds[0m
+[97m[INFO ] Processed Images Done taking 0.007906675338745117 seconds. Shape:  torch.Size([1, 3, 378, 504])[0m
+[97m[INFO ] Model Forward Pass Done. Time: 0.017176389694213867 seconds[0m
+[97m[INFO ] Conversion to Prediction Done. Time: 0.0002918243408203125 seconds[0m
+[97m[INFO ] Processed Images Done taking 0.008066415786743164 seconds. Shape:  torch.Size([1, 3, 378, 504])[0m
+[97m[INFO ] Model Forward Pass Done. Time: 0.01713705062866211 seconds[0m
+[97m[INFO ] Conversion to Prediction Done. Time: 0.0002880096435546875 seconds[0m
+[97m[INFO ] Processed Images Done taking 0.008234500885009766 seconds. Shape:  torch.Size([1, 3, 378, 504])[0m
+[97m[INFO ] Model Forward Pass Done. Time: 0.017140626907348633 seconds[0m
+[97m[INFO ] Conversion to Prediction Done. Time: 0.0002772808074951172 seconds[0m
+[97m[INFO ] Processed Images Done taking 0.007727861404418945 seconds. Shape:  torch.Size([1, 3, 378, 504])[0m
+[97m[INFO ] Model Forward Pass Done. Time: 0.017169713973999023 seconds[0m
+[97m[INFO ] Conversion to Prediction Done. Time: 0.00029158592224121094 seconds[0m
+[97m[INFO ] Processed Images Done taking 0.00780487060546875 seconds. Shape:  torch.Size([1, 3, 378, 504])[0m
+[97m[INFO ] Model Forward Pass Done. Time: 0.017222166061401367 seconds[0m
+[97m[INFO ] Conversion to Prediction Done. Time: 0.0002949237823486328 seconds[0m
+[97m[INFO ] Processed Images Done taking 0.008220911026000977 seconds. Shape:  torch.Size([1, 3, 378, 504])[0m
+[97m[INFO ] Model Forward Pass Done. Time: 0.017333507537841797 seconds[0m
+[97m[INFO ] Conversion to Prediction Done. Time: 0.00025653839111328125 seconds[0m
+[97m[INFO ] Processed Images Done taking 0.00812673568725586 seconds. Shape:  torch.Size([1, 3, 378, 504])[0m
+[97m[INFO ] Model Forward Pass Done. Time: 0.017188310623168945 seconds[0m
+[97m[INFO ] Conversion to Prediction Done. Time: 0.0002903938293457031 seconds[0m
+[97m[INFO ] Processed Images Done taking 0.006836652755737305 seconds. Shape:  torch.Size([1, 3, 378, 504])[0m
+[97m[INFO ] Model Forward Pass Done. Time: 0.017170190811157227 seconds[0m
+[97m[INFO ] Conversion to Prediction Done. Time: 0.0002789497375488281 seconds[0m
+[97m[INFO ] Processed Images Done taking 0.008047342300415039 seconds. Shape:  torch.Size([1, 3, 378, 504])[0m
+[97m[INFO ] Model Forward Pass Done. Time: 0.01716780662536621 seconds[0m
+[97m[INFO ] Conversion to Prediction Done. Time: 0.0002970695495605469 seconds[0m
+  [ 500/654] idx=1158  abs_rel=0.0390  d1=0.9988  (25.0s)
+[97m[INFO ] Processed Images Done taking 0.006749391555786133 seconds. Shape:  torch.Size([1, 3, 378, 504])[0m
+[97m[INFO ] Model Forward Pass Done. Time: 0.017115354537963867 seconds[0m
+[97m[INFO ] Conversion to Prediction Done. Time: 0.00028061866760253906 seconds[0m
+[97m[INFO ] Processed Images Done taking 0.007151126861572266 seconds. Shape:  torch.Size([1, 3, 378, 504])[0m
+[97m[INFO ] Model Forward Pass Done. Time: 0.017148494720458984 seconds[0m
+[97m[INFO ] Conversion to Prediction Done. Time: 0.00027871131896972656 seconds[0m
+[97m[INFO ] Processed Images Done taking 0.0078084468841552734 seconds. Shape:  torch.Size([1, 3, 378, 504])[0m
+[97m[INFO ] Model Forward Pass Done. Time: 0.017152070999145508 seconds[0m
+[97m[INFO ] Conversion to Prediction Done. Time: 0.00028204917907714844 seconds[0m
+[97m[INFO ] Processed Images Done taking 0.006562471389770508 seconds. Shape:  torch.Size([1, 3, 378, 504])[0m
+[97m[INFO ] Model Forward Pass Done. Time: 0.0171663761138916 seconds[0m
+[97m[INFO ] Conversion to Prediction Done. Time: 0.00028586387634277344 seconds[0m
+[97m[INFO ] Processed Images Done taking 0.0072553157806396484 seconds. Shape:  torch.Size([1, 3, 378, 504])[0m
+[97m[INFO ] Model Forward Pass Done. Time: 0.017131567001342773 seconds[0m
+[97m[INFO ] Conversion to Prediction Done. Time: 0.0002853870391845703 seconds[0m
+[97m[INFO ] Processed Images Done taking 0.0070345401763916016 seconds. Shape:  torch.Size([1, 3, 378, 504])[0m
+[97m[INFO ] Model Forward Pass Done. Time: 0.017137765884399414 seconds[0m
+[97m[INFO ] Conversion to Prediction Done. Time: 0.00030541419982910156 seconds[0m
+[97m[INFO ] Processed Images Done taking 0.0077893733978271484 seconds. Shape:  torch.Size([1, 3, 378, 504])[0m
+[97m[INFO ] Model Forward Pass Done. Time: 0.01715993881225586 seconds[0m
+[97m[INFO ] Conversion to Prediction Done. Time: 0.0002949237823486328 seconds[0m
+[97m[INFO ] Processed Images Done taking 0.0072824954986572266 seconds. Shape:  torch.Size([1, 3, 378, 504])[0m
+[97m[INFO ] Model Forward Pass Done. Time: 0.017142534255981445 seconds[0m
+[97m[INFO ] Conversion to Prediction Done. Time: 0.00028204917907714844 seconds[0m
+[97m[INFO ] Processed Images Done taking 0.007479667663574219 seconds. Shape:  torch.Size([1, 3, 378, 504])[0m
+[97m[INFO ] Model Forward Pass Done. Time: 0.017129898071289062 seconds[0m
+[97m[INFO ] Conversion to Prediction Done. Time: 0.0002906322479248047 seconds[0m
+[97m[INFO ] Processed Images Done taking 0.006989955902099609 seconds. Shape:  torch.Size([1, 3, 378, 504])[0m
+[97m[INFO ] Model Forward Pass Done. Time: 0.01713252067565918 seconds[0m
+[97m[INFO ] Conversion to Prediction Done. Time: 0.00028204917907714844 seconds[0m
+[97m[INFO ] Processed Images Done taking 0.0070378780364990234 seconds. Shape:  torch.Size([1, 3, 378, 504])[0m
+[97m[INFO ] Model Forward Pass Done. Time: 0.017192363739013672 seconds[0m
+[97m[INFO ] Conversion to Prediction Done. Time: 0.0002880096435546875 seconds[0m
+[97m[INFO ] Processed Images Done taking 0.007417440414428711 seconds. Shape:  torch.Size([1, 3, 378, 504])[0m
+[97m[INFO ] Model Forward Pass Done. Time: 0.017182350158691406 seconds[0m
+[97m[INFO ] Conversion to Prediction Done. Time: 0.0002911090850830078 seconds[0m
+[97m[INFO ] Processed Images Done taking 0.0064029693603515625 seconds. Shape:  torch.Size([1, 3, 378, 504])[0m
+[97m[INFO ] Model Forward Pass Done. Time: 0.017142772674560547 seconds[0m
+[97m[INFO ] Conversion to Prediction Done. Time: 0.000301361083984375 seconds[0m
+[97m[INFO ] Processed Images Done taking 0.007045745849609375 seconds. Shape:  torch.Size([1, 3, 378, 504])[0m
+[97m[INFO ] Model Forward Pass Done. Time: 0.017120361328125 seconds[0m
+[97m[INFO ] Conversion to Prediction Done. Time: 0.00028634071350097656 seconds[0m
+[97m[INFO ] Processed Images Done taking 0.007242441177368164 seconds. Shape:  torch.Size([1, 3, 378, 504])[0m
+[97m[INFO ] Model Forward Pass Done. Time: 0.017156600952148438 seconds[0m
+[97m[INFO ] Conversion to Prediction Done. Time: 0.00028634071350097656 seconds[0m
+[97m[INFO ] Processed Images Done taking 0.005592823028564453 seconds. Shape:  torch.Size([1, 3, 378, 504])[0m
+[97m[INFO ] Model Forward Pass Done. Time: 0.017167329788208008 seconds[0m
+[97m[INFO ] Conversion to Prediction Done. Time: 0.0002808570861816406 seconds[0m
+[97m[INFO ] Processed Images Done taking 0.007415056228637695 seconds. Shape:  torch.Size([1, 3, 378, 504])[0m
+[97m[INFO ] Model Forward Pass Done. Time: 0.017149686813354492 seconds[0m
+[97m[INFO ] Conversion to Prediction Done. Time: 0.0002841949462890625 seconds[0m
+[97m[INFO ] Processed Images Done taking 0.00654292106628418 seconds. Shape:  torch.Size([1, 3, 378, 504])[0m
+[97m[INFO ] Model Forward Pass Done. Time: 0.017119169235229492 seconds[0m
+[97m[INFO ] Conversion to Prediction Done. Time: 0.0002853870391845703 seconds[0m
+[97m[INFO ] Processed Images Done taking 0.0072841644287109375 seconds. Shape:  torch.Size([1, 3, 378, 504])[0m
+[97m[INFO ] Model Forward Pass Done. Time: 0.017140865325927734 seconds[0m
+[97m[INFO ] Conversion to Prediction Done. Time: 0.00028824806213378906 seconds[0m
+[97m[INFO ] Processed Images Done taking 0.007367849349975586 seconds. Shape:  torch.Size([1, 3, 378, 504])[0m
+[97m[INFO ] Model Forward Pass Done. Time: 0.017147302627563477 seconds[0m
+[97m[INFO ] Conversion to Prediction Done. Time: 0.00028133392333984375 seconds[0m
+[97m[INFO ] Processed Images Done taking 0.008088111877441406 seconds. Shape:  torch.Size([1, 3, 378, 504])[0m
+[97m[INFO ] Model Forward Pass Done. Time: 0.01714158058166504 seconds[0m
+[97m[INFO ] Conversion to Prediction Done. Time: 0.00028967857360839844 seconds[0m
+[97m[INFO ] Processed Images Done taking 0.0061054229736328125 seconds. Shape:  torch.Size([1, 3, 378, 504])[0m
+[97m[INFO ] Model Forward Pass Done. Time: 0.017127513885498047 seconds[0m
+[97m[INFO ] Conversion to Prediction Done. Time: 0.0002818107604980469 seconds[0m
+[97m[INFO ] Processed Images Done taking 0.007128715515136719 seconds. Shape:  torch.Size([1, 3, 378, 504])[0m
+[97m[INFO ] Model Forward Pass Done. Time: 0.01712656021118164 seconds[0m
+[97m[INFO ] Conversion to Prediction Done. Time: 0.00028204917907714844 seconds[0m
+[97m[INFO ] Processed Images Done taking 0.007104158401489258 seconds. Shape:  torch.Size([1, 3, 378, 504])[0m
+[97m[INFO ] Model Forward Pass Done. Time: 0.0171511173248291 seconds[0m
+[97m[INFO ] Conversion to Prediction Done. Time: 0.00027680397033691406 seconds[0m
+[97m[INFO ] Processed Images Done taking 0.007855415344238281 seconds. Shape:  torch.Size([1, 3, 378, 504])[0m
+[97m[INFO ] Model Forward Pass Done. Time: 0.017139434814453125 seconds[0m
+[97m[INFO ] Conversion to Prediction Done. Time: 0.0002815723419189453 seconds[0m
+[97m[INFO ] Processed Images Done taking 0.007009744644165039 seconds. Shape:  torch.Size([1, 3, 378, 504])[0m
+[97m[INFO ] Model Forward Pass Done. Time: 0.017123699188232422 seconds[0m
+[97m[INFO ] Conversion to Prediction Done. Time: 0.0002987384796142578 seconds[0m
+[97m[INFO ] Processed Images Done taking 0.0076787471771240234 seconds. Shape:  torch.Size([1, 3, 378, 504])[0m
+[97m[INFO ] Model Forward Pass Done. Time: 0.017122507095336914 seconds[0m
+[97m[INFO ] Conversion to Prediction Done. Time: 0.0002903938293457031 seconds[0m
+[97m[INFO ] Processed Images Done taking 0.007212400436401367 seconds. Shape:  torch.Size([1, 3, 378, 504])[0m
+[97m[INFO ] Model Forward Pass Done. Time: 0.01712799072265625 seconds[0m
+[97m[INFO ] Conversion to Prediction Done. Time: 0.0002753734588623047 seconds[0m
+[97m[INFO ] Processed Images Done taking 0.005817413330078125 seconds. Shape:  torch.Size([1, 3, 378, 504])[0m
+[97m[INFO ] Model Forward Pass Done. Time: 0.017168521881103516 seconds[0m
+[97m[INFO ] Conversion to Prediction Done. Time: 0.0003006458282470703 seconds[0m
+[97m[INFO ] Processed Images Done taking 0.006810426712036133 seconds. Shape:  torch.Size([1, 3, 378, 504])[0m
+[97m[INFO ] Model Forward Pass Done. Time: 0.01714348793029785 seconds[0m
+[97m[INFO ] Conversion to Prediction Done. Time: 0.0002827644348144531 seconds[0m
+[97m[INFO ] Processed Images Done taking 0.006119728088378906 seconds. Shape:  torch.Size([1, 3, 378, 504])[0m
+[97m[INFO ] Model Forward Pass Done. Time: 0.017164230346679688 seconds[0m
+[97m[INFO ] Conversion to Prediction Done. Time: 0.0002930164337158203 seconds[0m
+[97m[INFO ] Processed Images Done taking 0.0074634552001953125 seconds. Shape:  torch.Size([1, 3, 378, 504])[0m
+[97m[INFO ] Model Forward Pass Done. Time: 0.017169475555419922 seconds[0m
+[97m[INFO ] Conversion to Prediction Done. Time: 0.0003006458282470703 seconds[0m
+[97m[INFO ] Processed Images Done taking 0.007267475128173828 seconds. Shape:  torch.Size([1, 3, 378, 504])[0m
+[97m[INFO ] Model Forward Pass Done. Time: 0.01714158058166504 seconds[0m
+[97m[INFO ] Conversion to Prediction Done. Time: 0.00028133392333984375 seconds[0m
+[97m[INFO ] Processed Images Done taking 0.007326841354370117 seconds. Shape:  torch.Size([1, 3, 378, 504])[0m
+[97m[INFO ] Model Forward Pass Done. Time: 0.017119169235229492 seconds[0m
+[97m[INFO ] Conversion to Prediction Done. Time: 0.00028228759765625 seconds[0m
+[97m[INFO ] Processed Images Done taking 0.006281137466430664 seconds. Shape:  torch.Size([1, 3, 378, 504])[0m
+[97m[INFO ] Model Forward Pass Done. Time: 0.017095327377319336 seconds[0m
+[97m[INFO ] Conversion to Prediction Done. Time: 0.00028443336486816406 seconds[0m
+[97m[INFO ] Processed Images Done taking 0.007090330123901367 seconds. Shape:  torch.Size([1, 3, 378, 504])[0m
+[97m[INFO ] Model Forward Pass Done. Time: 0.017138242721557617 seconds[0m
+[97m[INFO ] Conversion to Prediction Done. Time: 0.0002734661102294922 seconds[0m
+[97m[INFO ] Processed Images Done taking 0.0067517757415771484 seconds. Shape:  torch.Size([1, 3, 378, 504])[0m
+[97m[INFO ] Model Forward Pass Done. Time: 0.01716327667236328 seconds[0m
+[97m[INFO ] Conversion to Prediction Done. Time: 0.00028586387634277344 seconds[0m
+[97m[INFO ] Processed Images Done taking 0.00705409049987793 seconds. Shape:  torch.Size([1, 3, 378, 504])[0m
+[97m[INFO ] Model Forward Pass Done. Time: 0.017108440399169922 seconds[0m
+[97m[INFO ] Conversion to Prediction Done. Time: 0.0002741813659667969 seconds[0m
+[97m[INFO ] Processed Images Done taking 0.006932497024536133 seconds. Shape:  torch.Size([1, 3, 378, 504])[0m
+[97m[INFO ] Model Forward Pass Done. Time: 0.01713085174560547 seconds[0m
+[97m[INFO ] Conversion to Prediction Done. Time: 0.0002837181091308594 seconds[0m
+[97m[INFO ] Processed Images Done taking 0.007556915283203125 seconds. Shape:  torch.Size([1, 3, 378, 504])[0m
+[97m[INFO ] Model Forward Pass Done. Time: 0.01715087890625 seconds[0m
+[97m[INFO ] Conversion to Prediction Done. Time: 0.00028705596923828125 seconds[0m
+[97m[INFO ] Processed Images Done taking 0.0068438053131103516 seconds. Shape:  torch.Size([1, 3, 378, 504])[0m
+[97m[INFO ] Model Forward Pass Done. Time: 0.017147064208984375 seconds[0m
+[97m[INFO ] Conversion to Prediction Done. Time: 0.0002987384796142578 seconds[0m
+[97m[INFO ] Processed Images Done taking 0.007218360900878906 seconds. Shape:  torch.Size([1, 3, 378, 504])[0m
+[97m[INFO ] Model Forward Pass Done. Time: 0.017156124114990234 seconds[0m
+[97m[INFO ] Conversion to Prediction Done. Time: 0.00028228759765625 seconds[0m
+[97m[INFO ] Processed Images Done taking 0.006201028823852539 seconds. Shape:  torch.Size([1, 3, 378, 504])[0m
+[97m[INFO ] Model Forward Pass Done. Time: 0.01711583137512207 seconds[0m
+[97m[INFO ] Conversion to Prediction Done. Time: 0.00027823448181152344 seconds[0m
+[97m[INFO ] Processed Images Done taking 0.007529735565185547 seconds. Shape:  torch.Size([1, 3, 378, 504])[0m
+[97m[INFO ] Model Forward Pass Done. Time: 0.017145156860351562 seconds[0m
+[97m[INFO ] Conversion to Prediction Done. Time: 0.00028061866760253906 seconds[0m
+[97m[INFO ] Processed Images Done taking 0.007425785064697266 seconds. Shape:  torch.Size([1, 3, 378, 504])[0m
+[97m[INFO ] Model Forward Pass Done. Time: 0.017155170440673828 seconds[0m
+[97m[INFO ] Conversion to Prediction Done. Time: 0.00028824806213378906 seconds[0m
+[97m[INFO ] Processed Images Done taking 0.008205652236938477 seconds. Shape:  torch.Size([1, 3, 378, 504])[0m
+[97m[INFO ] Model Forward Pass Done. Time: 0.017137527465820312 seconds[0m
+[97m[INFO ] Conversion to Prediction Done. Time: 0.00029754638671875 seconds[0m
+[97m[INFO ] Processed Images Done taking 0.0059702396392822266 seconds. Shape:  torch.Size([1, 3, 378, 504])[0m
+[97m[INFO ] Model Forward Pass Done. Time: 0.01722240447998047 seconds[0m
+[97m[INFO ] Conversion to Prediction Done. Time: 0.0003314018249511719 seconds[0m
+[97m[INFO ] Processed Images Done taking 0.008814811706542969 seconds. Shape:  torch.Size([1, 3, 378, 504])[0m
+[97m[INFO ] Model Forward Pass Done. Time: 0.0172119140625 seconds[0m
+[97m[INFO ] Conversion to Prediction Done. Time: 0.0002753734588623047 seconds[0m
+[97m[INFO ] Processed Images Done taking 0.00863194465637207 seconds. Shape:  torch.Size([1, 3, 378, 504])[0m
+[97m[INFO ] Model Forward Pass Done. Time: 0.017552852630615234 seconds[0m
+[97m[INFO ] Conversion to Prediction Done. Time: 0.0002799034118652344 seconds[0m
+[97m[INFO ] Processed Images Done taking 0.007847070693969727 seconds. Shape:  torch.Size([1, 3, 378, 504])[0m
+[97m[INFO ] Model Forward Pass Done. Time: 0.017252683639526367 seconds[0m
+[97m[INFO ] Conversion to Prediction Done. Time: 0.00027680397033691406 seconds[0m
+  [ 550/654] idx=1249  abs_rel=0.0561  d1=0.9897  (27.5s)
+[97m[INFO ] Processed Images Done taking 0.007322788238525391 seconds. Shape:  torch.Size([1, 3, 378, 504])[0m
+[97m[INFO ] Model Forward Pass Done. Time: 0.017130613327026367 seconds[0m
+[97m[INFO ] Conversion to Prediction Done. Time: 0.0002753734588623047 seconds[0m
+[97m[INFO ] Processed Images Done taking 0.007783651351928711 seconds. Shape:  torch.Size([1, 3, 378, 504])[0m
+[97m[INFO ] Model Forward Pass Done. Time: 0.017178058624267578 seconds[0m
+[97m[INFO ] Conversion to Prediction Done. Time: 0.0002777576446533203 seconds[0m
+[97m[INFO ] Processed Images Done taking 0.007895708084106445 seconds. Shape:  torch.Size([1, 3, 378, 504])[0m
+[97m[INFO ] Model Forward Pass Done. Time: 0.017174959182739258 seconds[0m
+[97m[INFO ] Conversion to Prediction Done. Time: 0.00029087066650390625 seconds[0m
+[97m[INFO ] Processed Images Done taking 0.007287025451660156 seconds. Shape:  torch.Size([1, 3, 378, 504])[0m
+[97m[INFO ] Model Forward Pass Done. Time: 0.017155170440673828 seconds[0m
+[97m[INFO ] Conversion to Prediction Done. Time: 0.0002777576446533203 seconds[0m
+[97m[INFO ] Processed Images Done taking 0.0067021846771240234 seconds. Shape:  torch.Size([1, 3, 378, 504])[0m
+[97m[INFO ] Model Forward Pass Done. Time: 0.017140865325927734 seconds[0m
+[97m[INFO ] Conversion to Prediction Done. Time: 0.0002918243408203125 seconds[0m
+[97m[INFO ] Processed Images Done taking 0.009106874465942383 seconds. Shape:  torch.Size([1, 3, 378, 504])[0m
+[97m[INFO ] Model Forward Pass Done. Time: 0.017151832580566406 seconds[0m
+[97m[INFO ] Conversion to Prediction Done. Time: 0.00028252601623535156 seconds[0m
+[97m[INFO ] Processed Images Done taking 0.0073642730712890625 seconds. Shape:  torch.Size([1, 3, 378, 504])[0m
+[97m[INFO ] Model Forward Pass Done. Time: 0.017157793045043945 seconds[0m
+[97m[INFO ] Conversion to Prediction Done. Time: 0.0002815723419189453 seconds[0m
+[97m[INFO ] Processed Images Done taking 0.009080648422241211 seconds. Shape:  torch.Size([1, 3, 378, 504])[0m
+[97m[INFO ] Model Forward Pass Done. Time: 0.017136573791503906 seconds[0m
+[97m[INFO ] Conversion to Prediction Done. Time: 0.0002903938293457031 seconds[0m
+[97m[INFO ] Processed Images Done taking 0.007563591003417969 seconds. Shape:  torch.Size([1, 3, 378, 504])[0m
+[97m[INFO ] Model Forward Pass Done. Time: 0.01712799072265625 seconds[0m
+[97m[INFO ] Conversion to Prediction Done. Time: 0.0002906322479248047 seconds[0m
+[97m[INFO ] Processed Images Done taking 0.0073130130767822266 seconds. Shape:  torch.Size([1, 3, 378, 504])[0m
+[97m[INFO ] Model Forward Pass Done. Time: 0.017170190811157227 seconds[0m
+[97m[INFO ] Conversion to Prediction Done. Time: 0.0002887248992919922 seconds[0m
+[97m[INFO ] Processed Images Done taking 0.008025884628295898 seconds. Shape:  torch.Size([1, 3, 378, 504])[0m
+[97m[INFO ] Model Forward Pass Done. Time: 0.017148494720458984 seconds[0m
+[97m[INFO ] Conversion to Prediction Done. Time: 0.0002841949462890625 seconds[0m
+[97m[INFO ] Processed Images Done taking 0.008087396621704102 seconds. Shape:  torch.Size([1, 3, 378, 504])[0m
+[97m[INFO ] Model Forward Pass Done. Time: 0.017133712768554688 seconds[0m
+[97m[INFO ] Conversion to Prediction Done. Time: 0.0002770423889160156 seconds[0m
+[97m[INFO ] Processed Images Done taking 0.007531166076660156 seconds. Shape:  torch.Size([1, 3, 378, 504])[0m
+[97m[INFO ] Model Forward Pass Done. Time: 0.01712632179260254 seconds[0m
+[97m[INFO ] Conversion to Prediction Done. Time: 0.0002980232238769531 seconds[0m
+[97m[INFO ] Processed Images Done taking 0.007665395736694336 seconds. Shape:  torch.Size([1, 3, 378, 504])[0m
+[97m[INFO ] Model Forward Pass Done. Time: 0.017168283462524414 seconds[0m
+[97m[INFO ] Conversion to Prediction Done. Time: 0.0002818107604980469 seconds[0m
+[97m[INFO ] Processed Images Done taking 0.007756233215332031 seconds. Shape:  torch.Size([1, 3, 378, 504])[0m
+[97m[INFO ] Model Forward Pass Done. Time: 0.017156362533569336 seconds[0m
+[97m[INFO ] Conversion to Prediction Done. Time: 0.00028228759765625 seconds[0m
+[97m[INFO ] Processed Images Done taking 0.00661778450012207 seconds. Shape:  torch.Size([1, 3, 378, 504])[0m
+[97m[INFO ] Model Forward Pass Done. Time: 0.01734471321105957 seconds[0m
+[97m[INFO ] Conversion to Prediction Done. Time: 0.00031065940856933594 seconds[0m
+[97m[INFO ] Processed Images Done taking 0.007822036743164062 seconds. Shape:  torch.Size([1, 3, 378, 504])[0m
+[97m[INFO ] Model Forward Pass Done. Time: 0.017347335815429688 seconds[0m
+[97m[INFO ] Conversion to Prediction Done. Time: 0.00026297569274902344 seconds[0m
+[97m[INFO ] Processed Images Done taking 0.007962703704833984 seconds. Shape:  torch.Size([1, 3, 378, 504])[0m
+[97m[INFO ] Model Forward Pass Done. Time: 0.017241477966308594 seconds[0m
+[97m[INFO ] Conversion to Prediction Done. Time: 0.0002789497375488281 seconds[0m
+[97m[INFO ] Processed Images Done taking 0.007889032363891602 seconds. Shape:  torch.Size([1, 3, 378, 504])[0m
+[97m[INFO ] Model Forward Pass Done. Time: 0.017180919647216797 seconds[0m
+[97m[INFO ] Conversion to Prediction Done. Time: 0.0002732276916503906 seconds[0m
+[97m[INFO ] Processed Images Done taking 0.007925748825073242 seconds. Shape:  torch.Size([1, 3, 378, 504])[0m
+[97m[INFO ] Model Forward Pass Done. Time: 0.017161846160888672 seconds[0m
+[97m[INFO ] Conversion to Prediction Done. Time: 0.00028443336486816406 seconds[0m
+[97m[INFO ] Processed Images Done taking 0.0073699951171875 seconds. Shape:  torch.Size([1, 3, 378, 504])[0m
+[97m[INFO ] Model Forward Pass Done. Time: 0.01715373992919922 seconds[0m
+[97m[INFO ] Conversion to Prediction Done. Time: 0.00028705596923828125 seconds[0m
+[97m[INFO ] Processed Images Done taking 0.007158517837524414 seconds. Shape:  torch.Size([1, 3, 378, 504])[0m
+[97m[INFO ] Model Forward Pass Done. Time: 0.01717376708984375 seconds[0m
+[97m[INFO ] Conversion to Prediction Done. Time: 0.0002808570861816406 seconds[0m
+[97m[INFO ] Processed Images Done taking 0.006783485412597656 seconds. Shape:  torch.Size([1, 3, 378, 504])[0m
+[97m[INFO ] Model Forward Pass Done. Time: 0.01714634895324707 seconds[0m
+[97m[INFO ] Conversion to Prediction Done. Time: 0.0002734661102294922 seconds[0m
+[97m[INFO ] Processed Images Done taking 0.007312297821044922 seconds. Shape:  torch.Size([1, 3, 378, 504])[0m
+[97m[INFO ] Model Forward Pass Done. Time: 0.01711893081665039 seconds[0m
+[97m[INFO ] Conversion to Prediction Done. Time: 0.0002810955047607422 seconds[0m
+[97m[INFO ] Processed Images Done taking 0.008005142211914062 seconds. Shape:  torch.Size([1, 3, 378, 504])[0m
+[97m[INFO ] Model Forward Pass Done. Time: 0.01752161979675293 seconds[0m
+[97m[INFO ] Conversion to Prediction Done. Time: 0.0002713203430175781 seconds[0m
+[97m[INFO ] Processed Images Done taking 0.007176399230957031 seconds. Shape:  torch.Size([1, 3, 378, 504])[0m
+[97m[INFO ] Model Forward Pass Done. Time: 0.01728677749633789 seconds[0m
+[97m[INFO ] Conversion to Prediction Done. Time: 0.00028967857360839844 seconds[0m
+[97m[INFO ] Processed Images Done taking 0.007371187210083008 seconds. Shape:  torch.Size([1, 3, 378, 504])[0m
+[97m[INFO ] Model Forward Pass Done. Time: 0.01720905303955078 seconds[0m
+[97m[INFO ] Conversion to Prediction Done. Time: 0.0002865791320800781 seconds[0m
+[97m[INFO ] Processed Images Done taking 0.007373809814453125 seconds. Shape:  torch.Size([1, 3, 378, 504])[0m
+[97m[INFO ] Model Forward Pass Done. Time: 0.01715874671936035 seconds[0m
+[97m[INFO ] Conversion to Prediction Done. Time: 0.000286102294921875 seconds[0m
+[97m[INFO ] Processed Images Done taking 0.006947755813598633 seconds. Shape:  torch.Size([1, 3, 378, 504])[0m
+[97m[INFO ] Model Forward Pass Done. Time: 0.017140626907348633 seconds[0m
+[97m[INFO ] Conversion to Prediction Done. Time: 0.000286102294921875 seconds[0m
+[97m[INFO ] Processed Images Done taking 0.0071413516998291016 seconds. Shape:  torch.Size([1, 3, 378, 504])[0m
+[97m[INFO ] Model Forward Pass Done. Time: 0.01717543601989746 seconds[0m
+[97m[INFO ] Conversion to Prediction Done. Time: 0.0002605915069580078 seconds[0m
+[97m[INFO ] Processed Images Done taking 0.007712364196777344 seconds. Shape:  torch.Size([1, 3, 378, 504])[0m
+[97m[INFO ] Model Forward Pass Done. Time: 0.01715874671936035 seconds[0m
+[97m[INFO ] Conversion to Prediction Done. Time: 0.00028705596923828125 seconds[0m
+[97m[INFO ] Processed Images Done taking 0.008409738540649414 seconds. Shape:  torch.Size([1, 3, 378, 504])[0m
+[97m[INFO ] Model Forward Pass Done. Time: 0.017139196395874023 seconds[0m
+[97m[INFO ] Conversion to Prediction Done. Time: 0.00028777122497558594 seconds[0m
+[97m[INFO ] Processed Images Done taking 0.006558656692504883 seconds. Shape:  torch.Size([1, 3, 378, 504])[0m
+[97m[INFO ] Model Forward Pass Done. Time: 0.017148256301879883 seconds[0m
+[97m[INFO ] Conversion to Prediction Done. Time: 0.00028252601623535156 seconds[0m
+[97m[INFO ] Processed Images Done taking 0.007923364639282227 seconds. Shape:  torch.Size([1, 3, 378, 504])[0m
+[97m[INFO ] Model Forward Pass Done. Time: 0.017435789108276367 seconds[0m
+[97m[INFO ] Conversion to Prediction Done. Time: 0.0002911090850830078 seconds[0m
+[97m[INFO ] Processed Images Done taking 0.008138179779052734 seconds. Shape:  torch.Size([1, 3, 378, 504])[0m
+[97m[INFO ] Model Forward Pass Done. Time: 0.017275571823120117 seconds[0m
+[97m[INFO ] Conversion to Prediction Done. Time: 0.00027489662170410156 seconds[0m
+[97m[INFO ] Processed Images Done taking 0.0072422027587890625 seconds. Shape:  torch.Size([1, 3, 378, 504])[0m
+[97m[INFO ] Model Forward Pass Done. Time: 0.017171144485473633 seconds[0m
+[97m[INFO ] Conversion to Prediction Done. Time: 0.0002799034118652344 seconds[0m
+[97m[INFO ] Processed Images Done taking 0.006308555603027344 seconds. Shape:  torch.Size([1, 3, 378, 504])[0m
+[97m[INFO ] Model Forward Pass Done. Time: 0.017154216766357422 seconds[0m
+[97m[INFO ] Conversion to Prediction Done. Time: 0.00028824806213378906 seconds[0m
+[97m[INFO ] Processed Images Done taking 0.006425380706787109 seconds. Shape:  torch.Size([1, 3, 378, 504])[0m
+[97m[INFO ] Model Forward Pass Done. Time: 0.017151594161987305 seconds[0m
+[97m[INFO ] Conversion to Prediction Done. Time: 0.0002892017364501953 seconds[0m
+[97m[INFO ] Processed Images Done taking 0.0074214935302734375 seconds. Shape:  torch.Size([1, 3, 378, 504])[0m
+[97m[INFO ] Model Forward Pass Done. Time: 0.016861438751220703 seconds[0m
+[97m[INFO ] Conversion to Prediction Done. Time: 0.0002884864807128906 seconds[0m
+[97m[INFO ] Processed Images Done taking 0.006659507751464844 seconds. Shape:  torch.Size([1, 3, 378, 504])[0m
+[97m[INFO ] Model Forward Pass Done. Time: 0.017137765884399414 seconds[0m
+[97m[INFO ] Conversion to Prediction Done. Time: 0.00027489662170410156 seconds[0m
+[97m[INFO ] Processed Images Done taking 0.007962703704833984 seconds. Shape:  torch.Size([1, 3, 378, 504])[0m
+[97m[INFO ] Model Forward Pass Done. Time: 0.01716470718383789 seconds[0m
+[97m[INFO ] Conversion to Prediction Done. Time: 0.0002849102020263672 seconds[0m
+[97m[INFO ] Processed Images Done taking 0.006548881530761719 seconds. Shape:  torch.Size([1, 3, 378, 504])[0m
+[97m[INFO ] Model Forward Pass Done. Time: 0.017129898071289062 seconds[0m
+[97m[INFO ] Conversion to Prediction Done. Time: 0.00033664703369140625 seconds[0m
+[97m[INFO ] Processed Images Done taking 0.00696110725402832 seconds. Shape:  torch.Size([1, 3, 378, 504])[0m
+[97m[INFO ] Model Forward Pass Done. Time: 0.017167091369628906 seconds[0m
+[97m[INFO ] Conversion to Prediction Done. Time: 0.00028204917907714844 seconds[0m
+[97m[INFO ] Processed Images Done taking 0.007915973663330078 seconds. Shape:  torch.Size([1, 3, 378, 504])[0m
+[97m[INFO ] Model Forward Pass Done. Time: 0.017144203186035156 seconds[0m
+[97m[INFO ] Conversion to Prediction Done. Time: 0.00027871131896972656 seconds[0m
+[97m[INFO ] Processed Images Done taking 0.0073740482330322266 seconds. Shape:  torch.Size([1, 3, 378, 504])[0m
+[97m[INFO ] Model Forward Pass Done. Time: 0.017116546630859375 seconds[0m
+[97m[INFO ] Conversion to Prediction Done. Time: 0.0002808570861816406 seconds[0m
+[97m[INFO ] Processed Images Done taking 0.006760597229003906 seconds. Shape:  torch.Size([1, 3, 378, 504])[0m
+[97m[INFO ] Model Forward Pass Done. Time: 0.017122507095336914 seconds[0m
+[97m[INFO ] Conversion to Prediction Done. Time: 0.0002875328063964844 seconds[0m
+[97m[INFO ] Processed Images Done taking 0.006678104400634766 seconds. Shape:  torch.Size([1, 3, 378, 504])[0m
+[97m[INFO ] Model Forward Pass Done. Time: 0.017168283462524414 seconds[0m
+[97m[INFO ] Conversion to Prediction Done. Time: 0.00027680397033691406 seconds[0m
+[97m[INFO ] Processed Images Done taking 0.006815195083618164 seconds. Shape:  torch.Size([1, 3, 378, 504])[0m
+[97m[INFO ] Model Forward Pass Done. Time: 0.017442703247070312 seconds[0m
+[97m[INFO ] Conversion to Prediction Done. Time: 0.0003211498260498047 seconds[0m
+[97m[INFO ] Processed Images Done taking 0.00803995132446289 seconds. Shape:  torch.Size([1, 3, 378, 504])[0m
+[97m[INFO ] Model Forward Pass Done. Time: 0.017396211624145508 seconds[0m
+[97m[INFO ] Conversion to Prediction Done. Time: 0.0002899169921875 seconds[0m
+[97m[INFO ] Processed Images Done taking 0.007048845291137695 seconds. Shape:  torch.Size([1, 3, 378, 504])[0m
+[97m[INFO ] Model Forward Pass Done. Time: 0.01720571517944336 seconds[0m
+[97m[INFO ] Conversion to Prediction Done. Time: 0.0002760887145996094 seconds[0m
+  [ 600/654] idx=1338  abs_rel=0.0783  d1=0.9889  (29.9s)
+[97m[INFO ] Processed Images Done taking 0.00750422477722168 seconds. Shape:  torch.Size([1, 3, 378, 504])[0m
+[97m[INFO ] Model Forward Pass Done. Time: 0.01717972755432129 seconds[0m
+[97m[INFO ] Conversion to Prediction Done. Time: 0.0002803802490234375 seconds[0m
+[97m[INFO ] Processed Images Done taking 0.006552696228027344 seconds. Shape:  torch.Size([1, 3, 378, 504])[0m
+[97m[INFO ] Model Forward Pass Done. Time: 0.01715993881225586 seconds[0m
+[97m[INFO ] Conversion to Prediction Done. Time: 0.00029349327087402344 seconds[0m
+[97m[INFO ] Processed Images Done taking 0.008189916610717773 seconds. Shape:  torch.Size([1, 3, 378, 504])[0m
+[97m[INFO ] Model Forward Pass Done. Time: 0.017145633697509766 seconds[0m
+[97m[INFO ] Conversion to Prediction Done. Time: 0.00028133392333984375 seconds[0m
+[97m[INFO ] Processed Images Done taking 0.007886648178100586 seconds. Shape:  torch.Size([1, 3, 378, 504])[0m
+[97m[INFO ] Model Forward Pass Done. Time: 0.017140865325927734 seconds[0m
+[97m[INFO ] Conversion to Prediction Done. Time: 0.0002903938293457031 seconds[0m
+[97m[INFO ] Processed Images Done taking 0.007166385650634766 seconds. Shape:  torch.Size([1, 3, 378, 504])[0m
+[97m[INFO ] Model Forward Pass Done. Time: 0.01717066764831543 seconds[0m
+[97m[INFO ] Conversion to Prediction Done. Time: 0.000286102294921875 seconds[0m
+[97m[INFO ] Processed Images Done taking 0.008104324340820312 seconds. Shape:  torch.Size([1, 3, 378, 504])[0m
+[97m[INFO ] Model Forward Pass Done. Time: 0.01717090606689453 seconds[0m
+[97m[INFO ] Conversion to Prediction Done. Time: 0.00029349327087402344 seconds[0m
+[97m[INFO ] Processed Images Done taking 0.007136344909667969 seconds. Shape:  torch.Size([1, 3, 378, 504])[0m
+[97m[INFO ] Model Forward Pass Done. Time: 0.017139196395874023 seconds[0m
+[97m[INFO ] Conversion to Prediction Done. Time: 0.0002760887145996094 seconds[0m
+[97m[INFO ] Processed Images Done taking 0.006960153579711914 seconds. Shape:  torch.Size([1, 3, 378, 504])[0m
+[97m[INFO ] Model Forward Pass Done. Time: 0.01711130142211914 seconds[0m
+[97m[INFO ] Conversion to Prediction Done. Time: 0.0002770423889160156 seconds[0m
+[97m[INFO ] Processed Images Done taking 0.007225751876831055 seconds. Shape:  torch.Size([1, 3, 378, 504])[0m
+[97m[INFO ] Model Forward Pass Done. Time: 0.017136573791503906 seconds[0m
+[97m[INFO ] Conversion to Prediction Done. Time: 0.0002815723419189453 seconds[0m
+[97m[INFO ] Processed Images Done taking 0.0060176849365234375 seconds. Shape:  torch.Size([1, 3, 378, 504])[0m
+[97m[INFO ] Model Forward Pass Done. Time: 0.01715993881225586 seconds[0m
+[97m[INFO ] Conversion to Prediction Done. Time: 0.0002856254577636719 seconds[0m
+[97m[INFO ] Processed Images Done taking 0.009061336517333984 seconds. Shape:  torch.Size([1, 3, 378, 504])[0m
+[97m[INFO ] Model Forward Pass Done. Time: 0.017151832580566406 seconds[0m
+[97m[INFO ] Conversion to Prediction Done. Time: 0.0002865791320800781 seconds[0m
+[97m[INFO ] Processed Images Done taking 0.006638765335083008 seconds. Shape:  torch.Size([1, 3, 378, 504])[0m
+[97m[INFO ] Model Forward Pass Done. Time: 0.017117738723754883 seconds[0m
+[97m[INFO ] Conversion to Prediction Done. Time: 0.0002758502960205078 seconds[0m
+[97m[INFO ] Processed Images Done taking 0.007248878479003906 seconds. Shape:  torch.Size([1, 3, 378, 504])[0m
+[97m[INFO ] Model Forward Pass Done. Time: 0.01715397834777832 seconds[0m
+[97m[INFO ] Conversion to Prediction Done. Time: 0.0002777576446533203 seconds[0m
+[97m[INFO ] Processed Images Done taking 0.007322788238525391 seconds. Shape:  torch.Size([1, 3, 378, 504])[0m
+[97m[INFO ] Model Forward Pass Done. Time: 0.01726555824279785 seconds[0m
+[97m[INFO ] Conversion to Prediction Done. Time: 0.0004181861877441406 seconds[0m
+[97m[INFO ] Processed Images Done taking 0.007958650588989258 seconds. Shape:  torch.Size([1, 3, 378, 504])[0m
+[97m[INFO ] Model Forward Pass Done. Time: 0.017198562622070312 seconds[0m
+[97m[INFO ] Conversion to Prediction Done. Time: 0.0003173351287841797 seconds[0m
+[97m[INFO ] Processed Images Done taking 0.0073909759521484375 seconds. Shape:  torch.Size([1, 3, 378, 504])[0m
+[97m[INFO ] Model Forward Pass Done. Time: 0.017138004302978516 seconds[0m
+[97m[INFO ] Conversion to Prediction Done. Time: 0.0002913475036621094 seconds[0m
+[97m[INFO ] Processed Images Done taking 0.007193326950073242 seconds. Shape:  torch.Size([1, 3, 378, 504])[0m
+[97m[INFO ] Model Forward Pass Done. Time: 0.017175912857055664 seconds[0m
+[97m[INFO ] Conversion to Prediction Done. Time: 0.0002918243408203125 seconds[0m
+[97m[INFO ] Processed Images Done taking 0.006641864776611328 seconds. Shape:  torch.Size([1, 3, 378, 504])[0m
+[97m[INFO ] Model Forward Pass Done. Time: 0.017149925231933594 seconds[0m
+[97m[INFO ] Conversion to Prediction Done. Time: 0.0002872943878173828 seconds[0m
+[97m[INFO ] Processed Images Done taking 0.007058143615722656 seconds. Shape:  torch.Size([1, 3, 378, 504])[0m
+[97m[INFO ] Model Forward Pass Done. Time: 0.017139673233032227 seconds[0m
+[97m[INFO ] Conversion to Prediction Done. Time: 0.0002913475036621094 seconds[0m
+[97m[INFO ] Processed Images Done taking 0.007607460021972656 seconds. Shape:  torch.Size([1, 3, 378, 504])[0m
+[97m[INFO ] Model Forward Pass Done. Time: 0.017142295837402344 seconds[0m
+[97m[INFO ] Conversion to Prediction Done. Time: 0.0002856254577636719 seconds[0m
+[97m[INFO ] Processed Images Done taking 0.006883859634399414 seconds. Shape:  torch.Size([1, 3, 378, 504])[0m
+[97m[INFO ] Model Forward Pass Done. Time: 0.01715683937072754 seconds[0m
+[97m[INFO ] Conversion to Prediction Done. Time: 0.0002846717834472656 seconds[0m
+[97m[INFO ] Processed Images Done taking 0.0066950321197509766 seconds. Shape:  torch.Size([1, 3, 378, 504])[0m
+[97m[INFO ] Model Forward Pass Done. Time: 0.0172121524810791 seconds[0m
+[97m[INFO ] Conversion to Prediction Done. Time: 0.00029921531677246094 seconds[0m
+[97m[INFO ] Processed Images Done taking 0.008111000061035156 seconds. Shape:  torch.Size([1, 3, 378, 504])[0m
+[97m[INFO ] Model Forward Pass Done. Time: 0.017447710037231445 seconds[0m
+[97m[INFO ] Conversion to Prediction Done. Time: 0.0002732276916503906 seconds[0m
+[97m[INFO ] Processed Images Done taking 0.00699305534362793 seconds. Shape:  torch.Size([1, 3, 378, 504])[0m
+[97m[INFO ] Model Forward Pass Done. Time: 0.017202377319335938 seconds[0m
+[97m[INFO ] Conversion to Prediction Done. Time: 0.0002894401550292969 seconds[0m
+[97m[INFO ] Processed Images Done taking 0.007007122039794922 seconds. Shape:  torch.Size([1, 3, 378, 504])[0m
+[97m[INFO ] Model Forward Pass Done. Time: 0.01723027229309082 seconds[0m
+[97m[INFO ] Conversion to Prediction Done. Time: 0.00028705596923828125 seconds[0m
+[97m[INFO ] Processed Images Done taking 0.00753021240234375 seconds. Shape:  torch.Size([1, 3, 378, 504])[0m
+[97m[INFO ] Model Forward Pass Done. Time: 0.01718616485595703 seconds[0m
+[97m[INFO ] Conversion to Prediction Done. Time: 0.0003008842468261719 seconds[0m
+[97m[INFO ] Processed Images Done taking 0.008275985717773438 seconds. Shape:  torch.Size([1, 3, 378, 504])[0m
+[97m[INFO ] Model Forward Pass Done. Time: 0.017139434814453125 seconds[0m
+[97m[INFO ] Conversion to Prediction Done. Time: 0.0002970695495605469 seconds[0m
+[97m[INFO ] Processed Images Done taking 0.005810737609863281 seconds. Shape:  torch.Size([1, 3, 378, 504])[0m
+[97m[INFO ] Model Forward Pass Done. Time: 0.017123699188232422 seconds[0m
+[97m[INFO ] Conversion to Prediction Done. Time: 0.0002918243408203125 seconds[0m
+[97m[INFO ] Processed Images Done taking 0.006624937057495117 seconds. Shape:  torch.Size([1, 3, 378, 504])[0m
+[97m[INFO ] Model Forward Pass Done. Time: 0.017150163650512695 seconds[0m
+[97m[INFO ] Conversion to Prediction Done. Time: 0.00027823448181152344 seconds[0m
+[97m[INFO ] Processed Images Done taking 0.00760650634765625 seconds. Shape:  torch.Size([1, 3, 378, 504])[0m
+[97m[INFO ] Model Forward Pass Done. Time: 0.017170190811157227 seconds[0m
+[97m[INFO ] Conversion to Prediction Done. Time: 0.0002837181091308594 seconds[0m
+[97m[INFO ] Processed Images Done taking 0.0073511600494384766 seconds. Shape:  torch.Size([1, 3, 378, 504])[0m
+[97m[INFO ] Model Forward Pass Done. Time: 0.017149925231933594 seconds[0m
+[97m[INFO ] Conversion to Prediction Done. Time: 0.00027751922607421875 seconds[0m
+[97m[INFO ] Processed Images Done taking 0.007036924362182617 seconds. Shape:  torch.Size([1, 3, 378, 504])[0m
+[97m[INFO ] Model Forward Pass Done. Time: 0.017132043838500977 seconds[0m
+[97m[INFO ] Conversion to Prediction Done. Time: 0.0002894401550292969 seconds[0m
+[97m[INFO ] Processed Images Done taking 0.0073146820068359375 seconds. Shape:  torch.Size([1, 3, 378, 504])[0m
+[97m[INFO ] Model Forward Pass Done. Time: 0.01716136932373047 seconds[0m
+[97m[INFO ] Conversion to Prediction Done. Time: 0.0003190040588378906 seconds[0m
+[97m[INFO ] Processed Images Done taking 0.007379770278930664 seconds. Shape:  torch.Size([1, 3, 378, 504])[0m
+[97m[INFO ] Model Forward Pass Done. Time: 0.01714920997619629 seconds[0m
+[97m[INFO ] Conversion to Prediction Done. Time: 0.0002887248992919922 seconds[0m
+[97m[INFO ] Processed Images Done taking 0.008051156997680664 seconds. Shape:  torch.Size([1, 3, 378, 504])[0m
+[97m[INFO ] Model Forward Pass Done. Time: 0.017132997512817383 seconds[0m
+[97m[INFO ] Conversion to Prediction Done. Time: 0.0002887248992919922 seconds[0m
+[97m[INFO ] Processed Images Done taking 0.0072591304779052734 seconds. Shape:  torch.Size([1, 3, 378, 504])[0m
+[97m[INFO ] Model Forward Pass Done. Time: 0.01715397834777832 seconds[0m
+[97m[INFO ] Conversion to Prediction Done. Time: 0.0002968311309814453 seconds[0m
+[97m[INFO ] Processed Images Done taking 0.007252693176269531 seconds. Shape:  torch.Size([1, 3, 378, 504])[0m
+[97m[INFO ] Model Forward Pass Done. Time: 0.017146587371826172 seconds[0m
+[97m[INFO ] Conversion to Prediction Done. Time: 0.0002791881561279297 seconds[0m
+[97m[INFO ] Processed Images Done taking 0.007529497146606445 seconds. Shape:  torch.Size([1, 3, 378, 504])[0m
+[97m[INFO ] Model Forward Pass Done. Time: 0.017155170440673828 seconds[0m
+[97m[INFO ] Conversion to Prediction Done. Time: 0.0002918243408203125 seconds[0m
+[97m[INFO ] Processed Images Done taking 0.0070798397064208984 seconds. Shape:  torch.Size([1, 3, 378, 504])[0m
+[97m[INFO ] Model Forward Pass Done. Time: 0.01715397834777832 seconds[0m
+[97m[INFO ] Conversion to Prediction Done. Time: 0.00028514862060546875 seconds[0m
+[97m[INFO ] Processed Images Done taking 0.007262468338012695 seconds. Shape:  torch.Size([1, 3, 378, 504])[0m
+[97m[INFO ] Model Forward Pass Done. Time: 0.017095327377319336 seconds[0m
+[97m[INFO ] Conversion to Prediction Done. Time: 0.0002753734588623047 seconds[0m
+[97m[INFO ] Processed Images Done taking 0.007549762725830078 seconds. Shape:  torch.Size([1, 3, 378, 504])[0m
+[97m[INFO ] Model Forward Pass Done. Time: 0.01715540885925293 seconds[0m
+[97m[INFO ] Conversion to Prediction Done. Time: 0.0002772808074951172 seconds[0m
+[97m[INFO ] Processed Images Done taking 0.007308483123779297 seconds. Shape:  torch.Size([1, 3, 378, 504])[0m
+[97m[INFO ] Model Forward Pass Done. Time: 0.01716899871826172 seconds[0m
+[97m[INFO ] Conversion to Prediction Done. Time: 0.0002942085266113281 seconds[0m
+[97m[INFO ] Processed Images Done taking 0.006098508834838867 seconds. Shape:  torch.Size([1, 3, 378, 504])[0m
+[97m[INFO ] Model Forward Pass Done. Time: 0.017134428024291992 seconds[0m
+[97m[INFO ] Conversion to Prediction Done. Time: 0.0002903938293457031 seconds[0m
+[97m[INFO ] Processed Images Done taking 0.007714033126831055 seconds. Shape:  torch.Size([1, 3, 378, 504])[0m
+[97m[INFO ] Model Forward Pass Done. Time: 0.017102718353271484 seconds[0m
+[97m[INFO ] Conversion to Prediction Done. Time: 0.0002875328063964844 seconds[0m
+[97m[INFO ] Processed Images Done taking 0.007255077362060547 seconds. Shape:  torch.Size([1, 3, 378, 504])[0m
+[97m[INFO ] Model Forward Pass Done. Time: 0.017131328582763672 seconds[0m
+[97m[INFO ] Conversion to Prediction Done. Time: 0.0002913475036621094 seconds[0m
+[97m[INFO ] Processed Images Done taking 0.006573915481567383 seconds. Shape:  torch.Size([1, 3, 378, 504])[0m
+[97m[INFO ] Model Forward Pass Done. Time: 0.017122268676757812 seconds[0m
+[97m[INFO ] Conversion to Prediction Done. Time: 0.0002770423889160156 seconds[0m
+[97m[INFO ] Processed Images Done taking 0.006290435791015625 seconds. Shape:  torch.Size([1, 3, 378, 504])[0m
+[97m[INFO ] Model Forward Pass Done. Time: 0.01715397834777832 seconds[0m
+[97m[INFO ] Conversion to Prediction Done. Time: 0.00028777122497558594 seconds[0m
+[97m[INFO ] Processed Images Done taking 0.00951385498046875 seconds. Shape:  torch.Size([1, 3, 378, 504])[0m
+[97m[INFO ] Model Forward Pass Done. Time: 0.017149686813354492 seconds[0m
+[97m[INFO ] Conversion to Prediction Done. Time: 0.00029206275939941406 seconds[0m
+[97m[INFO ] Processed Images Done taking 0.00652623176574707 seconds. Shape:  torch.Size([1, 3, 378, 504])[0m
+[97m[INFO ] Model Forward Pass Done. Time: 0.0171353816986084 seconds[0m
+[97m[INFO ] Conversion to Prediction Done. Time: 0.0002899169921875 seconds[0m
+[97m[INFO ] Processed Images Done taking 0.006852149963378906 seconds. Shape:  torch.Size([1, 3, 378, 504])[0m
+[97m[INFO ] Model Forward Pass Done. Time: 0.017157554626464844 seconds[0m
+[97m[INFO ] Conversion to Prediction Done. Time: 0.0002932548522949219 seconds[0m
+  [ 650/654] idx=1445  abs_rel=0.0779  d1=0.9829  (32.4s)
+[97m[INFO ] Processed Images Done taking 0.006849765777587891 seconds. Shape:  torch.Size([1, 3, 378, 504])[0m
+[97m[INFO ] Model Forward Pass Done. Time: 0.017354965209960938 seconds[0m
+[97m[INFO ] Conversion to Prediction Done. Time: 0.00032329559326171875 seconds[0m
+[97m[INFO ] Processed Images Done taking 0.008297204971313477 seconds. Shape:  torch.Size([1, 3, 378, 504])[0m
+[97m[INFO ] Model Forward Pass Done. Time: 0.01730060577392578 seconds[0m
+[97m[INFO ] Conversion to Prediction Done. Time: 0.00027489662170410156 seconds[0m
+[97m[INFO ] Processed Images Done taking 0.007592678070068359 seconds. Shape:  torch.Size([1, 3, 378, 504])[0m
+[97m[INFO ] Model Forward Pass Done. Time: 0.017197608947753906 seconds[0m
+[97m[INFO ] Conversion to Prediction Done. Time: 0.00028634071350097656 seconds[0m
+[97m[INFO ] Processed Images Done taking 0.007688283920288086 seconds. Shape:  torch.Size([1, 3, 378, 504])[0m
+[97m[INFO ] Model Forward Pass Done. Time: 0.017216920852661133 seconds[0m
+[97m[INFO ] Conversion to Prediction Done. Time: 0.00028586387634277344 seconds[0m
+
+=== NYUv2 (DA3METRIC-LARGE)  paper: d1=0.963  AbsRel=0.070 ===
+  N images : 654
+  abs_rel  : 0.0801
+  sq_rel   : 0.0466
+  rmse     : 0.3426
+  rmse_log : 0.1164
+  log10    : 0.0365
+  d1       : 0.9475
+  d2       : 0.9841
+  d3       : 0.9923
+  silog    : 9.1418
+[nyu] per-image rows -> results/nyuv2_val.csv
+[done]
+
+------------------------------------------------------------
+Sender: LSF System <jdl1fe@rng-dl01-w24n11>
+Subject: Job 12222484: <da3metric_nyu> in cluster <rng-dl01> Done
+
+Job <da3metric_nyu> was submitted from host <rng-dl01-login7> by user <izi2sgh> in cluster <rng-dl01> at Sun Apr 26 15:00:35 2026
+Job was executed on host(s) <4*rng-dl01-w24n11>, in queue <batch_h200>, as user <izi2sgh> in cluster <rng-dl01> at Sun Apr 26 15:00:46 2026
+</home/izi2sgh> was used as the home directory.
+</home/izi2sgh/MYDATA/quanjie/liren/DA3-Metric-Repro> was used as the working directory.
+Started at Sun Apr 26 15:00:46 2026
+Terminated at Sun Apr 26 15:02:34 2026
+Results reported at Sun Apr 26 15:02:34 2026
+
+Your job looked like:
+
+------------------------------------------------------------
+# LSBATCH: User input
+#!/bin/bash -l
+#BSUB -J da3metric_nyu
+#BSUB -P BH-000425-08-05
+#BSUB -q batch_h200
+#BSUB -gpu "num=1"
+#BSUB -n 4
+#BSUB -W 1:00
+#BSUB -M 16384
+#BSUB -o /home/izi2sgh/MYDATA/quanjie/liren/DA3-Metric-Repro/scripts/jobs/nyu.%J.stdout
+#BSUB -e /home/izi2sgh/MYDATA/quanjie/liren/DA3-Metric-Repro/scripts/jobs/nyu.%J.stderr
+#
+# Reproduce DA3-Metric NYUv2 results (Table 11).
+# Paper:  d1=0.963, AbsRel=0.070.  Eval set: 654 official val images.
+
+set -e
+mkdir -p /home/izi2sgh/MYDATA/quanjie/liren/DA3-Metric-Repro/scripts/jobs
+
+module purge
+module load conda/25.1.1
+module load cuda/12.4.0
+
+ENV=/home/izi2sgh/MYDATA/quanjie/liren/envs/da3
+export PATH="${ENV}/bin:${PATH}"
+export PYTHONNOUSERSITE=1
+export TORCH_CUDA_ARCH_LIST="9.0"
+
+cd /home/izi2sgh/MYDATA/quanjie/liren/DA3-Metric-Repro
+
+nvidia-smi | head -20
+echo "------------"
+which python
+python --version
+echo "------------"
+
+python eval/run_nyuv2.py \
+    --max_samples -1 \
+    --device cuda \
+    --process_res 504 \
+    --output results/nyuv2_val.csv
+
+echo "[done]"
+
+------------------------------------------------------------
+
+Successfully completed.
+
+Resource usage summary:
+
+    CPU time :                                   51.63 sec.
+    Max Memory :                                 1175 MB
+    Average Memory :                             558.86 MB
+    Total Requested Memory :                     65536.00 MB
+    Delta Memory :                               64361.00 MB
+    Max Swap :                                   -
+    Max Processes :                              4
+    Max Threads :                                21
+    Run time :                                   98 sec.
+    Turnaround time :                            119 sec.
+
+The output (if any) is above this job summary.
+
+
+
+PS:
+
+Read file </home/izi2sgh/MYDATA/quanjie/liren/DA3-Metric-Repro/scripts/jobs/nyu.12222484.stderr> for stderr output of this job.
+
