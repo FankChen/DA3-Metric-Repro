@@ -1,0 +1,30 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.venv/
+.env
+
+# Logs / outputs
+*.log
+logs/
+outputs/
+
+# Large artifacts
+checkpoints/**/*.bin
+checkpoints/**/*.safetensors
+checkpoints/**/*.pth
+checkpoints/**/*.pt
+
+# Datasets / cache
+data/
+*.npy
+*.npz
+.cache/
+
+# IDE
+.vscode/
+.idea/
+
+# Third-party clones
+third_party/Depth-Anything-3/
