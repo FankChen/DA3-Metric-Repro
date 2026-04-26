@@ -106,15 +106,15 @@ def main():
             continue
         if depth_rel is None:
             continue
-        depth_p = data_root / "depth" / depth_rel
+        # KITTI depth GT lives under depth/{train,val}/<drive>/proj_depth/...
+        depth_p = data_root / "depth" / "val" / depth_rel
         if not depth_p.is_file():
-            # Try BTS layout fallback
-            alt = data_root / depth_rel
-            if alt.is_file():
-                depth_p = alt
-            else:
-                print(f"  [skip] missing gt: {depth_p}")
-                continue
+            depth_p = data_root / "depth" / "train" / depth_rel
+        if not depth_p.is_file():
+            depth_p = data_root / "depth" / depth_rel
+        if not depth_p.is_file():
+            print(f"  [skip] missing gt: {depth_rel}")
+            continue
 
         # KITTI date dir lives at  raw/<date>/<date>_drive_xxxx_sync/...
         date_dir = data_root / "raw" / rgb_rel.split("/")[0]

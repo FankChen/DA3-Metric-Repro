@@ -36,11 +36,19 @@ def _ensure_repo_on_path(repo_path: str | Path) -> None:
 class DA3MetricInfer:
     def __init__(
         self,
-        model_id: str = "depth-anything/DA3METRIC-LARGE",
+        model_id: str | None = None,
         repo_path: str | Path | None = None,
         device: str = "cuda",
         process_res: int = 504,
     ) -> None:
+        if model_id is None:
+            # Prefer the locally downloaded checkpoint to avoid hitting HF
+            # from compute nodes that may have no internet.
+            local = (
+                Path(__file__).resolve().parents[1]
+                / "checkpoints" / "DA3METRIC-LARGE"
+            )
+            model_id = str(local) if local.is_dir() else "depth-anything/DA3METRIC-LARGE"
         if repo_path is None:
             repo_path = Path(__file__).resolve().parents[1] / "third_party" / "Depth-Anything-3"
         _ensure_repo_on_path(repo_path)
