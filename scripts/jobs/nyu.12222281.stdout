@@ -1,0 +1,78 @@
+
+------------------------------------------------------------
+Sender: LSF System <jdl1fe@rng-dl01-w24n11>
+Subject: Job 12222281: <da3metric_nyu> in cluster <rng-dl01> Exited
+
+Job <da3metric_nyu> was submitted from host <rng-dl01-login7> by user <izi2sgh> in cluster <rng-dl01> at Sun Apr 26 14:02:46 2026
+Job was executed on host(s) <4*rng-dl01-w24n11>, in queue <batch_h200>, as user <izi2sgh> in cluster <rng-dl01> at Sun Apr 26 14:03:00 2026
+</home/izi2sgh> was used as the home directory.
+</home/izi2sgh/MYDATA/quanjie/liren/DA3-Metric-Repro> was used as the working directory.
+Started at Sun Apr 26 14:03:00 2026
+Terminated at Sun Apr 26 14:03:52 2026
+Results reported at Sun Apr 26 14:03:52 2026
+
+Your job looked like:
+
+------------------------------------------------------------
+# LSBATCH: User input
+#!/bin/bash
+#BSUB -J da3metric_nyu
+#BSUB -P BH-000425-08-05
+#BSUB -q batch_h200
+#BSUB -gpu "num=1"
+#BSUB -n 4
+#BSUB -W 1:00
+#BSUB -o /home/izi2sgh/MYDATA/quanjie/liren/DA3-Metric-Repro/scripts/jobs/nyu.%J.stdout
+#BSUB -e /home/izi2sgh/MYDATA/quanjie/liren/DA3-Metric-Repro/scripts/jobs/nyu.%J.stderr
+#
+# Reproduce DA3-Metric NYUv2 results (Table 11).
+# Paper:  d1=0.963, AbsRel=0.070.  Eval set: 654 official val images.
+
+set -e
+mkdir -p /home/izi2sgh/MYDATA/quanjie/liren/DA3-Metric-Repro/scripts/jobs
+
+source /etc/profile.d/modules.sh
+module load conda/25.1.1
+conda activate /home/izi2sgh/MYDATA/quanjie/liren/envs/da3
+
+cd /home/izi2sgh/MYDATA/quanjie/liren/DA3-Metric-Repro
+
+nvidia-smi | head -20
+echo "------------"
+which python
+python --version
+echo "------------"
+
+python eval/run_nyuv2.py \
+    --max_samples -1 \
+    --device cuda \
+    --process_res 504 \
+    --output results/nyuv2_val.csv
+
+echo "[done]"
+
+------------------------------------------------------------
+
+Exited with exit code 1.
+
+Resource usage summary:
+
+    CPU time :                                   0.18 sec.
+    Max Memory :                                 17 MB
+    Average Memory :                             16.75 MB
+    Total Requested Memory :                     4096.00 MB
+    Delta Memory :                               4079.00 MB
+    Max Swap :                                   -
+    Max Processes :                              1
+    Max Threads :                                2
+    Run time :                                   39 sec.
+    Turnaround time :                            66 sec.
+
+The output (if any) is above this job summary.
+
+
+
+PS:
+
+Read file </home/izi2sgh/MYDATA/quanjie/liren/DA3-Metric-Repro/scripts/jobs/nyu.12222281.stderr> for stderr output of this job.
+

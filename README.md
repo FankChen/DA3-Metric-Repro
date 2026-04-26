@@ -52,14 +52,25 @@ DA3-Metric-Repro/
 ## 4. 进度
 
 - [x] 项目骨架 + README
-- [ ] 拉官方 repo + 下载 ckpt
-- [ ] 跑通官方 demo 验证环境
-- [ ] KITTI Eigen 评测（先做这个，因为本机有数据）
-- [ ] NYUv2 评测
-- [ ] ETH3D 评测
-- [ ] SUN-RGBD 评测
-- [ ] DIODE 评测
+- [x] 拉官方 repo + 下载 ckpt（1.3 GB at `checkpoints/DA3METRIC-LARGE/`）
+- [x] conda env `liren/envs/da3`（torch2.4.1+cu121 + xformers + DA3 -e .）
+- [x] 端到端 CPU smoke 跑通
+- [x] KITTI Eigen runner + 提交（job 12222224 PEND on batch_h200）
+- [x] NYUv2 runner + 提交（共享 scratch 654 张 val 已就位）
+- [ ] ETH3D 评测（数据未就位，需下载）
+- [ ] SUN-RGBD 评测（数据未就位，需下载）
+- [ ] DIODE 评测（数据未就位，需下载）
 - [ ] 五列复现数字 vs 论文对比表
+
+### 数据集状态
+
+| Dataset | 状态 | 路径 |
+|---|---|---|
+| KITTI Eigen | ✅ | `liren/depth-v3/training-for-depth-anything-v3/kitti_root` |
+| NYUv2 (654 val) | ✅ | `/fs/scratch/datasets/cr_dlp_open_permissive/nyuv2/val/` |
+| ETH3D | ❌ | TODO 下载（约 6 GB） |
+| SUN-RGBD | ❌ | TODO 下载（约 6 GB） |
+| DIODE indoor | ❌ | TODO 下载（约 3 GB） |
 
 ## 5. 与 DenseGRU-v1.0 项目的关系
 
