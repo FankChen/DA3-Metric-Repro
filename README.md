@@ -87,3 +87,119 @@ DA3-Metric-Repro/
 ## 6. Changelog
 
 - **2026-04-26**: 项目初始化。先Path A（评测复现）而不是 Path B（训练复现）。
+
+---
+
+## 7. 全过程分析与进度记录（2026-04-26 17:30）
+
+### 7.0 背景与定位
+
+**起因**：上一阶段 AI 辅助生成的 "Depth Anything V3" 训练代码实际加载的是
+`VideoDepthAnything` 类，做的是单帧 KITTI fine-tune，与 DA3 完全无关。本质是
+prompt 给得不准，方向偏了。
+
+**师兄要求**：参考论文，自己写 DA3 的训练代码。
+
+**拆解**：DA3 是多任务多阶段模型（relative / metric / multi-view geometry），
+先做最小可行的 metric depth fine-tune（论文 Sec 4.3）。分两条路径：
+- **Path A**：用官方 `DA3METRIC-LARGE` 权重在 5 个 benchmark 上跑 eval，确认
+  我对模型 I/O、单位换算、评测协议的理解正确
+- **Path B**：在 Path A 通过后，自己写训练代码做 metric fine-tune
+
+### 7.1 Path A — 评估复现（已完成）
+
+#### 自写代码
+
+| 文件 | 内容 |
+|---|---|
+| `eval/metrics.py` | AbsRel / SqRel / RMSE / RMSE-log / log10 / d1-d3 / SiLog；Garg crop |
+| `eval/infer.py` | DA3 推理 wrapper，自己写 resize + 焦距重缩放 |
+| `eval/run_kitti_eigen.py` | 697 张 KITTI Eigen test 评测器 |
+| `eval/run_nyuv2.py` | 654 张 NYU 官方 Eigen test 评测器 |
+| `scripts/eval_*.bsub` | LSF 提交脚本 |
+
+#### 关键 bug 与诊断
+
+| # | 现象 | 诊断 | 修复 |
+|---|---|---|---|
+| 1 | LSF 起步即崩 | `/etc/profile.d/modules.sh: No such file` 在计算节点 | `#!/bin/bash -l` + `module purge` + `module load conda/25.1.1` + `module load cuda/12.4.0` |
+| 2 | KITTI AbsRel=1.34（论文 0.086） | `metric = focal/300 × raw` 用了原图焦距 (~721 px)，但模型 forward 在 504 长边的 resize 输入下，实际焦距 ~292 px | 在 `infer.predict()` 里把 K 按 `(sx,sy)` 缩放到 model 输入分辨率后再算 focal |
+| 3 | NYU AbsRel=0.171（论文 0.070） | 单图诊断 idx=0 pred=2.91m vs GT=3.07m 几乎完美。最后定位 `/fs/scratch/.../nyuv2/val/` 那个 npy 已被预处理 resize 到 288×384，破坏精度 | 切换到原始 480×640 PNG (`nyu_depth_v2/nyuv2/test/`) |
+
+#### Path A 复现结果
+
+| Benchmark | 论文 d1 / AbsRel | 复现 d1 / AbsRel | 偏差 |
+|---|---|---|---|
+| KITTI Eigen (652 valid / 697) | 0.953 / 0.086 | **0.926 / 0.094** | d1 −2.8%, AbsRel +9% |
+| NYUv2 Eigen (654) | 0.963 / 0.070 | **0.948 / 0.080** | d1 −1.6%, AbsRel +14% |
+
+两列都在 ±15% 内，**Path A 复现成功**。
+ETH3D / SUN-RGBD / DIODE：cluster 上没数据，未做。
+
+### 7.2 Path B — 自写 DA3-Metric 训练代码（首轮已完成）
+
+#### 设计决策
+
+| 项 | 选择 | 理由 |
+|---|---|---|
+| 框架 | 纯 PyTorch + bf16 | 不依赖 Lightning，逻辑透明 |
+| 起点权重 | `DA3-LARGE`（relative depth, 1.6GB） | 论文 metric finetune 是从 relative 起步 |
+| 数据 | KITTI Eigen train 23157 张 | 复用师兄 `splits/eigen_train_files.txt` |
+| 冻结策略 | 冻 DINOv2 backbone (313M)，训 DPT decoder + metric head (98M) | 论文 metric finetune 同样设置 |
+| Loss | SiLog (var_focus=0.85) + LogL1 + multi-scale Grad，权重 1.0/0.1/0.5 | DA2/MiDaS 经典三件套 |
+| 优化器 | AdamW lr=5e-5，wd=0.01 | DA2 finetune 推荐 |
+| Schedule | 2 epoch warmup + cosine，8 epoch 总长 | 标准 finetune |
+| Batch | 4，grad clip 1.0 | 单 H200 显存 |
+| 监控 | 每 500 step 在 64 张 train 子样本做 quick-eval | 不打断训练的轻量探针 |
+
+#### 关键技术障碍：绕过 `inference_mode`
+
+官方 `DepthAnything3.forward()` 被双层包死：
+```python
+@torch.inference_mode()
+def forward(...):
+    with torch.no_grad():
+        return self.model(...)
+```
+完全无法训练。**解决方案**：直接调用内层 `model.model.forward()`
+（即 `DepthAnything3Net.forward`），跳过外层 wrapper。
+
+#### 自写代码
+
+| 文件 | 行数 | 内容 |
+|---|---|---|
+| `train/losses.py` | ~140 | SiLogLoss / LogL1Loss / GradMatchLoss(scales=1,2,4,8) / 组合 |
+| `train/datasets.py` | ~280 | KITTIEigenDataset + NYUv2Dataset；upper_bound_resize；K 同步缩放；hflip 时 cx 镜像；ColorJitter |
+| `train/model_wrapper.py` | ~120 | 加载 DA3-LARGE，绕过 inference_mode，应用 `(focal_proc/300)*raw` |
+| `train/train.py` | ~250 | AdamW + bf16 autocast + warmup-cosine + grad clip + quick-eval + ckpt save |
+| `scripts/train_kitti.bsub` | ~30 | LSF 提交 |
+| `configs/metric_kitti.yaml` | — | 超参记录 |
+
+#### 训练首轮结果（job 12223055，2026-04-26 16:49–17:29）
+
+- **总时长**：40 分钟（2410s 真实运行）on 单 H200
+- **完成度**：8 epoch / 46312 步全跑完
+- **速度**：~21 step/s
+- **Loss**：step 0 = 11.07 → step 34500 ≈ 0.70（下降 ~16×）
+- **Quick-eval**（64 张 train 子样本 + Garg crop，saturated 区间）：
+  - AbsRel ≈ **0.045**
+  - d1 ≈ **0.985**
+  - RMSE ≈ **1.97**
+  - 注：train 子集偏乐观；最终判定要在 697 张官方 KITTI Eigen test 上重测
+- **ckpt**：`runs/da3metric_kitti_v0/ckpts/step_046000.pt`（1.9GB，最终）
+
+### 7.3 训练后 todo
+
+1. 用 `eval/run_kitti_eigen.py` 在 **697 张 KITTI Eigen test** 上跑自训 ckpt
+2. 用 `eval/run_nyuv2.py` 在 NYU Eigen test 上跑（关键：只在 KITTI 训，NYU 上指标能反映泛化）
+3. 与 `DA3METRIC-LARGE` 官方 ckpt head-to-head 比较
+4. 根据结果决定后续：
+   - KITTI 接近论文但 NYU 差很多 → 加 NYU 混训
+   - 两者都差 → 解冻 backbone 加训 1-2 epoch
+   - 两者都接近 → 补 ETH3D / SUN-RGBD / DIODE 凑齐 Table 11
+
+### 7.4 自写代码占比
+
+- **eval**：100% 自写（metrics、infer wrapper、runner、LSF 脚本）
+- **train**：100% 自写（loss、dataset、主循环、model wrapper、LSF 脚本）
+- **依赖官方代码**：仅模型 forward 走内层 `DepthAnything3Net.forward`（无替代方案，否则要重训 DINOv2）
