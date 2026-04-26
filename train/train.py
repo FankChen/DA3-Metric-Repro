@@ -132,18 +132,40 @@ def main():
         print(f"  NYU   train: {len(ds_list[-1])} samples")
     assert ds_list, "no datasets configured"
 
-    # For now, train on a single dataset at a time (avoids variable-shape
-    # batching headaches). Pick the first one in cfg.
+    # ---- Build one DataLoader per dataset and a sampling-prob list.
+    # Each loader yields its own (homogeneous-shape) batches; in each step we
+    # pick one loader at random with prob `sample_probs[i]` (default uniform).
+    sample_probs = cfg.get("data", {}).get("sample_probs", None)
+    if sample_probs is None:
+        sample_probs = [1.0 / len(ds_list)] * len(ds_list)
+    assert len(sample_probs) == len(ds_list)
+    print(f"[data] sample_probs = {sample_probs}")
+
+    loaders = []
+    for ds_i in ds_list:
+        loaders.append(DataLoader(
+            ds_i,
+            batch_size=int(cfg["train"]["batch_size"]),
+            shuffle=True,
+            num_workers=int(cfg["train"].get("num_workers", 4)),
+            pin_memory=True,
+            drop_last=True,
+            persistent_workers=cfg["train"].get("num_workers", 4) > 0,
+        ))
+    iters = [iter(ld) for ld in loaders]
+
+    def next_batch(rng):
+        di = int(rng.choice(len(loaders), p=sample_probs))
+        try:
+            return next(iters[di]), di
+        except StopIteration:
+            iters[di] = iter(loaders[di])
+            return next(iters[di]), di
+
+    # The first dataset is used as the "anchor" length to define epoch /
+    # step counts (this is just a logging convenience).
     ds = ds_list[0]
-    loader = DataLoader(
-        ds,
-        batch_size=int(cfg["train"]["batch_size"]),
-        shuffle=True,
-        num_workers=int(cfg["train"].get("num_workers", 4)),
-        pin_memory=True,
-        drop_last=True,
-        persistent_workers=cfg["train"].get("num_workers", 4) > 0,
-    )
+    loader = loaders[0]
 
     # ---- model ----
     print("[model] loading DA3-LARGE init ...")
@@ -153,6 +175,17 @@ def main():
         freeze_backbone=cfg["model"].get("freeze_backbone", True),
     ).to(device)
     print(f"[model] ready in {time.time()-t0:.1f}s")
+
+    resume_from = cfg.get("model", {}).get("resume_from", None)
+    if resume_from:
+        print(f"[model] resuming weights from {resume_from}")
+        ck = torch.load(str(resume_from), map_location="cpu", weights_only=False)
+        sd = ck["model"]
+        missing, unexpected = model.load_state_dict(sd, strict=False)
+        print(f"  resume: missing={len(missing)}  unexpected={len(unexpected)}")
+        if missing:
+            print("    first missing:", missing[:3])
+        del ck, sd
 
     # ---- loss ----
     lc = cfg["loss"]
@@ -199,78 +232,78 @@ def main():
 
     step = 0
     t_loop = time.time()
-    for ep in range(max_epochs):
-        for batch in loader:
-            if "per_sample" in batch:
-                # mixed-shape batch: degrade to per-sample loop
-                batches = [{k: v.unsqueeze(0) if torch.is_tensor(v) else [v]
-                            for k, v in s.items()} for s in batch["per_sample"]]
-            else:
-                batches = [batch]
+    rng = np.random.default_rng(0)
+    src_count = {f"ds{i}": 0 for i in range(len(ds_list))}
+    while step < total_steps:
+        batch, di = next_batch(rng)
+        src_count[f"ds{di}"] += 1
+        if "per_sample" in batch:
+            batches = [{k: v.unsqueeze(0) if torch.is_tensor(v) else [v]
+                        for k, v in s.items()} for s in batch["per_sample"]]
+        else:
+            batches = [batch]
 
-            losses_acc = {}
-            for b in batches:
-                img = b["image"].to(device, non_blocking=True)
-                gt = b["depth"].to(device, non_blocking=True)
-                mask = b["mask"].to(device, non_blocking=True)
-                K = b["K"].to(device, non_blocking=True)
-                # set per-step LR
-                lr_now = cosine_lr(step, total_steps, base_lr, warmup=warmup_steps)
-                for i, g in enumerate(optimizer.param_groups):
-                    g["lr"] = lr_now * (bb_lr_factor if i == 1 else 1.0)
+        losses_acc = {}
+        for b in batches:
+            img = b["image"].to(device, non_blocking=True)
+            gt = b["depth"].to(device, non_blocking=True)
+            mask = b["mask"].to(device, non_blocking=True)
+            K = b["K"].to(device, non_blocking=True)
+            # set per-step LR
+            lr_now = cosine_lr(step, total_steps, base_lr, warmup=warmup_steps)
+            for i, g in enumerate(optimizer.param_groups):
+                g["lr"] = lr_now * (bb_lr_factor if i == 1 else 1.0)
 
-                optimizer.zero_grad(set_to_none=True)
-                with torch.autocast(device_type="cuda" if device == "cuda" else "cpu",
-                                     dtype=amp_dtype):
-                    pred, _ = model.train_forward(img, K)
-                # Cast pred back to float32 for loss numerical stability
-                pred_f = pred.float()
-                loss_dict = criterion(pred_f, gt, mask)
-                total = loss_dict["total"]
-                if not torch.isfinite(total):
-                    print(f"  [warn] non-finite loss at step {step}, skipping")
-                    continue
-                total.backward()
-                torch.nn.utils.clip_grad_norm_(
-                    [p for p in model.parameters() if p.requires_grad and p.grad is not None],
-                    max_norm=grad_clip,
-                )
-                optimizer.step()
-                for k, v in loss_dict.items():
-                    losses_acc[k] = losses_acc.get(k, 0.0) + float(v.detach().cpu())
+            optimizer.zero_grad(set_to_none=True)
+            with torch.autocast(device_type="cuda" if device == "cuda" else "cpu",
+                                 dtype=amp_dtype):
+                pred, _ = model.train_forward(img, K)
+            # Cast pred back to float32 for loss numerical stability
+            pred_f = pred.float()
+            loss_dict = criterion(pred_f, gt, mask)
+            total = loss_dict["total"]
+            if not torch.isfinite(total):
+                print(f"  [warn] non-finite loss at step {step}, skipping")
+                continue
+            total.backward()
+            torch.nn.utils.clip_grad_norm_(
+                [p for p in model.parameters() if p.requires_grad and p.grad is not None],
+                max_norm=grad_clip,
+            )
+            optimizer.step()
+            for k, v in loss_dict.items():
+                losses_acc[k] = losses_acc.get(k, 0.0) + float(v.detach().cpu())
 
-            for k in losses_acc:
-                losses_acc[k] /= max(len(batches), 1)
+        for k in losses_acc:
+            losses_acc[k] /= max(len(batches), 1)
 
-            if step % log_every == 0:
-                el = time.time() - t_loop
-                print(f"  [ep{ep:02d} step {step:>5d}/{total_steps}] "
-                      f"loss={losses_acc.get('total', 0):.4f}  "
-                      f"silog={losses_acc.get('silog', 0):.4f}  "
-                      f"l1={losses_acc.get('l1', 0):.4f}  "
-                      f"grad={losses_acc.get('grad', 0):.4f}  "
-                      f"lr={lr_now:.2e}  ({el:.1f}s)")
+        if step % log_every == 0:
+            el = time.time() - t_loop
+            ep_now = step // max(steps_per_epoch, 1)
+            src_str = " ".join(f"{k}={v}" for k, v in src_count.items())
+            print(f"  [ep{ep_now:02d} step {step:>5d}/{total_steps}] "
+                  f"loss={losses_acc.get('total', 0):.4f}  "
+                  f"silog={losses_acc.get('silog', 0):.4f}  "
+                  f"l1={losses_acc.get('l1', 0):.4f}  "
+                  f"grad={losses_acc.get('grad', 0):.4f}  "
+                  f"lr={lr_now:.2e}  src=[{src_str}]  ({el:.1f}s)")
 
-            if step > 0 and step % eval_every == 0:
-                print(f"  [eval @ step {step}]")
-                m = quick_eval_kitti(model, ds, n=64, device=device, max_depth=80.0)
-                print(f"    quick-eval (64 train samples): {m}")
+        if step > 0 and step % eval_every == 0:
+            print(f"  [eval @ step {step}]")
+            m = quick_eval_kitti(model, ds, n=64, device=device, max_depth=80.0)
+            print(f"    quick-eval (64 train samples): {m}")
 
-            if step > 0 and step % save_every == 0:
-                ck = out_dir / "ckpts" / f"step_{step:06d}.pt"
-                torch.save({
-                    "step": step,
-                    "model": model.state_dict(),
-                    "optim": optimizer.state_dict(),
-                    "cfg": cfg,
-                }, ck)
-                print(f"    [ckpt] -> {ck}")
+        if step > 0 and step % save_every == 0:
+            ck = out_dir / "ckpts" / f"step_{step:06d}.pt"
+            torch.save({
+                "step": step,
+                "model": model.state_dict(),
+                "optim": optimizer.state_dict(),
+                "cfg": cfg,
+            }, ck)
+            print(f"    [ckpt] -> {ck}")
 
-            step += 1
-            if step >= total_steps:
-                break
-        if step >= total_steps:
-            break
+        step += 1
 
     # final ckpt
     ck = out_dir / "ckpts" / "final.pt"

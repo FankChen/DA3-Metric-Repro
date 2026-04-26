@@ -1,0 +1,40 @@
+#!/bin/bash -l
+#BSUB -P BH-000425-08-05
+#BSUB -q batch_h200
+#BSUB -gpu "num=1:mode=exclusive_process"
+#BSUB -n 8
+#BSUB -M 65536
+#BSUB -W 4:00
+#BSUB -J da3_kn_mix
+#BSUB -o scripts/jobs/train_kn_mix.%J.stdout
+#BSUB -e scripts/jobs/train_kn_mix.%J.stderr
+
+module purge
+module load conda/25.1.1
+module load cuda/12.4.0
+
+ENV=/home/izi2sgh/MYDATA/quanjie/liren/envs/da3
+export PATH="${ENV}/bin:${PATH}"
+export PYTHONNOUSERSITE=1
+export TORCH_CUDA_ARCH_LIST="9.0"
+export OMP_NUM_THREADS=4
+export TOKENIZERS_PARALLELISM=false
+
+cd /home/izi2sgh/MYDATA/quanjie/liren/DA3-Metric-Repro
+which python
+python --version
+
+echo "===================================================="
+echo "[run] DA3-Metric KITTI+NYU mix training (resume from v0)"
+echo "===================================================="
+
+SMOKE_FLAG=""
+if [[ "${SMOKE:-0}" == "1" ]]; then
+    SMOKE_FLAG="--smoke"
+fi
+
+python -u train/train.py \
+    --config configs/metric_kn_mix.yaml \
+    ${SMOKE_FLAG}
+
+echo "[done]"
