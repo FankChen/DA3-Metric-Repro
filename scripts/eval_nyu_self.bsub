@@ -1,0 +1,31 @@
+#!/bin/bash -l
+#BSUB -P BH-000425-08-05
+#BSUB -q batch_h200
+#BSUB -gpu "num=1:mode=exclusive_process"
+#BSUB -n 4
+#BSUB -M 16384
+#BSUB -W 1:00
+#BSUB -J da3_eval_nyu_self
+#BSUB -o scripts/jobs/eval_nyu_self.%J.stdout
+#BSUB -e scripts/jobs/eval_nyu_self.%J.stderr
+
+module purge
+module load conda/25.1.1
+module load cuda/12.4.0
+
+ENV=/home/izi2sgh/MYDATA/quanjie/liren/envs/da3
+export PATH="${ENV}/bin:${PATH}"
+export PYTHONNOUSERSITE=1
+export TORCH_CUDA_ARCH_LIST="9.0"
+
+cd /home/izi2sgh/MYDATA/quanjie/liren/DA3-Metric-Repro
+
+CKPT="${CKPT:-runs/da3metric_kitti_v0/ckpts/step_046000.pt}"
+echo "[eval-self] ckpt = $CKPT"
+
+python -u eval/run_nyuv2.py \
+    --max_samples -1 \
+    --train_ckpt "$CKPT" \
+    --output results/nyuv2_self_step046000.csv
+
+echo "[done]"

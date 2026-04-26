@@ -182,11 +182,22 @@ def forward(...):
 - **速度**：~21 step/s
 - **Loss**：step 0 = 11.07 → step 34500 ≈ 0.70（下降 ~16×）
 - **Quick-eval**（64 张 train 子样本 + Garg crop，saturated 区间）：
-  - AbsRel ≈ **0.045**
-  - d1 ≈ **0.985**
-  - RMSE ≈ **1.97**
-  - 注：train 子集偏乐观；最终判定要在 697 张官方 KITTI Eigen test 上重测
+  - AbsRel ≈ **0.045**, d1 ≈ **0.985**, RMSE ≈ **1.97**
 - **ckpt**：`runs/da3metric_kitti_v0/ckpts/step_046000.pt`（1.9GB，最终）
+
+#### 自训 ckpt 在官方测试集上的最终评测（job 12223186/187）
+
+| 来源 | KITTI AbsRel / d1 | NYUv2 AbsRel / d1 |
+|---|---|---|
+| 论文 | 0.086 / 0.953 | 0.070 / 0.963 |
+| 官方 DA3METRIC-LARGE (Path A) | 0.094 / 0.926 | 0.080 / 0.948 |
+| **自训 step_046000** | **0.065 / 0.952** ⭐ | 2.71 / 0.007 ❌ |
+
+**KITTI**：自训模型 AbsRel 比官方权重好 31%，d1 与论文（0.953）基本持平。
+说明 Path B 训练 pipeline 完全可行，**自己写的训练代码确实学到了 metric depth**。
+
+**NYU**：完全崩溃。原因是首轮**只在 KITTI 上训**，KITTI 是室外 0–80m 道路场景，
+而 NYU 是室内 0–10m 房间场景，这就是 domain shift。下一轮要做 KITTI+NYU 混训。
 
 ### 7.3 训练后 todo
 

@@ -1893,3 +1893,159 @@ Loading weights from local directory
   [ep05 step 33180/46312] loss=0.5905  silog=0.5784  l1=0.0340  grad=0.0174  lr=9.47e-06  (1650.5s)
   [ep05 step 33200/46312] loss=0.7113  silog=0.6978  l1=0.0493  grad=0.0171  lr=9.44e-06  (1651.3s)
   [ep05 step 33220/46312] loss=0.8802  silog=0.8656  l1=0.0436  grad=0.0206  lr=9.42e-06  (1652.1s)
+  [ep05 step 33240/46312] loss=0.8121  silog=0.7956  l1=0.0498  grad=0.0231  lr=9.39e-06  (1652.8s)
+  [ep05 step 33260/46312] loss=0.5854  silog=0.5727  l1=0.0320  grad=0.0189  lr=9.36e-06  (1653.6s)
+  [ep05 step 33280/46312] loss=0.8452  silog=0.8281  l1=0.0538  grad=0.0235  lr=9.34e-06  (1654.4s)
+  [ep05 step 33300/46312] loss=0.6577  silog=0.6451  l1=0.0423  grad=0.0167  lr=9.31e-06  (1655.1s)
+  [ep05 step 33320/46312] loss=0.8472  silog=0.8308  l1=0.0494  grad=0.0228  lr=9.28e-06  (1655.9s)
+  [ep05 step 33340/46312] loss=0.7764  silog=0.7604  l1=0.0563  grad=0.0207  lr=9.26e-06  (1656.7s)
+  [ep05 step 33360/46312] loss=0.7015  silog=0.6869  l1=0.0436  grad=0.0205  lr=9.23e-06  (1657.4s)
+  [ep05 step 33380/46312] loss=0.6943  silog=0.6805  l1=0.0426  grad=0.0191  lr=9.20e-06  (1658.2s)
+  [ep05 step 33400/46312] loss=0.9558  silog=0.9385  l1=0.0608  grad=0.0224  lr=9.18e-06  (1659.0s)
+  [ep05 step 33420/46312] loss=0.7720  silog=0.7561  l1=0.0483  grad=0.0222  lr=9.15e-06  (1659.8s)
+  [ep05 step 33440/46312] loss=0.7393  silog=0.7259  l1=0.0443  grad=0.0180  lr=9.12e-06  (1660.6s)
+  [ep05 step 33460/46312] loss=0.8436  silog=0.8284  l1=0.0457  grad=0.0211  lr=9.10e-06  (1661.4s)
+  [ep05 step 33480/46312] loss=0.7706  silog=0.7559  l1=0.0517  grad=0.0191  lr=9.07e-06  (1662.2s)
+  [ep05 step 33500/46312] loss=0.8141  silog=0.7998  l1=0.0527  grad=0.0179  lr=9.04e-06  (1663.0s)
+  [eval @ step 33500]
+    quick-eval (64 train samples): {'abs_rel': 0.04678114827265955, 'd1': 0.9852303748543778, 'rmse': 1.9672267956051674}
+  [ep05 step 33520/46312] loss=0.6178  silog=0.6045  l1=0.0382  grad=0.0189  lr=9.02e-06  (1670.4s)
+  [ep05 step 33540/46312] loss=0.8753  silog=0.8597  l1=0.0551  grad=0.0201  lr=8.99e-06  (1671.2s)
+  [ep05 step 33560/46312] loss=0.7829  silog=0.7659  l1=0.0459  grad=0.0249  lr=8.97e-06  (1672.0s)
+  [ep05 step 33580/46312] loss=0.7178  silog=0.7030  l1=0.0468  grad=0.0202  lr=8.94e-06  (1672.7s)
+  [ep05 step 33600/46312] loss=0.8642  silog=0.8476  l1=0.0487  grad=0.0234  lr=8.91e-06  (1673.5s)
+  [ep05 step 33620/46312] loss=0.8789  silog=0.8626  l1=0.0530  grad=0.0220  lr=8.89e-06  (1674.3s)
+  [ep05 step 33640/46312] loss=0.8131  silog=0.7986  l1=0.0548  grad=0.0179  lr=8.86e-06  (1675.1s)
+  [ep05 step 33660/46312] loss=0.5660  silog=0.5525  l1=0.0395  grad=0.0190  lr=8.83e-06  (1675.8s)
+  [ep05 step 33680/46312] loss=0.7074  silog=0.6949  l1=0.0417  grad=0.0166  lr=8.81e-06  (1676.6s)
+  [ep05 step 33700/46312] loss=0.6752  silog=0.6624  l1=0.0432  grad=0.0169  lr=8.78e-06  (1677.4s)
+  [ep05 step 33720/46312] loss=0.7515  silog=0.7380  l1=0.0485  grad=0.0174  lr=8.76e-06  (1678.1s)
+  [ep05 step 33740/46312] loss=1.0067  silog=0.9890  l1=0.0612  grad=0.0231  lr=8.73e-06  (1678.9s)
+  [ep05 step 33760/46312] loss=0.7042  silog=0.6910  l1=0.0447  grad=0.0174  lr=8.70e-06  (1679.7s)
+  [ep05 step 33780/46312] loss=0.7911  silog=0.7762  l1=0.0489  grad=0.0201  lr=8.68e-06  (1680.5s)
+  [ep05 step 33800/46312] loss=0.8542  silog=0.8393  l1=0.0478  grad=0.0203  lr=8.65e-06  (1681.3s)
+  [ep05 step 33820/46312] loss=0.6145  silog=0.6008  l1=0.0408  grad=0.0192  lr=8.63e-06  (1682.0s)
+  [ep05 step 33840/46312] loss=0.7430  silog=0.7269  l1=0.0467  grad=0.0228  lr=8.60e-06  (1682.8s)
+  [ep05 step 33860/46312] loss=0.9687  silog=0.9524  l1=0.0555  grad=0.0215  lr=8.57e-06  (1683.6s)
+  [ep05 step 33880/46312] loss=0.6988  silog=0.6850  l1=0.0494  grad=0.0176  lr=8.55e-06  (1684.3s)
+  [ep05 step 33900/46312] loss=0.6704  silog=0.6577  l1=0.0428  grad=0.0167  lr=8.52e-06  (1685.1s)
+  [ep05 step 33920/46312] loss=0.7243  silog=0.7093  l1=0.0526  grad=0.0196  lr=8.50e-06  (1685.9s)
+  [ep05 step 33940/46312] loss=0.7974  silog=0.7848  l1=0.0383  grad=0.0175  lr=8.47e-06  (1686.7s)
+  [ep05 step 33960/46312] loss=0.6797  silog=0.6666  l1=0.0422  grad=0.0176  lr=8.45e-06  (1687.4s)
+  [ep05 step 33980/46312] loss=0.6608  silog=0.6478  l1=0.0469  grad=0.0166  lr=8.42e-06  (1688.2s)
+  [ep05 step 34000/46312] loss=0.9259  silog=0.9081  l1=0.0593  grad=0.0238  lr=8.39e-06  (1689.0s)
+  [eval @ step 34000]
+    quick-eval (64 train samples): {'abs_rel': 0.04477361308271792, 'd1': 0.9844478367202958, 'rmse': 1.976646757039311}
+    [ckpt] -> /home/izi2sgh/MYDATA/quanjie/liren/DA3-Metric-Repro/runs/da3metric_kitti_v0/ckpts/step_034000.pt
+  [ep05 step 34020/46312] loss=0.8807  silog=0.8626  l1=0.0662  grad=0.0229  lr=8.37e-06  (1697.7s)
+  [ep05 step 34040/46312] loss=0.6810  silog=0.6672  l1=0.0452  grad=0.0186  lr=8.34e-06  (1698.5s)
+  [ep05 step 34060/46312] loss=0.6604  silog=0.6472  l1=0.0417  grad=0.0181  lr=8.32e-06  (1699.2s)
+  [ep05 step 34080/46312] loss=0.7275  silog=0.7119  l1=0.0472  grad=0.0218  lr=8.29e-06  (1700.0s)
+  [ep05 step 34100/46312] loss=0.6846  silog=0.6710  l1=0.0415  grad=0.0190  lr=8.27e-06  (1700.8s)
+  [ep05 step 34120/46312] loss=0.9070  silog=0.8868  l1=0.0581  grad=0.0287  lr=8.24e-06  (1701.6s)
+  [ep05 step 34140/46312] loss=0.7247  silog=0.7109  l1=0.0409  grad=0.0195  lr=8.22e-06  (1702.4s)
+  [ep05 step 34160/46312] loss=0.6190  silog=0.6058  l1=0.0399  grad=0.0184  lr=8.19e-06  (1703.2s)
+  [ep05 step 34180/46312] loss=0.6934  silog=0.6810  l1=0.0357  grad=0.0176  lr=8.16e-06  (1703.9s)
+  [ep05 step 34200/46312] loss=0.5848  silog=0.5722  l1=0.0446  grad=0.0163  lr=8.14e-06  (1704.7s)
+  [ep05 step 34220/46312] loss=0.6655  silog=0.6514  l1=0.0394  grad=0.0204  lr=8.11e-06  (1705.5s)
+  [ep05 step 34240/46312] loss=0.7995  silog=0.7855  l1=0.0482  grad=0.0183  lr=8.09e-06  (1706.2s)
+  [ep05 step 34260/46312] loss=0.7747  silog=0.7595  l1=0.0474  grad=0.0210  lr=8.06e-06  (1707.0s)
+  [ep05 step 34280/46312] loss=0.6026  silog=0.5897  l1=0.0388  grad=0.0181  lr=8.04e-06  (1707.8s)
+  [ep05 step 34300/46312] loss=0.7694  silog=0.7549  l1=0.0518  grad=0.0185  lr=8.01e-06  (1708.6s)
+  [ep05 step 34320/46312] loss=0.6403  silog=0.6268  l1=0.0414  grad=0.0187  lr=7.99e-06  (1709.3s)
+  [ep05 step 34340/46312] loss=0.7887  silog=0.7730  l1=0.0531  grad=0.0208  lr=7.96e-06  (1710.2s)
+  [ep05 step 34360/46312] loss=0.7257  silog=0.7129  l1=0.0428  grad=0.0170  lr=7.94e-06  (1710.9s)
+  [ep05 step 34380/46312] loss=0.8104  silog=0.7959  l1=0.0589  grad=0.0172  lr=7.91e-06  (1711.7s)
+  [ep05 step 34400/46312] loss=0.7769  silog=0.7611  l1=0.0509  grad=0.0213  lr=7.89e-06  (1712.5s)
+  [ep05 step 34420/46312] loss=0.8932  silog=0.8768  l1=0.0601  grad=0.0208  lr=7.86e-06  (1713.3s)
+  [ep05 step 34440/46312] loss=0.7193  silog=0.7054  l1=0.0465  grad=0.0184  lr=7.84e-06  (1714.0s)
+  [ep05 step 34460/46312] loss=0.6603  silog=0.6482  l1=0.0384  grad=0.0166  lr=7.81e-06  (1714.8s)
+  [ep05 step 34480/46312] loss=0.9277  silog=0.9092  l1=0.0621  grad=0.0246  lr=7.79e-06  (1715.6s)
+  [ep05 step 34500/46312] loss=0.6947  silog=0.6808  l1=0.0442  grad=0.0189  lr=7.76e-06  (1716.4s)
+  [eval @ step 34500]
+
+------------------------------------------------------------
+Sender: LSF System <jdl1fe@rng-dl01-w24n13>
+Subject: Job 12223055: <da3metric_kitti> in cluster <rng-dl01> Done
+
+Job <da3metric_kitti> was submitted from host <rng-dl01-login7> by user <izi2sgh> in cluster <rng-dl01> at Sun Apr 26 16:49:29 2026
+Job was executed on host(s) <8*rng-dl01-w24n13>, in queue <batch_h200>, as user <izi2sgh> in cluster <rng-dl01> at Sun Apr 26 16:49:39 2026
+</home/izi2sgh> was used as the home directory.
+</home/izi2sgh/MYDATA/quanjie/liren/DA3-Metric-Repro> was used as the working directory.
+Started at Sun Apr 26 16:49:39 2026
+Terminated at Sun Apr 26 17:29:58 2026
+Results reported at Sun Apr 26 17:29:58 2026
+
+Your job looked like:
+
+------------------------------------------------------------
+# LSBATCH: User input
+#!/bin/bash -l
+#BSUB -J da3metric_kitti
+#BSUB -q batch_h200
+#BSUB -P BH-000425-08-05
+#BSUB -gpu "num=1:mode=exclusive_process"
+#BSUB -n 8
+#BSUB -M 32768
+#BSUB -W 24:00
+#BSUB -o /home/izi2sgh/MYDATA/quanjie/liren/DA3-Metric-Repro/scripts/jobs/train_kitti.%J.stdout
+#BSUB -e /home/izi2sgh/MYDATA/quanjie/liren/DA3-Metric-Repro/scripts/jobs/train_kitti.%J.stderr
+
+set -e
+module purge
+module load conda/25.1.1
+module load cuda/12.4.0
+
+ENV=/home/izi2sgh/MYDATA/quanjie/liren/envs/da3
+export PATH="${ENV}/bin:${PATH}"
+export PYTHONNOUSERSITE=1
+export TORCH_CUDA_ARCH_LIST="9.0"
+export OMP_NUM_THREADS=4
+export TOKENIZERS_PARALLELISM=false
+
+cd /home/izi2sgh/MYDATA/quanjie/liren/DA3-Metric-Repro
+which python
+python --version
+nvidia-smi | head -15
+
+echo "===================================================="
+echo "[run] DA3-Metric KITTI training"
+echo "===================================================="
+
+# Default: full training. Pass SMOKE=1 in env for 50-step smoke test.
+SMOKE_FLAG=""
+if [[ "${SMOKE:-0}" == "1" ]]; then
+    SMOKE_FLAG="--smoke"
+fi
+
+python -u train/train.py \
+    --config configs/metric_kitti.yaml \
+    ${SMOKE_FLAG}
+
+echo "[done]"
+
+------------------------------------------------------------
+
+Successfully completed.
+
+Resource usage summary:
+
+    CPU time :                                   6685.66 sec.
+    Max Memory :                                 2353 MB
+    Average Memory :                             2158.38 MB
+    Total Requested Memory :                     262144.00 MB
+    Delta Memory :                               259791.00 MB
+    Max Swap :                                   -
+    Max Processes :                              10
+    Max Threads :                                37
+    Run time :                                   2410 sec.
+    Turnaround time :                            2429 sec.
+
+The output (if any) is above this job summary.
+
+
+
+PS:
+
+Read file </home/izi2sgh/MYDATA/quanjie/liren/DA3-Metric-Repro/scripts/jobs/train_kitti.12223055.stderr> for stderr output of this job.
+

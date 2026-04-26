@@ -70,6 +70,8 @@ def main():
     ap.add_argument("--device", default="cuda")
     ap.add_argument("--process_res", type=int, default=504)
     ap.add_argument("--output", default=str(ROOT / "results" / "nyuv2_val.csv"))
+    ap.add_argument("--train_ckpt", default=None,
+                    help="if set, evaluate this self-trained ckpt on top of DA3-LARGE.")
     args = ap.parse_args()
 
     root = Path(args.root)
@@ -80,9 +82,17 @@ def main():
     print(f"[nyu] root={root}")
     print(f"[nyu] split={split}  N={len(ids)}")
 
-    print("[nyu] loading DA3METRIC-LARGE ...")
     t0 = time.time()
-    engine = DA3MetricInfer(device=args.device, process_res=args.process_res)
+    if args.train_ckpt:
+        from infer_custom import DA3MetricCustomInfer  # noqa: E402
+        print(f"[nyu] loading SELF-TRAINED ckpt {args.train_ckpt}")
+        engine = DA3MetricCustomInfer(
+            train_ckpt=args.train_ckpt,
+            device=args.device, process_res=args.process_res,
+        )
+    else:
+        print("[nyu] loading DA3METRIC-LARGE ...")
+        engine = DA3MetricInfer(device=args.device, process_res=args.process_res)
     print(f"[nyu] model ready in {time.time() - t0:.1f}s")
 
     aggregated = {k: 0.0 for k in

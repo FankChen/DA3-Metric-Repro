@@ -78,6 +78,9 @@ def main():
     ap.add_argument("--device", default="cuda")
     ap.add_argument("--process_res", type=int, default=504)
     ap.add_argument("--output", default=str(ROOT / "results" / "kitti_eigen_smoke.csv"))
+    ap.add_argument("--train_ckpt", default=None,
+                    help="if set, evaluate this self-trained ckpt on top of DA3-LARGE "
+                         "instead of using the official DA3METRIC-LARGE.")
     args = ap.parse_args()
 
     data_root = Path(args.data_root)
@@ -87,9 +90,17 @@ def main():
     print(f"[kitti] data_root={data_root}")
     print(f"[kitti] num samples={len(split)}")
 
-    print("[kitti] loading DA3METRIC-LARGE ...")
     t0 = time.time()
-    engine = DA3MetricInfer(device=args.device, process_res=args.process_res)
+    if args.train_ckpt:
+        from infer_custom import DA3MetricCustomInfer  # noqa: E402
+        print(f"[kitti] loading SELF-TRAINED ckpt {args.train_ckpt}")
+        engine = DA3MetricCustomInfer(
+            train_ckpt=args.train_ckpt,
+            device=args.device, process_res=args.process_res,
+        )
+    else:
+        print("[kitti] loading DA3METRIC-LARGE ...")
+        engine = DA3MetricInfer(device=args.device, process_res=args.process_res)
     print(f"[kitti] model ready in {time.time() - t0:.1f}s")
 
     aggregated = {k: 0.0 for k in
