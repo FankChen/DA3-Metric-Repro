@@ -2,9 +2,9 @@
 #BSUB -P BH-000425-08-05
 #BSUB -q batch_h200
 #BSUB -gpu "num=1:mode=exclusive_process"
-#BSUB -n 8
-#BSUB -M 65536
-#BSUB -W 4:00
+#BSUB -n 4
+#BSUB -M 32768
+#BSUB -W 8:00
 #BSUB -J da3_kn_mix
 #BSUB -o scripts/jobs/train_kn_mix.%J.stdout
 #BSUB -e scripts/jobs/train_kn_mix.%J.stderr
