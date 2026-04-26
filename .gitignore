@@ -9,6 +9,7 @@ __pycache__/
 *.log
 logs/
 outputs/
+runs/
 
 # Large artifacts
 checkpoints/**/*.bin

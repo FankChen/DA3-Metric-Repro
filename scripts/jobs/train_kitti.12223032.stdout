@@ -1,0 +1,37 @@
+
+------------------------------------------------------------
+Sender: LSF System <jdl1fe@rng-dl01-w24n13>
+Subject: Job 12223032: <da3metric_kitti> in cluster <rng-dl01> Exited
+
+Job <da3metric_kitti> was submitted from host <rng-dl01-login7> by user <izi2sgh> in cluster <rng-dl01> at Sun Apr 26 16:36:04 2026
+Job was executed on host(s) <8*rng-dl01-w24n13>, in queue <batch_h200>, as user <izi2sgh> in cluster <rng-dl01> at Sun Apr 26 16:36:15 2026
+</home/izi2sgh> was used as the home directory.
+</home/izi2sgh/MYDATA/quanjie/liren/DA3-Metric-Repro> was used as the working directory.
+Started at Sun Apr 26 16:36:15 2026
+Terminated at Sun Apr 26 16:36:30 2026
+Results reported at Sun Apr 26 16:36:30 2026
+Cannot open your job file: /home/izi2sgh/.lsbatch/1777214164.12223032
+TERM_OWNER: job killed by owner.
+Exited with signal termination: 2.
+
+Resource usage summary:
+
+    CPU time :                                   0.02 sec.
+    Max Memory :                                 -
+    Average Memory :                             -
+    Total Requested Memory :                     262144.00 MB
+    Delta Memory :                               -
+    Max Swap :                                   -
+    Max Processes :                              -
+    Max Threads :                                -
+    Run time :                                   12 sec.
+    Turnaround time :                            26 sec.
+
+The output (if any) is above this job summary.
+
+
+
+PS:
+
+Read file </home/izi2sgh/MYDATA/quanjie/liren/DA3-Metric-Repro/scripts/jobs/train_kitti.12223032.stderr> for stderr output of this job.
+

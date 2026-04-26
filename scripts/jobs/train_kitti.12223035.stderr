@@ -1,0 +1,10 @@
+Traceback (most recent call last):
+  File "/fs/scratch/rb-bd-dlp-rng-dl01-cr-tfx/driving/tfx-201/users/izi2sgh/quanjie/liren/DA3-Metric-Repro/train/train.py", line 280, in <module>
+    main()
+  File "/fs/scratch/rb-bd-dlp-rng-dl01-cr-tfx/driving/tfx-201/users/izi2sgh/quanjie/liren/DA3-Metric-Repro/train/train.py", line 254, in main
+    m = quick_eval_kitti(model, ds, n=64, device=device, max_depth=80.0)
+  File "/home/izi2sgh/MYDATA/quanjie/liren/envs/da3/lib/python3.10/site-packages/torch/utils/_contextlib.py", line 116, in decorate_context
+    return func(*args, **kwargs)
+  File "/fs/scratch/rb-bd-dlp-rng-dl01-cr-tfx/driving/tfx-201/users/izi2sgh/quanjie/liren/DA3-Metric-Repro/train/train.py", line 74, in quick_eval_kitti
+    mask = mask & crop
+ValueError: operands could not be broadcast together with shapes (154,504) (2,) 

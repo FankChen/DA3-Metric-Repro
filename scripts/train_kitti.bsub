@@ -1,0 +1,43 @@
+#!/bin/bash -l
+#BSUB -J da3metric_kitti
+#BSUB -q batch_h200
+#BSUB -P BH-000425-08-05
+#BSUB -gpu "num=1:mode=exclusive_process"
+#BSUB -n 8
+#BSUB -M 32768
+#BSUB -W 24:00
+#BSUB -o /home/izi2sgh/MYDATA/quanjie/liren/DA3-Metric-Repro/scripts/jobs/train_kitti.%J.stdout
+#BSUB -e /home/izi2sgh/MYDATA/quanjie/liren/DA3-Metric-Repro/scripts/jobs/train_kitti.%J.stderr
+
+set -e
+module purge
+module load conda/25.1.1
+module load cuda/12.4.0
+
+ENV=/home/izi2sgh/MYDATA/quanjie/liren/envs/da3
+export PATH="${ENV}/bin:${PATH}"
+export PYTHONNOUSERSITE=1
+export TORCH_CUDA_ARCH_LIST="9.0"
+export OMP_NUM_THREADS=4
+export TOKENIZERS_PARALLELISM=false
+
+cd /home/izi2sgh/MYDATA/quanjie/liren/DA3-Metric-Repro
+which python
+python --version
+nvidia-smi | head -15
+
+echo "===================================================="
+echo "[run] DA3-Metric KITTI training"
+echo "===================================================="
+
+# Default: full training. Pass SMOKE=1 in env for 50-step smoke test.
+SMOKE_FLAG=""
+if [[ "${SMOKE:-0}" == "1" ]]; then
+    SMOKE_FLAG="--smoke"
+fi
+
+python -u train/train.py \
+    --config configs/metric_kitti.yaml \
+    ${SMOKE_FLAG}
+
+echo "[done]"

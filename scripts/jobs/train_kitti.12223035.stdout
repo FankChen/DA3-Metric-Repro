@@ -1,0 +1,181 @@
+/home/izi2sgh/MYDATA/quanjie/liren/envs/da3/bin/python
+Python 3.10.20
+Sun Apr 26 16:38:48 2026       
++-----------------------------------------------------------------------------------------+
+| NVIDIA-SMI 590.48.01              Driver Version: 590.48.01      CUDA Version: 13.1     |
++-----------------------------------------+------------------------+----------------------+
+| GPU  Name                 Persistence-M | Bus-Id          Disp.A | Volatile Uncorr. ECC |
+| Fan  Temp   Perf          Pwr:Usage/Cap |           Memory-Usage | GPU-Util  Compute M. |
+|                                         |                        |               MIG M. |
+|=========================================+========================+======================|
+|   0  NVIDIA H200                    On  |   00000000:B9:00.0 Off |                    0 |
+| N/A   27C    P0             74W /  700W |       0MiB / 143771MiB |      0%   E. Process |
+|                                         |                        |             Disabled |
++-----------------------------------------+------------------------+----------------------+
+
++-----------------------------------------------------------------------------------------+
+| Processes:                                                                              |
+====================================================
+[run] DA3-Metric KITTI training
+====================================================
+[cfg] -> /home/izi2sgh/MYDATA/quanjie/liren/DA3-Metric-Repro/runs/da3metric_kitti_v0
+{
+  "out_dir": "/home/izi2sgh/MYDATA/quanjie/liren/DA3-Metric-Repro/runs/da3metric_kitti_v0",
+  "device": "cuda",
+  "amp": "bf16",
+  "process_res": 504,
+  "model": {
+    "init_ckpt": "/home/izi2sgh/MYDATA/quanjie/liren/DA3-Metric-Repro/checkpoints/DA3-LARGE",
+    "freeze_backbone": true
+  },
+  "data": {
+    "kitti": {
+      "data_root": "/home/izi2sgh/MYDATA/quanjie/liren/depth-v3/training-for-depth-anything-v3/kitti_root",
+      "split_file": "/home/izi2sgh/MYDATA/quanjie/liren/depth-v3/training-for-depth-anything-v3/splits/eigen_train_files.txt",
+      "min_depth": 0.001,
+      "max_depth": 80.0
+    }
+  },
+  "loss": {
+    "w_silog": 1.0,
+    "w_l1": 0.1,
+    "w_grad": 0.5,
+    "silog_variance_focus": 0.85
+  },
+  "train": {
+    "batch_size": 4,
+    "num_workers": 6,
+    "max_epochs": 8,
+    "lr": 5e-05,
+    "backbone_lr_factor": 0.1,
+    "weight_decay": 0.01,
+    "warmup_steps": 500,
+    "grad_clip": 1.0,
+    "log_every": 20,
+    "eval_every": 500,
+    "save_every": 1000
+  }
+}
+[data] building datasets ...
+  KITTI train: 23158 samples
+[model] loading DA3-LARGE init ...
+[93m[WARN ] Dependency `gsplat` is required for rendering 3DGS. Install via: pip install git+https://github.com/nerfstudio-project/gsplat.git@0b4dddf04cb687367602c01196913cde6a743d70[0m
+[97m[INFO ] using MLP layer as FFN[0m
+Loading weights from local directory
+[DA3MetricTrainable] frozen=312.8M  trainable=98.2M
+[model] ready in 23.9s
+[optim] decoder=98.2M backbone=0.0M
+[train] 8 epochs * 5789 steps/ep = 46312 total
+  [ep00 step     0/46312] loss=10.5619  silog=10.2893  l1=2.6126  grad=0.0227  lr=1.00e-07  (1.4s)
+  [ep00 step    20/46312] loss=10.9713  silog=10.6892  l1=2.7303  grad=0.0181  lr=2.10e-06  (2.2s)
+  [ep00 step    40/46312] loss=10.9940  silog=10.7110  l1=2.7148  grad=0.0231  lr=4.10e-06  (3.0s)
+  [ep00 step    60/46312] loss=9.9975  silog=9.7422  l1=2.4374  grad=0.0231  lr=6.10e-06  (3.7s)
+  [ep00 step    80/46312] loss=5.3873  silog=5.2547  l1=1.0942  grad=0.0462  lr=8.10e-06  (4.5s)
+  [ep00 step   100/46312] loss=4.0431  silog=3.9621  l1=0.6116  grad=0.0397  lr=1.01e-05  (5.3s)
+  [ep00 step   120/46312] loss=1.8990  silog=1.8667  l1=0.1500  grad=0.0346  lr=1.21e-05  (6.1s)
+  [ep00 step   140/46312] loss=1.9406  silog=1.9083  l1=0.1512  grad=0.0345  lr=1.41e-05  (6.8s)
+  [ep00 step   160/46312] loss=1.7145  silog=1.6869  l1=0.1193  grad=0.0314  lr=1.61e-05  (7.6s)
+  [ep00 step   180/46312] loss=2.0006  silog=1.9648  l1=0.2048  grad=0.0306  lr=1.81e-05  (8.4s)
+  [ep00 step   200/46312] loss=1.9311  silog=1.9025  l1=0.1349  grad=0.0303  lr=2.01e-05  (9.2s)
+  [ep00 step   220/46312] loss=2.7633  silog=2.7262  l1=0.2012  grad=0.0339  lr=2.21e-05  (10.0s)
+  [ep00 step   240/46312] loss=1.9135  silog=1.8819  l1=0.1754  grad=0.0282  lr=2.41e-05  (10.7s)
+  [ep00 step   260/46312] loss=1.8913  silog=1.8604  l1=0.1469  grad=0.0324  lr=2.61e-05  (11.5s)
+  [ep00 step   280/46312] loss=1.8241  silog=1.7957  l1=0.1358  grad=0.0295  lr=2.81e-05  (12.3s)
+  [ep00 step   300/46312] loss=1.2964  silog=1.2749  l1=0.0883  grad=0.0255  lr=3.01e-05  (13.1s)
+  [ep00 step   320/46312] loss=1.5670  silog=1.5399  l1=0.1110  grad=0.0321  lr=3.21e-05  (13.9s)
+  [ep00 step   340/46312] loss=1.5718  silog=1.5480  l1=0.1216  grad=0.0234  lr=3.41e-05  (14.6s)
+  [ep00 step   360/46312] loss=1.1802  silog=1.1572  l1=0.1066  grad=0.0247  lr=3.61e-05  (15.4s)
+  [ep00 step   380/46312] loss=1.2377  silog=1.2146  l1=0.1085  grad=0.0245  lr=3.81e-05  (16.2s)
+  [ep00 step   400/46312] loss=1.8995  silog=1.8638  l1=0.1941  grad=0.0326  lr=4.01e-05  (16.9s)
+  [ep00 step   420/46312] loss=1.2346  silog=1.2113  l1=0.1107  grad=0.0244  lr=4.21e-05  (17.7s)
+  [ep00 step   440/46312] loss=1.4244  silog=1.3980  l1=0.1195  grad=0.0289  lr=4.41e-05  (18.5s)
+  [ep00 step   460/46312] loss=1.5786  silog=1.5551  l1=0.1244  grad=0.0222  lr=4.61e-05  (19.2s)
+  [ep00 step   480/46312] loss=1.2469  silog=1.2272  l1=0.0860  grad=0.0223  lr=4.81e-05  (20.0s)
+  [ep00 step   500/46312] loss=1.3178  silog=1.2969  l1=0.1056  grad=0.0206  lr=5.00e-05  (20.8s)
+  [eval @ step 500]
+
+------------------------------------------------------------
+Sender: LSF System <jdl1fe@rng-dl01-w24n13>
+Subject: Job 12223035: <da3metric_kitti> in cluster <rng-dl01> Exited
+
+Job <da3metric_kitti> was submitted from host <rng-dl01-login7> by user <izi2sgh> in cluster <rng-dl01> at Sun Apr 26 16:38:09 2026
+Job was executed on host(s) <8*rng-dl01-w24n13>, in queue <batch_h200>, as user <izi2sgh> in cluster <rng-dl01> at Sun Apr 26 16:38:15 2026
+</home/izi2sgh> was used as the home directory.
+</home/izi2sgh/MYDATA/quanjie/liren/DA3-Metric-Repro> was used as the working directory.
+Started at Sun Apr 26 16:38:15 2026
+Terminated at Sun Apr 26 16:40:23 2026
+Results reported at Sun Apr 26 16:40:23 2026
+
+Your job looked like:
+
+------------------------------------------------------------
+# LSBATCH: User input
+#!/bin/bash -l
+#BSUB -J da3metric_kitti
+#BSUB -q batch_h200
+#BSUB -P BH-000425-08-05
+#BSUB -gpu "num=1:mode=exclusive_process"
+#BSUB -n 8
+#BSUB -M 32768
+#BSUB -W 24:00
+#BSUB -o /home/izi2sgh/MYDATA/quanjie/liren/DA3-Metric-Repro/scripts/jobs/train_kitti.%J.stdout
+#BSUB -e /home/izi2sgh/MYDATA/quanjie/liren/DA3-Metric-Repro/scripts/jobs/train_kitti.%J.stderr
+
+set -e
+module purge
+module load conda/25.1.1
+module load cuda/12.4.0
+
+ENV=/home/izi2sgh/MYDATA/quanjie/liren/envs/da3
+export PATH="${ENV}/bin:${PATH}"
+export PYTHONNOUSERSITE=1
+export TORCH_CUDA_ARCH_LIST="9.0"
+export OMP_NUM_THREADS=4
+export TOKENIZERS_PARALLELISM=false
+
+cd /home/izi2sgh/MYDATA/quanjie/liren/DA3-Metric-Repro
+which python
+python --version
+nvidia-smi | head -15
+
+echo "===================================================="
+echo "[run] DA3-Metric KITTI training"
+echo "===================================================="
+
+# Default: full training. Pass SMOKE=1 in env for 50-step smoke test.
+SMOKE_FLAG=""
+if [[ "${SMOKE:-0}" == "1" ]]; then
+    SMOKE_FLAG="--smoke"
+fi
+
+python -u train/train.py \
+    --config configs/metric_kitti.yaml \
+    ${SMOKE_FLAG}
+
+echo "[done]"
+
+------------------------------------------------------------
+
+Exited with exit code 1.
+
+Resource usage summary:
+
+    CPU time :                                   79.73 sec.
+    Max Memory :                                 1777 MB
+    Average Memory :                             928.12 MB
+    Total Requested Memory :                     262144.00 MB
+    Delta Memory :                               260367.00 MB
+    Max Swap :                                   -
+    Max Processes :                              10
+    Max Threads :                                37
+    Run time :                                   119 sec.
+    Turnaround time :                            134 sec.
+
+The output (if any) is above this job summary.
+
+
+
+PS:
+
+Read file </home/izi2sgh/MYDATA/quanjie/liren/DA3-Metric-Repro/scripts/jobs/train_kitti.12223035.stderr> for stderr output of this job.
+
