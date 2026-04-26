@@ -4,7 +4,7 @@
 
 ## 0. 写在最前
 
-师兄要求：先复现 DA3 论文 Table 11（DA3-Metric 在 5 个 metric depth benchmark 上的指标），暂不训练。
+要求：先复现 DA3 论文 Table 11（DA3-Metric 在 5 个 metric depth benchmark 上的指标），暂不训练。
 
 参考：
 - 论文：[Depth Anything 3 (arXiv:2511.10647)](https://arxiv.org/abs/2511.10647) — ICLR 2026 Oral
@@ -86,4 +86,4 @@ DA3-Metric-Repro/
 
 ## 6. Changelog
 
-- **2026-04-26**: 项目初始化。明确走 Path A（评测复现）而不是 Path B（训练复现）。
+- **2026-04-26**: 项目初始化。先Path A（评测复现）而不是 Path B（训练复现）。
