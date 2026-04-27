@@ -13,19 +13,36 @@
 
 ## 1. 目标 — 论文 Table 11
 
-| Methods | NYUv2 | KITTI | ETH3D | SUN-RGBD | DIODE |
+> ⚠️ 注意区分两个不同的"DA3 数字"：(a) 论文 Table 11 报告的数字；
+> (b) 用 HuggingFace `depth-anything/DA3METRIC-LARGE` 开源 ckpt 推理出来的数字。
+> 两者并不一致（论文未开源 monocular metric 评测代码）。下表把它们分开列。
+
+| 来源 | NYUv2 | KITTI | ETH3D | SUN-RGBD | DIODE |
 |---|---|---|---|---|---|
 |  | δ1 / AbsRel | δ1 / AbsRel | δ1 / AbsRel | δ1 / AbsRel | δ1 / AbsRel |
-| DA3-metric (paper) | 0.963 / 0.070 | 0.953 / 0.086 | 0.917 / 0.104 | 0.973 / 0.105 | 0.838 / 0.128 |
-| **本项目复现** | **0.948 / 0.080** ✅ | **0.926 / 0.094** ✅ | TBD | TBD | TBD |
+| DA3 论文 Table 11 | 0.963 / 0.070 | 0.953 / 0.086 | 0.917 / 0.104 | 0.973 / 0.105 | 0.838 / 0.128 |
+| 开源 `DA3METRIC-LARGE` ckpt 推理 | 0.948 / 0.080 | 0.926 / 0.094 | TBD | TBD | TBD |
+| 自训 v0（KITTI only, ~40 min） | 0.007 / 2.71 ❌ | **0.952 / 0.065** ⭐ | — | — | — |
+| **自训 v1（KITTI+NYU mix, ~24 min）** | **0.908 / 0.100** ✅ | **0.951 / 0.065** ⭐ | TBD | TBD | TBD |
 
-**KITTI 复现成功**：AbsRel 差 +0.008（相对 +9%），d1 差 -0.027（相对 -2.8%）。
-完整 7 个指标见 [results/kitti_eigen_full.csv](results/kitti_eigen_full.csv)。
+**对开源 ckpt 推理 vs 论文报告的差距**：
+- KITTI：δ1 −2.8%，AbsRel +9%
+- NYU：δ1 −1.6%，AbsRel +14%
 
-**NYUv2 复现成功**：AbsRel 差 +0.010（相对 +14%），d1 差 -0.015（相对 -1.6%）。
-官方 654 Eigen test split (480×640 原图)，见 [results/nyuv2_val.csv](results/nyuv2_val.csv)。
-注：之前用 `/fs/scratch/.../nyuv2/val/` 下的 288×384 npy 跑出 AbsRel=0.171，
-切换到原始 `nyu_depth_v2/nyuv2/test/` (480×640 PNG) 后正常。
+**差距来源猜测**（按可能性）：
+1. 论文未开源 monocular metric 评测代码（官方 `bench/` 里只有 multi-view geometry 评测），我对预处理 / Garg/Eigen crop / 边界处理的细节实现，跟论文未必完全一致
+2. 公式 `metric = focal/300 × raw` 来自 README FAQ，但实际是否还有未公开的细节调整未知
+3. 这个 +9% / +14% 偏差和我开源社区还没有人放 DA3-Metric 复现的现状是一致的
+
+**关于自训模型**：
+- 起点：HuggingFace `depth-anything/DA3-LARGE`（DA3 relative-depth 预训练权重 1.6 GB），**不是从头训**，与论文 Sec 4.3 metric finetune 的设置一致
+- 数据：KITTI Eigen train (23157 张) + NYU train (795 张)
+- 自训 v1 在 KITTI 上 AbsRel 比论文好 24%（0.065 vs 0.086），δ1 持平（0.951 vs 0.953）
+- NYU 上仍比论文/开源 ckpt 差（0.100 vs 0.070 / 0.080），主要因为 NYU 训练数据只有 795 张，论文使用了更大规模混合数据
+
+完整 7 项指标 csv：
+- 开源 ckpt: [results/kitti_eigen_full.csv](results/kitti_eigen_full.csv) / [results/nyuv2_val.csv](results/nyuv2_val.csv)
+- 自训 v1: [results/kitti_eigen_v1_final.csv](results/kitti_eigen_v1_final.csv) / [results/nyuv2_v1_final.csv](results/nyuv2_v1_final.csv)
 
 ## 2. 关键转换公式（论文 FAQ）
 
@@ -128,12 +145,15 @@ prompt 给得不准，方向偏了。
 
 #### Path A 复现结果
 
-| Benchmark | 论文 d1 / AbsRel | 复现 d1 / AbsRel | 偏差 |
+> Path A 跑的是 **HuggingFace 开源 ckpt `depth-anything/DA3METRIC-LARGE`** 的推理，不是论文报告值。
+
+| Benchmark | 论文 Table 11 d1 / AbsRel | 开源 ckpt 推理 d1 / AbsRel | 偏差 |
 |---|---|---|---|
 | KITTI Eigen (652 valid / 697) | 0.953 / 0.086 | **0.926 / 0.094** | d1 −2.8%, AbsRel +9% |
 | NYUv2 Eigen (654) | 0.963 / 0.070 | **0.948 / 0.080** | d1 −1.6%, AbsRel +14% |
 
-两列都在 ±15% 内，**Path A 复现成功**。
+两列都在 ±15% 内，**开源 ckpt 推理流程通了**。论文未开源 monocular metric 评测代码，
+所以这 ±9% / ±14% 的偏差很可能来自评测端预处理细节差异（Garg/Eigen crop、边界处理等）。
 ETH3D / SUN-RGBD / DIODE：cluster 上没数据，未做。
 
 ### 7.2 Path B — 自写 DA3-Metric 训练代码（首轮已完成）
