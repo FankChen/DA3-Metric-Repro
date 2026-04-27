@@ -21,11 +21,12 @@ export TORCH_CUDA_ARCH_LIST="9.0"
 cd /home/izi2sgh/MYDATA/quanjie/liren/DA3-Metric-Repro
 
 CKPT="${CKPT:-runs/da3metric_kitti_v0/ckpts/step_046000.pt}"
-echo "[eval-self] ckpt = $CKPT"
+TAG="${TAG:-$(basename $(dirname $(dirname "$CKPT")))_$(basename "$CKPT" .pt)}"
+echo "[eval-self] ckpt = $CKPT  tag = $TAG"
 
 python -u eval/run_kitti_eigen.py \
     --max_samples -1 \
     --train_ckpt "$CKPT" \
-    --output results/kitti_eigen_self_step046000.csv
+    --output "results/kitti_eigen_${TAG}.csv"
 
 echo "[done]"
