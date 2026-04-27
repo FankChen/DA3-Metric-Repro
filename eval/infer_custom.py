@@ -34,9 +34,11 @@ class DA3MetricCustomInfer:
             repo_path = Path(__file__).resolve().parents[1] / "third_party" / "Depth-Anything-3"
         _ensure_repo_on_path(repo_path)
         from depth_anything_3.api import DepthAnything3  # noqa: E402
+        from depth_anything_3.utils.alignment import apply_metric_scaling  # noqa: E402
 
         self.device = torch.device(device)
         self.process_res = int(process_res)
+        self._apply_metric_scaling = apply_metric_scaling
 
         print(f"[infer-custom] base = {base_dir}")
         self.model = DepthAnything3.from_pretrained(str(base_dir))
@@ -79,13 +81,16 @@ class DA3MetricCustomInfer:
             depth_raw = depth_raw[0]
         h_proc, w_proc = depth_raw.shape
 
-        sx = w_proc / float(W)
-        sy = h_proc / float(H)
-        f_proc = 0.5 * (float(K[0, 0]) * sx + float(K[1, 1]) * sy)
-        metric_proc = (f_proc / 300.0) * depth_raw.astype(np.float32)
+        # Official metric scaling (depth * focal / 300), with K rescaled
+        # to process resolution per official _resize_ixt rule.
+        K_proc = K.astype(np.float32).copy()
+        K_proc[0] *= w_proc / float(W)
+        K_proc[1] *= h_proc / float(H)
+        depth_t = torch.from_numpy(depth_raw.astype(np.float32))[None, None]
+        ixt_t = torch.from_numpy(K_proc)[None, None]
+        metric_t = self._apply_metric_scaling(depth_t, ixt_t)
 
-        d_t = torch.from_numpy(metric_proc)[None, None]
         d_t = torch.nn.functional.interpolate(
-            d_t, size=(H, W), mode="bilinear", align_corners=False
+            metric_t, size=(H, W), mode="bilinear", align_corners=False
         )[0, 0].numpy()
         return d_t.astype(np.float32)

@@ -6,17 +6,22 @@ Usage:
     from infer import DA3MetricInfer
     engine = DA3MetricInfer(model_id="depth-anything/DA3METRIC-LARGE",
                             device="cuda")
-    depth_m = engine.predict(rgb_uint8_HW3, K_3x3, eval_size=518)
+    depth_m = engine.predict(rgb_uint8_HW3, K_3x3)
 
-We follow the FAQ in the official README:
-    metric_depth_meters = focal * raw_output / 300.0,  focal = (fx + fy) / 2
+The metric scaling rule is the official one (see DA3 paper Sec 4.3 / FAQ):
 
-Notes:
-- For the standalone DA3METRIC-LARGE model, `inference()` returns RAW
-  depth (not metric scaled). That is the value we apply the focal/300
-  rule to.
-- Input images are auto-resized internally by the API to a multiple of
-  patch_size=14 close to `process_res`.
+    metric_depth_meters = depth_raw * focal / 300,  focal = (fx + fy) / 2
+
+with ``focal`` measured at the model's process resolution. We **reuse the
+official utility** ``depth_anything_3.utils.alignment.apply_metric_scaling``
+instead of re-implementing the formula, to guarantee bit-exact agreement
+with how DA3-NESTED applies it internally
+(see model/da3.py::_apply_metric_scaling).
+
+Preprocessing (resize to multiple of patch_size=14, ImageNet normalize, K
+resize) is **entirely handled inside** ``model.inference()`` via the
+official ``InputProcessor`` (utils/io/input_processor.py). We do not
+implement any of that ourselves.
 """
 from __future__ import annotations
 
@@ -53,11 +58,15 @@ class DA3MetricInfer:
             repo_path = Path(__file__).resolve().parents[1] / "third_party" / "Depth-Anything-3"
         _ensure_repo_on_path(repo_path)
         from depth_anything_3.api import DepthAnything3  # noqa: E402
+        from depth_anything_3.utils.alignment import apply_metric_scaling  # noqa: E402
 
         self.device = torch.device(device)
         self.process_res = int(process_res)
         self.model = DepthAnything3.from_pretrained(model_id)
         self.model = self.model.to(self.device).eval()
+        # Reference to official metric scaling utility (depth * focal / 300).
+        # Same function DA3-NESTED uses internally (model/da3.py L368).
+        self._apply_metric_scaling = apply_metric_scaling
 
     @torch.inference_mode()
     def predict(
@@ -78,14 +87,22 @@ class DA3MetricInfer:
             depth_m: (H, W) float32 metric depth in meters, resampled to
                 input resolution.
 
-        Important: the model forwards on a resized image of shape
-        (h_proc, w_proc) close to ``process_res`` on its longest side.
-        Per the official FAQ ``metric_depth = focal / 300 * raw_output``,
-        with `focal` measured **at the model's input resolution** because
-        ``raw_output`` is conditioned on the canonical focal of 300 px in
-        that same resolution.  We therefore scale K by (sx, sy) before
-        computing focal, then upsample the metric depth to the original
-        resolution (depth in meters is invariant to spatial resize).
+        Implementation:
+            1. ``model.inference([rgb_uint8])`` — official API; the official
+               ``InputProcessor`` handles resize-to-multiple-of-14,
+               ImageNet normalization, and (if intrinsics passed) K
+               rescaling. We pass ``intrinsics=None`` because for the
+               standalone DA3METRIC-LARGE the model output is raw depth
+               (not metric); we apply the metric scaling ourselves below.
+            2. Build the process-resolution K by the same rule the
+               official ``_resize_ixt`` applies: ``fx *= w_proc/W;
+               fy *= h_proc/H``.
+            3. Call the official ``apply_metric_scaling(depth, K_proc)``
+               (from ``depth_anything_3.utils.alignment``) — exactly the
+               function DA3-NESTED uses internally to convert raw depth
+               to metric meters.
+            4. Upsample metric depth to original resolution (depth in
+               meters is invariant to spatial resampling).
         """
         assert rgb_uint8.ndim == 3 and rgb_uint8.shape[2] == 3
         assert rgb_uint8.dtype == np.uint8
@@ -93,7 +110,7 @@ class DA3MetricInfer:
 
         prediction = self.model.inference(
             [rgb_uint8],
-            intrinsics=None,  # we apply our own focal/300 scaling
+            intrinsics=None,
             process_res=process_res or self.process_res,
             process_res_method="upper_bound_resize",
             export_dir=None,
@@ -103,16 +120,17 @@ class DA3MetricInfer:
             depth_raw = depth_raw[0]
         h_proc, w_proc = depth_raw.shape
 
-        # --- correct metric scaling ---
-        # Use intrinsics at the model-input resolution.
-        sx = w_proc / float(W)
-        sy = h_proc / float(H)
-        f_proc = 0.5 * (float(K[0, 0]) * sx + float(K[1, 1]) * sy)
-        metric_proc = (f_proc / 300.0) * depth_raw.astype(np.float32)
+        # --- official metric scaling (depth * focal / 300) ---
+        # Build K_proc following official _resize_ixt rule (input_processor.py L262).
+        K_proc = K.astype(np.float32).copy()
+        K_proc[0] *= w_proc / float(W)   # fx, cx
+        K_proc[1] *= h_proc / float(H)   # fy, cy
+        depth_t = torch.from_numpy(depth_raw.astype(np.float32))[None, None]   # (1,1,h,w)
+        ixt_t = torch.from_numpy(K_proc)[None, None]                            # (1,1,3,3)
+        metric_t = self._apply_metric_scaling(depth_t, ixt_t)                  # (1,1,h,w)
 
         # Upsample metric depth back to input resolution.
-        d_t = torch.from_numpy(metric_proc)[None, None]
         d_t = torch.nn.functional.interpolate(
-            d_t, size=(H, W), mode="bilinear", align_corners=False
+            metric_t, size=(H, W), mode="bilinear", align_corners=False
         )[0, 0].numpy()
         return d_t.astype(np.float32)
