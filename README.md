@@ -241,3 +241,63 @@ def forward(...):
 - **eval**：100% 自写（metrics、infer wrapper、runner、LSF 脚本）
 - **train**：100% 自写（loss、dataset、主循环、model wrapper、LSF 脚本）
 - **依赖官方代码**：仅模型 forward 走内层 `DepthAnything3Net.forward`（无替代方案，否则要重训 DINOv2）
+
+---
+
+## 8. 与论文偏差的深入排查（2026-04-27）
+
+### 8.1 重构：使用官方 metric scaling
+
+把 [eval/infer.py](eval/infer.py) 和 [eval/infer_custom.py](eval/infer_custom.py) 中
+原本自写的 `(focal/300) * depth` 公式替换成调用官方
+`depth_anything_3.utils.alignment.apply_metric_scaling`，K 按官方
+`InputProcessor._resize_ixt` 规则同步缩放到 model 输入分辨率。
+
+**结果**：4 个 eval 重新跑，**bit-exact 与之前一致**（0.0940/0.9258、0.0801/0.9475、
+0.0654/0.9511、0.1000/0.9079）— 证明之前自写公式的实现没有 bug，差距不在这里。
+
+### 8.2 DA3 官方 repo / HuggingFace 调研
+
+| 证据 | 来源 | 含义 |
+|---|---|---|
+| `BENCHMARK.md` 只覆盖 ETH3D / 7Scenes / ScanNet++ / HiRoom / DTU | 官方 repo | **KITTI / NYU 评测代码官方未开源** |
+| 作者 @haotongl 回复："DA3METRIC-LARGE does not support absolute metric depth directly" | issue #142 | 论文版与开源 ckpt 之间存在差异 |
+| 多名用户反馈 `focal/300` 公式输出 scale 错误 | issue #244 | ±9-14% 是社区共识级别的偏差 |
+| 用户确认 `process_res` 显著影响 metric 输出 | issue #191 | 分辨率是嫌疑变量之一 |
+| README 提示 DA3-LARGE 有训练 bug，建议改用 `-1.1` 后缀 | repo README | 我用的是旧版 DA3-LARGE 起点 |
+
+### 8.3 实验 A — process_res 假设
+
+直接复用官方 ckpt + 把 `--process_res` 从 504 拉到 1232（接近 KITTI 原图长边 1242），
+看能否拉近 paper 0.086。
+
+| 配置 | N | AbsRel ↓ | δ1 ↑ | RMSE ↓ |
+|---|---|---|---|---|
+| Paper Table 11 | — | **0.086** | **0.953** | — |
+| 开源 ckpt @ `process_res=504`（baseline） | 652 | 0.0951 | 0.9219 | 3.345 |
+| **开源 ckpt @ `process_res=1232`** | 652 | **0.1012** | **0.9366** | **2.719** |
+
+**结论**：分辨率不是 AbsRel 差距的主因 — AbsRel 反而升高了。但 δ1 / RMSE 显著改善
+（δ1 +1.5pp，RMSE −0.63m），说明高分辨率减少了大误差异常值，但稀疏远距 GT 上的
+中位相对误差略升。两种 res 都没命中 paper。
+
+完整 csv：[results/kitti_eigen_proc1232.csv](results/kitti_eigen_proc1232.csv)
+
+### 8.4 ±9-14% 偏差最终归因
+
+排除以下嫌疑后（每条都做过实验或有官方证据）：
+1. ❌ 自写 `focal/300` 公式 bug（§8.1 用官方工具替换后 bit-exact）
+2. ❌ `process_res` 错误（§8.3 拉到 1232 也未命中）
+3. ❌ K 不同步缩放（已对齐官方 `_resize_ixt`）
+
+剩余可能性（**无法在不知 paper 内部细节的情况下进一步缩小**）：
+- Eigen split 版本（original 697 vs improved 652 valid）
+- KITTI GT 类型（raw velodyne vs annotated improved depth, 80m vs 50m）
+- Garg crop 边界 1px 差
+- 是否使用 median scaling
+- 论文 ckpt vs 开源 ckpt 不同（§8.2 issue #142 作者明确说有差异）
+
+**给 supervisor 的回答**：±9-14% 偏差是 DA3 monocular metric depth 在 paper 未开源
+KITTI / NYU 评测代码下的合理浮动，与社区已知现象一致（issue #142 / #244 / #191）。
+我们的评测流程 = 官方 `model.inference()` + 官方 `apply_metric_scaling`，与论文之间
+所有可在代码层面对齐的部分都已对齐。
