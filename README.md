@@ -13,7 +13,7 @@
 
 ## 1. 目标 — 论文 Table 11
 
-> ⚠️ 注意区分两个不同的"DA3 数字"：(a) 论文 Table 11 报告的数字；
+> (a) 论文 Table 11 报告的数字；
 > (b) 用 HuggingFace `depth-anything/DA3METRIC-LARGE` 开源 ckpt 推理出来的数字。
 > 两者并不一致（论文未开源 monocular metric 评测代码）。下表把它们分开列。
 
@@ -35,7 +35,7 @@
 3. 这个 +9% / +14% 偏差和我开源社区还没有人放 DA3-Metric 复现的现状是一致的
 
 **关于自训模型**：
-- 起点：HuggingFace `depth-anything/DA3-LARGE`（DA3 relative-depth 预训练权重 1.6 GB），**不是从头训**，与论文 Sec 4.3 metric finetune 的设置一致
+- 起点：HuggingFace `depth-anything/DA3-LARGE`（DA3 relative-depth 预训练权重 1.6 GB），与论文 Sec 4.3 metric finetune 的设置一致
 - 数据：KITTI Eigen train (23157 张) + NYU train (795 张)
 - 自训 v1 在 KITTI 上 AbsRel 比论文好 24%（0.065 vs 0.086），δ1 持平（0.951 vs 0.953）
 - NYU 上仍比论文/开源 ckpt 差（0.100 vs 0.070 / 0.080），主要因为 NYU 训练数据只有 795 张，论文使用了更大规模混合数据
@@ -115,12 +115,10 @@ DA3-Metric-Repro/
 `VideoDepthAnything` 类，做的是单帧 KITTI fine-tune，与 DA3 完全无关。本质是
 prompt 给得不准，方向偏了。
 
-**师兄要求**：参考论文，自己写 DA3 的训练代码。
-
 **拆解**：DA3 是多任务多阶段模型（relative / metric / multi-view geometry），
 先做最小可行的 metric depth fine-tune（论文 Sec 4.3）。分两条路径：
 - **Path A**：用官方 `DA3METRIC-LARGE` 权重在 5 个 benchmark 上跑 eval，确认
-  我对模型 I/O、单位换算、评测协议的理解正确
+  对模型 I/O、单位换算、评测协议的理解正确
 - **Path B**：在 Path A 通过后，自己写训练代码做 metric fine-tune
 
 ### 7.1 Path A — 评估复现（已完成）
